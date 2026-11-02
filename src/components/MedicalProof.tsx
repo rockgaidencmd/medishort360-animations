@@ -26,13 +26,24 @@ export const MedicalProof: React.FC<{audio?: boolean}> = ({audio = true}) => {
   const vesselHeight = 320 - constrict * 145;
   const top = 960 - vesselHeight/2;
   const bottom = 960 + vesselHeight/2;
-  const title = t < 1.2 ? 'NOREPINEFRINA' : t < 4.8 ? 'VASOCONSTRICCIÓN' : 'ARTERIOLAS MÁS ESTRECHAS';
+  const captions = [
+    {start:0.00,end:1.22,words:['Medicamentos','como','la'],highlight:-1,color:'#fff'},
+    {start:1.22,end:2.12,words:['NOREPINEFRINA'],highlight:0,color:'#5be2ee'},
+    {start:2.12,end:2.68,words:['produce'],highlight:-1,color:'#fff'},
+    {start:2.68,end:3.74,words:['VASOCONSTRICCIÓN'],highlight:0,color:'#ffdf65'},
+    {start:3.74,end:5.46,words:['para','elevar','la','presión','arterial'],highlight:3,color:'#fff'},
+    {start:5.94,end:6.38,words:['OBSERVA'],highlight:0,color:'#ffdf65'},
+    {start:6.88,end:7.96,words:['Las','arterias','pequeñas'],highlight:2,color:'#5be2ee'},
+    {start:7.96,end:8.80,words:['se','estrechan'],highlight:1,color:'#ffdf65'}
+  ];
+  const activeCaption = captions.find((item)=>t>=item.start && t<item.end);
 
   return <AbsoluteFill style={{background:'#0d2635',fontFamily:'Arial, sans-serif',overflow:'hidden'}}>
     <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position:'absolute',inset:0}}>
       <defs>
-        <linearGradient id="bg" x2=".8" y2="1"><stop stopColor="#183e50"/><stop offset=".52" stopColor="#101f34"/><stop offset="1" stopColor="#251e3b"/></linearGradient>
-        <radialGradient id="glow"><stop stopColor="#70d4d7" stopOpacity=".28"/><stop offset="1" stopColor="#70d4d7" stopOpacity="0"/></radialGradient>
+        <linearGradient id="bg" x2=".8" y2="1"><stop stopColor="#321556"/><stop offset=".48" stopColor="#261548"/><stop offset="1" stopColor="#4a1f70"/></linearGradient>
+        <radialGradient id="glow"><stop stopColor="#aa69e8" stopOpacity=".42"/><stop offset="1" stopColor="#aa69e8" stopOpacity="0"/></radialGradient>
+        <radialGradient id="aquaGlow"><stop stopColor="#45cfd7" stopOpacity=".2"/><stop offset="1" stopColor="#45cfd7" stopOpacity="0"/></radialGradient>
         <linearGradient id="skin" x2=".2" y2="1"><stop stopColor="#e4ad89"/><stop offset=".55" stopColor="#c98468"/><stop offset="1" stopColor="#9e605d"/></linearGradient>
         <linearGradient id="cyanosis" x2="0" y2="1"><stop stopColor="#4d5c9c" stopOpacity=".78"/><stop offset=".35" stopColor="#53639c" stopOpacity=".64"/><stop offset=".72" stopColor="#6572a1" stopOpacity=".30"/><stop offset="1" stopColor="#6572a1" stopOpacity="0"/></linearGradient>
         <linearGradient id="vessel" x2="0" y2="1"><stop stopColor="#9e3c48"/><stop offset=".19" stopColor="#501d35"/><stop offset=".5" stopColor="#35172f"/><stop offset=".82" stopColor="#591d36"/><stop offset="1" stopColor="#a4474a"/></linearGradient>
@@ -43,23 +54,27 @@ export const MedicalProof: React.FC<{audio?: boolean}> = ({audio = true}) => {
         <clipPath id="zoomTunnel"><circle cx="450" cy="1400" r={interpolate(t,[3.45,5.5],[4,1900],clamp)}/></clipPath>
       </defs>
       <rect width="1080" height="1920" fill="url(#bg)"/>
-      <circle cx="200" cy="330" r="420" fill="url(#glow)"/>
-      <circle cx="1000" cy="1540" r="500" fill="#70447a" opacity=".16" filter="url(#soft)"/>
-      <g opacity=".28" fill="none" stroke="#a9d8dc">
+      <circle cx="200" cy="330" r="470" fill="url(#glow)"/>
+      <circle cx="1000" cy="1540" r="560" fill="url(#aquaGlow)"/>
+      <circle cx="980" cy="370" r="270" fill="#e85aba" opacity=".13" filter="url(#soft)"/>
+      <g fill="#f1c7ff" opacity=".22">
+        {Array.from({length:22},(_,i)=>{const x=(i*173+91)%1080;const y=(i*281+117)%1800;const r=2+(i%4);return <circle key={i} cx={x+Math.sin(frame*.018+i)*12} cy={y+Math.cos(frame*.021+i)*9} r={r} opacity={.35+((i%3)*.15)}/>})}
+      </g>
+      <g opacity=".32" fill="none" stroke="#d2a7fa">
         <path d="M-40 430 C220 340 340 520 520 435 S850 280 1120 390" strokeWidth="2"/>
         <path d="M-60 1460 C200 1360 380 1550 570 1460 S850 1320 1150 1440" strokeWidth="2"/>
       </g>
       {/* ICU depth layers */}
       <g opacity={sceneA}>
-        <rect x="690" y="260" width="290" height="360" rx="28" fill="#101c2a" stroke="#5d8991" strokeWidth="5"/>
-        <rect x="720" y="292" width="230" height="210" rx="14" fill="#09232e"/>
+        <rect x="690" y="260" width="290" height="360" rx="28" fill="#211b3e" stroke="#ad81d0" strokeWidth="5"/>
+        <rect x="720" y="292" width="230" height="210" rx="14" fill="#102c3a"/>
         <path d="M735 399 L765 399 L782 355 L802 447 L823 380 L845 400 L872 400 L891 365 L913 400 L943 400" fill="none" stroke="#60e4bd" strokeWidth="6"/>
         <text x="738" y="550" fill="#a3d5d6" fontSize="25" letterSpacing="2">MONITORIZACIÓN</text>
-        <path d="M100 1220 H998 V1500 H100 Z" fill="#dce8ee" opacity=".17"/>
-        <path d="M88 1210 Q170 1160 308 1184 L720 1190 Q830 1192 930 1245 L980 1370 H140 Z" fill="#d8e6e9" opacity=".82"/>
+        <path d="M100 1220 H998 V1500 H100 Z" fill="#dce8ee" opacity=".22"/>
+        <path d="M88 1210 Q170 1160 308 1184 L720 1190 Q830 1192 930 1245 L980 1370 H140 Z" fill="#e3e7f4" opacity=".9"/>
         <path d="M145 1190 Q220 1090 388 1100 Q560 1104 675 1180 L660 1290 H170 Z" fill="#d0a38d"/>
         <path d="M342 1192 C370 1180 400 1187 430 1200 L543 1296 C568 1318 567 1354 544 1370 C523 1385 491 1368 468 1350 L355 1284 C327 1266 319 1214 342 1192Z" fill="url(#skin)" stroke="#f2c1a0" strokeWidth="5"/>
-        <ellipse cx="542" cy="1360" rx="132" ry="36" fill="#191d32" opacity=".45" filter="url(#shadow)"/>
+        <ellipse cx="542" cy="1360" rx="132" ry="36" fill="#17112d" opacity=".52" filter="url(#shadow)"/>
         <g transform={`translate(0 ${Math.sin(frame*.09)*5})`}>
           <path d="M260 1360 C330 1310 410 1308 504 1344 C553 1363 584 1406 578 1450 C573 1490 532 1516 479 1508 L322 1480 C272 1471 237 1410 260 1360Z" fill="#c9886d" stroke="#efb89a" strokeWidth="5"/>
         </g>
@@ -67,7 +82,7 @@ export const MedicalProof: React.FC<{audio?: boolean}> = ({audio = true}) => {
         <text x="780" y="733" fill="#203746" fontSize="16" fontWeight="700">NOREPINEFRINA</text>
         <text x="795" y="762" fill="#415966" fontSize="15">IV · PERFUSIÓN</text>
         <path d="M820 850 V872" stroke="#c8dae0" strokeWidth="6"/>
-        <rect x="875" y="840" width="88" height="250" rx="18" fill="#0d1726" stroke="#8da8b3" strokeWidth="4"/>
+        <rect x="875" y="840" width="88" height="250" rx="18" fill="#17182f" stroke="#ad81d0" strokeWidth="4"/>
         <rect x="887" y="862" width="64" height="66" rx="7" fill="#173d45"/>
         <path d="M898 899 h14 l8 -18 l9 36 l7 -18 h10" fill="none" stroke="#7be4be" strokeWidth="3"/>
         <path d="M919 1090 v280 M875 1370 h88" stroke="#a5bbc5" strokeWidth="8"/>
@@ -88,8 +103,8 @@ export const MedicalProof: React.FC<{audio?: boolean}> = ({audio = true}) => {
       </g>
       {/* continuous anatomical tunnel, vessel opens as the camera arrives */}
       <g opacity={vesselOpacity} clipPath="url(#zoomTunnel)" transform={`translate(0 ${Math.sin(frame*.04)*8})`}>
-        <rect width="1080" height="1920" fill="#101b31" opacity=".96"/>
-        <ellipse cx="540" cy="960" rx="590" ry="760" fill="#5d263b" opacity=".34"/>
+        <rect width="1080" height="1920" fill="#24123e" opacity=".98"/>
+        <ellipse cx="540" cy="960" rx="590" ry="760" fill="#7a285c" opacity=".3"/>
         <path d={`M0 ${top-180} C260 ${top-230} 370 ${top-92} 540 ${top-70} C710 ${top-92} 820 ${top-230} 1080 ${top-180} L1080 ${bottom+180} C820 ${bottom+230} 710 ${bottom+92} 540 ${bottom+70} C370 ${bottom+92} 260 ${bottom+230} 0 ${bottom+180}Z`} fill="url(#vessel)" stroke="#e07a73" strokeWidth="18"/>
         <path d={`M0 ${top+26} C260 ${top-25} 370 ${top+55} 540 ${top+70} C710 ${top+55} 820 ${top-25} 1080 ${top+26} L1080 ${bottom-26} C820 ${bottom+25} 710 ${bottom-55} 540 ${bottom-70} C370 ${bottom-55} 260 ${bottom+25} 0 ${bottom-26}Z`} fill="#36182f" stroke="#be5b61" strokeWidth="7"/>
         <path d={`M0 ${top-150} C240 ${top-180} 380 ${top-68} 540 ${top-52} C710 ${top-68} 840 ${top-180} 1080 ${top-150}`} fill="none" stroke="url(#light)" strokeWidth="34"/>
@@ -106,11 +121,16 @@ export const MedicalProof: React.FC<{audio?: boolean}> = ({audio = true}) => {
         <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#ffd782"/></marker></defs>
       </g>
     </svg>
-    <div style={{position:'absolute',top:110,left:68,right:68,display:'flex',alignItems:'center',gap:18}}>
-      <div style={{width:12,height:62,borderRadius:8,background:'#f2c56b',boxShadow:'0 0 22px #f2c56b'}}/>
-      <div style={{color:'#f5f7f6',fontWeight:800,fontSize:48,letterSpacing:2,textShadow:'0 3px 15px #07121e'}}>{title}</div>
-    </div>
-    <div style={{position:'absolute',top:202,left:68,color:'#b8dfe2',fontSize:23,letterSpacing:3,opacity:interpolate(t,[0,1],[.7,.3],clamp)}}>UCI · PERFUSIÓN PERIFÉRICA</div>
+    <div style={{position:'absolute',top:54,left:64,padding:'10px 18px',borderRadius:24,background:'rgba(27,14,48,.6)',border:'1px solid rgba(197,157,235,.42)',color:'#e5d7f2',fontWeight:700,fontSize:21,letterSpacing:2}}>MEDISHORT360 · UCI</div>
+    {activeCaption && <div style={{position:'absolute',top:132,left:62,right:62,minHeight:94,display:'flex',alignItems:'center',justifyContent:'center',gap:12,flexWrap:'wrap',textAlign:'center',fontSize:47,lineHeight:1.12,fontWeight:850,letterSpacing:.2,textShadow:'0 4px 18px rgba(10,3,28,.88)'}}>
+      {activeCaption.words.map((word,i)=>{
+        const age=frame-Math.round(activeCaption.start*fps)-i*3;
+        const opacity=interpolate(age,[0,7],[0,1],clamp);
+        const y=interpolate(age,[0,7],[20,0],clamp);
+        const isKey=i===activeCaption.highlight;
+        return <span key={`${word}-${i}`} style={{display:'inline-block',opacity,transform:`translateY(${y}px) scale(${isKey?1.04:1})`,color:isKey?activeCaption.color:'#fff',textShadow:isKey?`0 0 20px ${activeCaption.color}88, 0 4px 18px rgba(10,3,28,.88)`:'0 4px 18px rgba(10,3,28,.88)'}}>{word}</span>;
+      })}
+    </div>}
     <div style={{position:'absolute',right:48,bottom:60,color:'#ffffff',fontSize:24,fontWeight:700,letterSpacing:4,opacity:.68}}>MEDISHORT360</div>
     {audio && <Audio src={staticFile('audio/vasopresores-original.mp3')} startFrom={Math.round(8.34 * fps)} volume={0.94}/>}
   </AbsoluteFill>;
