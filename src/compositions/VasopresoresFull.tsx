@@ -168,7 +168,7 @@ export const VasopresoresFull:React.FC = () => {
         {Array.from({length:15},(_,i)=><RedCell key={i} x={i*91-100} y={960+Math.sin(i*1.6)*Math.min(22,lumen*.14)} frame={frame} speed={flowSpeed} delay={i*71} scale={.83}/>) }
         <path d={`M270 ${top-80} Q540 ${top-185} 810 ${top-80}`} fill="none" stroke="#ffe073" strokeWidth="8" markerEnd="url(#inArrow)" opacity={constriction}/>
         <path d={`M270 ${bottom+80} Q540 ${bottom+185} 810 ${bottom+80}`} fill="none" stroke="#ffe073" strokeWidth="8" markerEnd="url(#inArrow)" opacity={constriction}/>
-        <text x="106" y="1430" fill="#f1d7fc" fontSize="35" letterSpacing="5" opacity=".86">MICROCIRCULACIÓN DISTAL</text>
+        <text x="260" y="1430" fill="#f1d7fc" fontSize="35" letterSpacing="5" opacity=".86">MICROCIRCULACIÓN DISTAL</text>
       </g>
 
       {/* Hyperframe: perfusion, oxygen exchange and viable tissue */}
