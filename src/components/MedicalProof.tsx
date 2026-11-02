@@ -16,7 +16,6 @@ export const MedicalProof: React.FC<{audio?: boolean}> = ({audio = true}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
-  const pulse = 1 + Math.sin(frame * 0.11) * 0.012;
   const sceneA = interpolate(t,[0,1.2,2.6],[1,1,.05],clamp);
   const handOpacity = interpolate(t,[1.0,1.8,4.1,4.9],[0,1,1,0],clamp);
   const vesselOpacity = interpolate(t,[3.6,4.8,9],[0,1,1],clamp);
