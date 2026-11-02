@@ -1,0 +1,22 @@
+{
+  "name": "medishort360-animations",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "remotion studio src/index.tsx",
+    "render:proof": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx VasopresoresProof output/vasopresores-prueba.mp4 --codec h264 --audio-codec aac"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.540",
+    "@remotion/google-fonts": "4.0.540",
+    "@remotion/media-utils": "4.0.540",
+    "remotion": "4.0.540",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.8",
+    "typescript": "5.8.3"
+  }
+}
