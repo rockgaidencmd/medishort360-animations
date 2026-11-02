@@ -17,11 +17,11 @@ export const ShockSegment:React.FC=()=>{
   const f=useCurrentFrame();
   const {fps}=useVideoConfig();
   const t=f/fps;
-  const wide=fade(f,0,68), hand=fade(f,42,126), micro=fade(f,106,182), back=fade(f,166,192);
+  const wide=fade(f,0,68), hand=fade(f,42,108), micro=fade(f,100,178), back=fade(f,166,192);
   const approach=interpolate(f,[35,83],[0,1],clamp);
   const zoom=interpolate(f,[25,74,105,160,190],[1,1.35,2.7,1.35,1],clamp);
   const shift=interpolate(f,[25,74,105,160,190],[0,-80,-170,-80,0],clamp);
-  const caption=t<2.1?'EL SHOCK TAMBIÉN ALTERA LA MICROCIRCULACIÓN':t<4.4?'EL MOTEADO PUEDE REFLEJAR PERFUSIÓN HETEROGÉNEA':'NO ES EXCLUSIVO DEL VASOPRESOR';
+  const caption=t<3.15?'EL SHOCK ALTERA LA MICROCIRCULACIÓN':'NO ES SOLO EL MEDICAMENTO';
 
   return <AbsoluteFill style={{background:'#211333',fontFamily:'Arial,sans-serif',overflow:'hidden'}}>
     <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position:'absolute',inset:0}}>
@@ -40,6 +40,8 @@ export const ShockSegment:React.FC=()=>{
       <rect width="1080" height="1920" fill="url(#room)"/>
       <ellipse cx="170" cy="580" rx="460" ry="540" fill="url(#roomGlow)"/>
       <g opacity=".28" fill="none" stroke="#d7b7eb" strokeWidth="3"><path d="M0 410H1080M0 1540H1080"/><path d="M95 410V1540M985 410V1540" opacity=".5"/></g>
+      {/* Enlarge the continuous scene content to use the vertical frame more fully. */}
+      <g transform="translate(540 960) scale(1.06) translate(-540 -960)">
       {/* UCI bedside, monitor and patient establish that the finding occurs in shock */}
       <g opacity={wide}>
         <rect x="685" y="420" width="310" height="285" rx="27" fill="#19182e" stroke="#c8a0e1" strokeWidth="7"/>
@@ -63,10 +65,13 @@ export const ShockSegment:React.FC=()=>{
       <g opacity={hand} transform={`translate(${shift} 0) translate(540 950) scale(${zoom}) translate(-540 -950)`}>
         <path d="M295 1085C261 1040 253 970 260 912L278 730C281 689 307 663 336 671C366 679 369 711 365 760L350 874L375 660C380 620 408 599 439 610C472 622 472 657 465 698L439 873L478 686C486 647 513 631 543 643C571 654 572 688 561 727L521 890L568 761C581 726 611 714 637 730C667 748 656 785 641 824L590 977C572 1034 538 1072 487 1097L421 1129C375 1151 332 1134 295 1085Z" fill="url(#skin)" stroke="#ffdfc6" strokeWidth="9"/>
         <g clipPath="url(#dorsal)">
-          <path d="M245 610H665V1160H245Z" fill="url(#mottledTone)" opacity=".92"/>
-          <path d="M250 838C286 802 319 818 339 852S379 888 411 856 467 829 496 861 553 903 592 870 635 845 667 867M251 936C287 901 321 913 344 947S391 978 421 948 476 915 507 946 563 987 598 957 638 930 665 950M278 1011C312 982 343 989 366 1018S410 1042 437 1016 483 984 511 1008 557 1048 591 1024" fill="none" stroke="#525d9e" strokeWidth="12" opacity=".54"/>
-          <path d="M245 886C290 848 322 867 345 905S393 946 427 911s64-31 90 6 58 51 98 16M252 962c39-35 77-28 101 10s63 44 93 12 69-38 96-3 59 45 96 9M270 1022c38-25 64-14 90 13s52 35 78 14 51-45 85-25 58 45 102 17M300 779c33-23 59-7 79 20s49 31 71 5 51-37 76-17 52 37 86 11M345 687c28 18 38 55 30 94m73-156c24 44 5 99-7 145m107-100c8 42-22 82-38 126m111-73c-2 40-29 72-48 104" fill="none" stroke="#695eaa" strokeWidth="14" opacity=".62"/>
-          <path d="M245 886C290 848 322 867 345 905S393 946 427 911s64-31 90 6 58 51 98 16M252 962c39-35 77-28 101 10s63 44 93 12 69-38 96-3 59 45 96 9M270 1022c38-25 64-14 90 13s52 35 78 14 51-45 85-25 58 45 102 17" fill="none" stroke="#9677d2" strokeWidth="7" opacity=".7"/>
+          <path d="M245 610H665V1160H245Z" fill="url(#mottledTone)" opacity=".72"/>
+          {/* Irregular branching reticulum integrated with skin tone, not dark circular spots. */}
+          <g fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M260 1032C302 1004 324 973 342 944S374 907 404 889 438 862 456 827 489 788 520 767 559 728 574 695M341 944C325 912 308 893 282 880M374 907C370 877 383 852 406 830M404 889C430 908 452 926 482 936S535 947 562 973M456 827C442 797 437 770 445 739M489 788C520 801 547 814 572 836M520 767C541 749 551 725 548 700" stroke="#525d9e" strokeWidth="15" opacity=".56"/>
+            <path d="M260 1032C302 1004 324 973 342 944S374 907 404 889 438 862 456 827 489 788 520 767 559 728 574 695M341 944C325 912 308 893 282 880M374 907C370 877 383 852 406 830M404 889C430 908 452 926 482 936S535 947 562 973M456 827C442 797 437 770 445 739M489 788C520 801 547 814 572 836M520 767C541 749 551 725 548 700" stroke="#a28ad0" strokeWidth="5" opacity=".76"/>
+            <path d="M283 995C322 970 348 941 369 916M429 872C416 840 416 812 427 782M478 810C485 843 497 870 523 887M326 967C310 946 293 930 268 924M502 780C529 775 550 760 564 737" stroke="#7770b1" strokeWidth="10" opacity=".55"/>
+          </g>
         </g>
         <path d="M302 734q16-24 39-11l-7 39q-22 9-34-8zm105-96q20-18 39-4l-7 39q-24 6-36-7zm104 33q18-20 38-5l-8 39q-23 7-35-8zm106 73q20-12 37 7l-16 36q-23-1-31-17z" fill="#efc6b5" stroke="#ae7c75" strokeWidth="3"/>
       </g>
@@ -90,9 +95,10 @@ export const ShockSegment:React.FC=()=>{
         <path d="M295 1085C261 1040 253 970 260 912L278 730C281 689 307 663 336 671C366 679 369 711 365 760L350 874L375 660C380 620 408 599 439 610C472 622 472 657 465 698L439 873L478 686C486 647 513 631 543 643C571 654 572 688 561 727L521 890L568 761C581 726 611 714 637 730C667 748 656 785 641 824L590 977C572 1034 538 1072 487 1097L421 1129C375 1151 332 1134 295 1085Z" fill="url(#skin)" stroke="#ffdfc6" strokeWidth="9"/>
         <g clipPath="url(#dorsal)"><path d="M245 886C290 848 322 867 345 905S393 946 427 911s64-31 90 6 58 51 98 16M252 962c39-35 77-28 101 10s63 44 93 12 69-38 96-3 59 45 96 9M270 1022c38-25 64-14 90 13s52 35 78 14 51-45 85-25 58 45 102 17" fill="none" stroke="#695eaa" strokeWidth="14" opacity=".68"/></g>
       </g>
+      </g>
     </svg>
     <div style={{position:'absolute',top:46,left:54,color:'#f7e9ff',fontWeight:750,fontSize:21,letterSpacing:3,background:'rgba(22,12,38,.55)',padding:'10px 18px',borderRadius:24,border:'1px solid rgba(226,190,245,.35)'}}>MEDISHORT360 · UCI</div>
-    <div style={{position:'absolute',top:140,left:64,right:64,padding:'22px 28px',borderRadius:25,textAlign:'center',color:'#fff',fontSize:39,fontWeight:850,lineHeight:1.08,background:'rgba(23,12,40,.78)',border:'1px solid rgba(230,199,255,.35)',boxShadow:'0 18px 42px rgba(6,2,18,.3)'}}>{caption}</div>
+    <div style={{position:'absolute',top:132,left:72,right:72,padding:'15px 22px',borderRadius:22,textAlign:'center',color:'#fff',fontSize:32,fontWeight:850,lineHeight:1.08,letterSpacing:.4,background:'rgba(23,12,40,.72)',border:'1px solid rgba(230,199,255,.35)',boxShadow:'0 12px 32px rgba(6,2,18,.26)'}}>{caption}</div>
     <div style={{position:'absolute',right:44,bottom:50,color:'#fff',fontSize:22,fontWeight:700,letterSpacing:4,opacity:.7}}>MEDISHORT360</div>
     <Audio src={staticFile('audio/vasopresores-original.mp3')} startFrom={948} endAt={1140} volume={.96}/>
   </AbsoluteFill>;
