@@ -53,13 +53,13 @@ export const VasopresoresFull:React.FC = () => {
   const lumen=310-155*constriction;
   const top=960-lumen/2;
   const bottom=960+lumen/2;
-  const patientOpacity=Math.max(reveal(t,0,14.25,.16),reveal(t,31.7,48.25,.6));
+  const patientOpacity=reveal(t,0,14.25,.16);
   const greetingOpacity=reveal(t,5.82,8.2,.35);
   const drugOpacity=reveal(t,8.2,15,.5);
   const vesselOpacity=reveal(t,14.1,23.1,.55);
-  const tissueOpacity=reveal(t,22.8,31.65,.55);
+  const tissueOpacity=reveal(t,22.8,27.2,.35);
   const handOpacity=reveal(t,1.6,5.8,.3);
-  const symptomHandOpacity=reveal(t,26.8,31.7,.4);
+  const symptomHandOpacity=reveal(t,26.9,31.7,.4);
   const nursingOpacity=reveal(t,38,48.25,.45);
   const outroOpacity=reveal(t,48.08,50.834,.3);
   const flowSpeed=interpolate(t,[15.5,18.5,22.5],[2.3,1.25,1.1],clamp);
@@ -196,7 +196,7 @@ export const VasopresoresFull:React.FC = () => {
       {/* Return from tissue to the visible distal sign */}
       <g opacity={symptomHandOpacity} transform={`translate(-390 560) scale(2.08)`}>
         <path d="M337 350 C325 327 323 280 319 237 C317 207 324 186 339 184 C356 182 365 199 368 222 L378 292 L383 176 C384 148 396 131 414 132 C434 133 439 151 438 179 L434 291 L450 164 C454 137 469 124 487 128 C506 132 509 151 504 180 L482 300 L512 205 C521 180 537 171 554 180 C571 190 568 211 559 236 L527 344 C518 374 499 398 469 414 L434 433 C405 448 378 442 356 425 L311 394 C291 381 284 363 296 350 C308 337 328 346 349 370 Z" fill="url(#skinFull)" stroke="#ffe0c6" strokeWidth="8"/>
-        <g clipPath="url(#fullHandClip)"><path d="M290 120 H590 V470 H285Z" fill="url(#distalBlue)" opacity=".9"/><path d="M325 232 C356 210 372 240 392 278 S423 315 447 283 S497 242 524 271 M322 283 C353 266 370 303 397 332 S442 352 466 321 S516 298 547 323 M322 337 C350 316 380 355 410 378 S466 386 488 357 S522 346 540 366" fill="none" stroke="#7778ba" strokeWidth="4" opacity=".76"/></g>
+        <g clipPath="url(#fullHandClip)"><path d="M290 120 H590 V470 H285Z" fill="url(#distalBlue)" opacity={interpolate(t,[26.9,29.2,31.3],[.16,.94,.94],clamp)}/><path d="M325 232 C356 210 372 240 392 278 S423 315 447 283 S497 242 524 271 M322 283 C353 266 370 303 397 332 S442 352 466 321 S516 298 547 323 M322 337 C350 316 380 355 410 378 S466 386 488 357 S522 346 540 366" fill="none" stroke="#7778ba" strokeWidth="4" opacity=".76"/></g>
         <path d="M337 210 Q342 201 350 207 L352 221 Q344 226 338 219Z M399 154 Q408 147 417 154 L417 168 Q407 171 399 166Z M470 150 Q480 145 489 154 L486 168 Q475 170 469 162Z M535 193 Q544 188 551 197 L545 211 Q536 210 532 202Z" fill="#f2d2be" stroke="#b78373" strokeWidth="2"/>
       </g>
 
@@ -215,7 +215,6 @@ export const VasopresoresFull:React.FC = () => {
 
       {/* Hyperframe: active nursing assessment */}
       <g opacity={nursingOpacity}>
-        <rect x="35" y="480" width="1010" height="1270" rx="50" fill="#342050" opacity=".4" stroke="#b984d6" strokeWidth="4"/>
         <path d="M95 1110 H985 V1510 H95Z" fill="#dfe7ef" opacity=".5"/>
         <path d="M125 1090 Q225 1010 381 1030 L720 1030 Q830 1040 938 1112 L960 1375 H128Z" fill="#dbe5ed" opacity=".88"/>
         <path d="M360 1090 C419 1070 468 1093 496 1145 L607 1310 C632 1350 614 1381 581 1392 C550 1403 524 1376 500 1342 L390 1203 C358 1162 337 1114 360 1090Z" fill="url(#skinFull)" stroke="#f1c4a8" strokeWidth="6"/>
@@ -228,6 +227,17 @@ export const VasopresoresFull:React.FC = () => {
         {/* gloved finger presses a nail, then lifts */}
         <path d={`M${interpolate(t,[41.8,42.2,42.55,42.9],[620,605,605,620],clamp)} ${interpolate(t,[41.8,42.2,42.55,42.9],[1190,1120,1120,1190],clamp)} Q660 1050 701 1080 L718 1130 Q670 1160 622 1145Z`} fill="#eef7ff" stroke="#75bfd3" strokeWidth="6"/>
         <path d="M784 988 Q820 950 863 976 L885 1010 Q839 1036 795 1022Z" fill="#d7e1eb" stroke="#a988cd" strokeWidth="5" opacity={reveal(t,43.35,44.7,.2)}/>
+        {/* nurse leans in to assess the patient's hand */}
+        <g>
+          <path d="M794 1170 Q822 1116 885 1124 L1000 1180 V1510 H790Z" fill="#3caeb8" stroke="#a8edf0" strokeWidth="6"/>
+          <path d="M807 1082 Q806 982 874 962 Q954 964 960 1071 Q955 1149 884 1164 Q817 1152 807 1082Z" fill="url(#skinFull)" stroke="#ffd5b9" strokeWidth="5"/>
+          <path d="M806 1072 Q784 982 865 934 Q934 931 962 1013 L948 1051 Q902 1013 868 1034 Q839 1051 806 1072Z" fill="#2d203e"/>
+          <path d="M834 1078 Q847 1067 859 1078 M898 1076 Q912 1066 925 1077" fill="none" stroke="#563a4a" strokeWidth="5" strokeLinecap="round"/>
+          <path d="M866 1126 Q884 1133 902 1125" fill="none" stroke="#955c5b" strokeWidth="4" strokeLinecap="round"/>
+          <path d="M820 1200 Q750 1190 686 1145" fill="none" stroke="#3caeb8" strokeWidth="43" strokeLinecap="round"/>
+          <path d="M688 1147 Q659 1125 628 1124" fill="none" stroke="#f3f8fd" strokeWidth="25" strokeLinecap="round"/>
+          <path d="M624 1123 Q601 1108 585 1118" fill="none" stroke="#8dcdd9" strokeWidth="17" strokeLinecap="round"/>
+        </g>
         {/* four nursing cues appear one at a time, tied to the voice */}
         <g opacity={reveal(t,40.35,41.45,.2)}><rect x="94" y="610" width="360" height="84" rx="42" fill="#382359" stroke="#e8b8e4" strokeWidth="4"/><circle cx="143" cy="652" r="17" fill="#d98099"/><text x="181" y="665" fill="#fff" fontSize="29" fontWeight="700">COLORACIÓN</text></g>
         <g opacity={reveal(t,41.4,42.15,.2)}><rect x="608" y="610" width="360" height="84" rx="42" fill="#382359" stroke="#8ee1e5" strokeWidth="4"/><path d="M652 632 V672 M642 642 H662" stroke="#8ee1e5" strokeWidth="7" strokeLinecap="round"/><text x="684" y="665" fill="#fff" fontSize="29" fontWeight="700">TEMPERATURA</text></g>
