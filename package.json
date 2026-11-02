@@ -6,7 +6,8 @@
   "scripts": {
     "start": "remotion studio src/index.tsx",
     "render:proof": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx VasopresoresProof output/vasopresores-prueba.mp4 --codec h264 --audio-codec aac",
-    "render:full": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx VasopresoresFull output/vasopresores-completo.mp4 --codec h264 --audio-codec aac"
+    "render:full": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx VasopresoresFull output/vasopresores-completo.mp4 --codec h264 --audio-codec aac",
+    "render:shock": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx VasopresoresShockSegment output/vasopresores-shock-prueba.mp4 --codec h264 --audio-codec aac"
   },
   "dependencies": {
     "@remotion/cli": "4.0.540",
