@@ -16,9 +16,11 @@ mkdir -p public/audio
 # Copia el audio original como public/audio/vasopresores-original.mp3
 npm run start
 npm run render:proof
+# Video completo
+npm run render:full
 ```
 
-La salida local es `output/vasopresores-prueba.mp4`, en vertical 1080 × 1920, 30 FPS, H.264 con audio AAC. El repositorio no incluye el MP3: al ser público, añadirlo aquí lo haría público también.
+Las salidas quedan en `output/vasopresores-prueba.mp4` y `output/vasopresores-completo.mp4`, en vertical 1080 × 1920, 30 FPS, H.264 con audio AAC. El repositorio no incluye el MP3: al ser público, añadirlo aquí lo haría público también.
 
 ## Render en la nube desde Android con Codespaces
 
@@ -44,4 +46,4 @@ Para otro tema, crea una composición Remotion independiente y reutiliza compone
 
 ## Estado
 
-Esta rama contiene la prueba visual solicitada. El video completo queda pendiente de la revisión de esta prueba.
+La prueba visual y el video completo son composiciones separadas. Revisa el MP4 completo antes de publicarlo.
