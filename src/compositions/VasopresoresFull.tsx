@@ -7,8 +7,9 @@ const reveal = (t:number,start:number,end:number,fade=.45) => interpolate(t,[sta
 const RedCell:React.FC<{x:number;y:number;frame:number;speed?:number;delay?:number;scale?:number}> = ({x,y,frame,speed=2,delay=0,scale=1}) => {
   const position=((frame*speed+delay)%1260)-90;
   return <g transform={`translate(${x+position} ${y}) scale(${scale})`}>
-    <ellipse rx="27" ry="15" fill="#a5263d" stroke="#ff9f9d" strokeWidth="2.5"/>
-    <ellipse rx="11" ry="5.5" fill="#e96e75" opacity=".95"/>
+    <ellipse rx="27" ry="15" fill="url(#rbcBody)" stroke="#ffaaa7" strokeWidth="2.5"/>
+    <ellipse rx="12" ry="6.5" fill="#712239" opacity=".82"/>
+    <ellipse rx="7" ry="3.5" fill="#d96472" opacity=".92"/>
     <path d="M-21 -3 Q0 -12 21 -3" fill="none" stroke="#ffd1cc" strokeWidth="2" opacity=".72"/>
   </g>;
 };
@@ -34,7 +35,8 @@ const KineticCaption:React.FC<{t:number;frame:number;fps:number}> = ({t,frame,fp
   ];
   const line=lines.find((item)=>t>=item.start && t<item.end);
   if(!line)return null;
-  return <div style={{position:'absolute',top:138,left:58,right:58,minHeight:104,display:'flex',alignItems:'center',justifyContent:'center',flexWrap:'wrap',gap:'5px 12px',textAlign:'center',fontSize:43,lineHeight:1.08,fontWeight:850,letterSpacing:.2,textShadow:'0 4px 20px rgba(14,3,37,.9)'}}>
+  const progress=interpolate(t,[line.start,line.end],[0,1],clamp);
+  return <div style={{position:'absolute',top:128,left:64,right:64,minHeight:132,padding:'16px 24px 24px',boxSizing:'border-box',display:'flex',alignItems:'center',justifyContent:'center',flexWrap:'wrap',gap:'5px 12px',textAlign:'center',fontSize:38,lineHeight:1.08,fontWeight:850,letterSpacing:.2,background:'linear-gradient(110deg,rgba(19,11,38,.83),rgba(46,26,70,.66))',border:'1px solid rgba(230,199,255,.26)',borderRadius:26,boxShadow:'0 16px 42px rgba(9,4,22,.27),inset 0 1px 0 rgba(255,255,255,.08)',backdropFilter:'blur(12px)',textShadow:'0 4px 20px rgba(14,3,37,.9)'}}>
     {line.words.map((word,index)=>{
       const age=frame-Math.round(line.start*fps)-index*2;
       const opacity=interpolate(age,[0,6],[0,1],clamp);
@@ -42,6 +44,7 @@ const KineticCaption:React.FC<{t:number;frame:number;fps:number}> = ({t,frame,fp
       const key=index===line.key;
       return <span key={`${line.start}-${index}`} style={{display:'inline-block',opacity,transform:`translateY(${y}px) scale(${key?1.04:1})`,color:key?line.color:'#fff',textShadow:key?`0 0 20px ${line.color}88, 0 4px 18px rgba(14,3,37,.92)`:'0 4px 18px rgba(14,3,37,.92)'}}>{word}</span>;
     })}
+    <div style={{position:'absolute',left:25,right:25,bottom:9,height:3,borderRadius:4,background:'rgba(255,255,255,.13)',overflow:'hidden'}}><div style={{height:'100%',width:'100%',transform:`scaleX(${progress})`,transformOrigin:'left',background:`linear-gradient(90deg,${line.color},#71e5e4)`,boxShadow:`0 0 14px ${line.color}99`}}/></div>
   </div>;
 };
 
@@ -73,6 +76,7 @@ export const VasopresoresFull:React.FC = () => {
         <linearGradient id="skinFull" x2=".2" y2="1"><stop stopColor="#edbd9d"/><stop offset=".55" stopColor="#cb8b71"/><stop offset="1" stopColor="#a36462"/></linearGradient>
         <linearGradient id="distalBlue" x2="0" y2="1"><stop stopColor="#5362a6" stopOpacity=".83"/><stop offset=".38" stopColor="#645c9f" stopOpacity=".62"/><stop offset=".78" stopColor="#6f6ba5" stopOpacity=".24"/><stop offset="1" stopColor="#706da3" stopOpacity="0"/></linearGradient>
         <linearGradient id="wallFull" x2="0" y2="1"><stop stopColor="#f18b92"/><stop offset=".16" stopColor="#8b3858"/><stop offset=".5" stopColor="#562448"/><stop offset=".84" stopColor="#8b3858"/><stop offset="1" stopColor="#f18b92"/></linearGradient>
+        <radialGradient id="rbcBody" cx="34%" cy="28%" r="82%"><stop stopColor="#ff9a9b"/><stop offset=".38" stopColor="#d64d62"/><stop offset="1" stopColor="#741c3a"/></radialGradient>
         <linearGradient id="lumenFull" x2="0" y2="1"><stop stopColor="#542039"/><stop offset=".5" stopColor="#30182f"/><stop offset="1" stopColor="#642943"/></linearGradient>
         <radialGradient id="tissueCell"><stop stopColor="#f3a7c1"/><stop offset=".72" stopColor="#bd5e91"/><stop offset="1" stopColor="#74346e"/></radialGradient>
         <filter id="blurFull"><feGaussianBlur stdDeviation="48"/></filter>
@@ -155,7 +159,7 @@ export const VasopresoresFull:React.FC = () => {
       </g>
 
       {/* Hyperframe: zoom into arterioles; the lumen narrows but cells keep moving */}
-      <g opacity={vesselOpacity} clipPath="url(#zoomVessel)">
+      <g opacity={vesselOpacity} clipPath="url(#zoomVessel)" transform="translate(540 960) scale(1.25) translate(-540 -960)">
         <rect width="1080" height="1920" fill="#311645"/>
         <circle cx="540" cy="960" r="820" fill="url(#violetGlow)" opacity=".58"/>
         <path d={`M0 ${top-190} C250 ${top-225} 350 ${top-75} 540 ${top-64} C730 ${top-75} 830 ${top-225} 1080 ${top-190} L1080 ${bottom+190} C830 ${bottom+225} 730 ${bottom+75} 540 ${bottom+64} C350 ${bottom+75} 250 ${bottom+225} 0 ${bottom+190}Z`} fill="url(#wallFull)" stroke="#ffc2c1" strokeWidth="15"/>
@@ -214,7 +218,7 @@ export const VasopresoresFull:React.FC = () => {
       </g>
 
       {/* Hyperframe: active nursing assessment */}
-      <g opacity={nursingOpacity}>
+      <g opacity={nursingOpacity} transform="translate(0 -190)">
         <path d="M95 1110 H985 V1510 H95Z" fill="#dfe7ef" opacity=".5"/>
         <path d="M125 1090 Q225 1010 381 1030 L720 1030 Q830 1040 938 1112 L960 1375 H128Z" fill="#dbe5ed" opacity=".88"/>
         <path d="M360 1090 C419 1070 468 1093 496 1145 L607 1310 C632 1350 614 1381 581 1392 C550 1403 524 1376 500 1342 L390 1203 C358 1162 337 1114 360 1090Z" fill="url(#skinFull)" stroke="#f1c4a8" strokeWidth="6"/>
