@@ -1,3 +1,5 @@
+import {ChildFall} from './ChildFall';
+import {WoundHealing} from './WoundHealing';
 import type React from 'react';
 import {Clip} from './Clip';
 import {Outro} from './Outro';
@@ -17,4 +19,7 @@ export const sceneRegistry: Record<SceneComponentName, React.FC<SceneProps>> = {
   Clip,
   ShockMicrocirculation,
   Outro,
+  ChildFall,
+  WoundHealing,
 };
+

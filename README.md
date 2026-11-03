@@ -63,3 +63,9 @@ npm run render:draft -- vasopresores
 ```
 
 El audio original y los MP4 de trabajo se guardan localmente en `public/audio/` y `public/renders/`, que están excluidos de Git. Por eso, el proyecto JSON de vasopresores se registra ahora, pero no se puede renderizar hasta copiar esos medios al entorno de Codespaces o a la carpeta local. El render final también requiere completar la revisión clínica y las licencias indicadas en `facts.json` y `public/models/assets.json`.
+
+
+## Biblioteca anatómica: herida del antebrazo
+
+Ver `docs/anatomia-herida.md`. Las cinco composiciones `Preview-*` no necesitan audio ni medios externos. Ejecuta `npm run start` y selecciona una vista previa. No se ha creado un video final.
+

@@ -16,6 +16,18 @@ export const theme = {
     rose: '#c87c91',
     shadow: '#163444',
   },
+  anatomy: {
+    maskWhite: '#ffffff', maskBlack: '#000000', sky: '#e7f1eb', ground: '#c5d4bc', groundDeep: '#9ead92', stone: '#87938c',
+    paper: '#fff8e9', ink: '#213d46', skinLight: '#f9d4ad', skin: '#dba57a',
+    skinShade: '#bb7c5a', hair: '#51372b', hairLight: '#896040', eye: '#47392f',
+    shirt: '#238d92', shirtShade: '#17656e', pants: '#254453', shoe: '#8b664a',
+    epidermis: '#e5ae85', corneum: '#f8d9af', dermis: '#e6a29c', fat: '#efd08e',
+    fatOutline: '#d7ae6d', nerve: '#f9eaaa', capillary: '#be5865', vein: '#648fa5',
+    wound: '#c8525a', clot: '#963e49', scab: '#624135', scabLight: '#9a6b4b',
+    newSkin: '#efb4b4', fibrin: '#f1d8a2', platelet: '#d29fa8',
+    neutrophil: '#e4ddf1', nucleus: '#806b9f', macrophage: '#b5cfc4',
+    fibroblast: '#c785a5', collagen: '#f5ddd0', transparent: 'transparent',
+  },
   font: {family: 'Arial, sans-serif'},
   size: {label: 35, caption: 30, brand: 25, callout: 29},
   layout: {
@@ -30,3 +42,4 @@ export const theme = {
   },
   defaultTransitionFrames: 10,
 } as const;
+
