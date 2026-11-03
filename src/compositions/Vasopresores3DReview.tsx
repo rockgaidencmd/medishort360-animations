@@ -41,7 +41,7 @@ export const Vasopresores3DReview:React.FC=()=>{
   {t>=38.4&&t<48.2&&<div style={{position:'absolute',left:70,right:70,top:290,padding:22,borderRadius:22,background:'rgba(25,62,76,.88)',color:'#c4ede0',fontSize:29}}>Color · temperatura · relleno capilar · pulsos</div>}
   <div style={{position:'absolute',left:48,top:50,color:'#ecf6e9',fontWeight:700,fontSize:25,letterSpacing:3,textShadow:'0 2px 8px #163444'}}>MEDISHORT360</div>
   <div style={{position:'absolute',left:48,right:48,top:132,padding:'20px',height:110,background:'#244453',color:'#ffe0a9',fontWeight:700,fontSize:35,textShadow:'0 2px 8px #163444'}}>{label}</div>
-  <div style={{position:'absolute',left:150,right:70,bottom:130,height:130,padding:'18px 24px',borderRadius:18,background:'rgba(21,49,61,.88)',color:'#fff2dd',fontSize:30,lineHeight:1.25}}>{caption}</div>
+  <div style={{position:'absolute',left:150,right:70,bottom:130,height:130,padding:'18px 24px',borderRadius:18,background:'#15313d',color:'#fff2dd',fontSize:30,lineHeight:1.25}}>{caption}</div>
   <Audio src={staticFile('audio/vasopresores-original.mp3')}/>
  </AbsoluteFill>;
 };
