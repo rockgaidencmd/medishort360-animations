@@ -30,13 +30,13 @@ export const Vasopresores3DReview:React.FC=()=>{
  [38.4,40.35,'Como enfermeros debemos vigilar'],[40.35,41.4,'Coloración'],[41.4,42.35,'Temperatura'],[42.35,43.25,'Relleno capilar'],[43.25,44.55,'Pulsos periféricos'],[44.55,47.84,'Comunicar inmediatamente cualquier deterioro'],[48.2,50.15,'Síguenos en MediShort360']];
  const caption=cues.find(([a,b])=>t>=a&&t<b)?.[2]??'';
  return <AbsoluteFill style={{background:'#284b59',fontFamily:'Arial, sans-serif'}}>
-  <Layer start={0} end={260}><OffthreadVideo muted src={staticFile('renders/icu.mp4')}/></Layer>
-  <Layer start={250} end={438}><OffthreadVideo muted src={staticFile('renders/infusion.mp4')}/></Layer>
-  <Layer start={420} end={702}><OffthreadVideo muted playbackRate={.9} src={staticFile('renders/arteriole.mp4')}/></Layer>
-  <Layer start={684} end={964}><OffthreadVideo muted playbackRate={.9} src={staticFile('renders/hand.mp4')}/></Layer>
-  <Layer start={946} end={1162}><OffthreadVideo muted src={staticFile('renders/icu.mp4')}/></Layer>
-  <Layer start={1144} end={1456}><OffthreadVideo muted src={staticFile('renders/nursing.mp4')}/></Layer>
-  <Layer start={1438} end={1525}><OffthreadVideo muted src={staticFile('renders/icu.mp4')}/></Layer>
+  <Layer start={0} end={260}><OffthreadVideo style={{width:'100%',height:'100%',objectFit:'cover'}} muted src={staticFile('renders/icu.mp4')}/></Layer>
+  <Layer start={250} end={438}><OffthreadVideo style={{width:'100%',height:'100%',objectFit:'cover'}} muted src={staticFile('renders/infusion.mp4')}/></Layer>
+  <Layer start={420} end={702}><OffthreadVideo style={{width:'100%',height:'100%',objectFit:'cover'}} muted playbackRate={.9} src={staticFile('renders/arteriole.mp4')}/></Layer>
+  <Layer start={684} end={964}><OffthreadVideo style={{width:'100%',height:'100%',objectFit:'cover'}} muted playbackRate={.9} src={staticFile('renders/hand.mp4')}/></Layer>
+  <Layer start={946} end={1162}><OffthreadVideo style={{width:'100%',height:'100%',objectFit:'cover'}} muted src={staticFile('renders/icu.mp4')}/></Layer>
+  <Layer start={1144} end={1456}><OffthreadVideo style={{width:'100%',height:'100%',objectFit:'cover'}} muted src={staticFile('renders/nursing.mp4')}/></Layer>
+  <Layer start={1438} end={1525}><OffthreadVideo style={{width:'100%',height:'100%',objectFit:'cover'}} muted src={staticFile('renders/icu.mp4')}/></Layer>
   {t>=31.82&&t<38.4&&<FlowMap time={t-31.82}/>}
   {t>=38.4&&t<48.2&&<div style={{position:'absolute',left:70,right:70,top:290,padding:22,borderRadius:22,background:'rgba(25,62,76,.88)',color:'#c4ede0',fontSize:29}}>Color · temperatura · relleno capilar · pulsos</div>}
   <div style={{position:'absolute',left:48,top:50,color:'#ecf6e9',fontWeight:700,fontSize:25,letterSpacing:3,textShadow:'0 2px 8px #163444'}}>MEDISHORT360</div>
