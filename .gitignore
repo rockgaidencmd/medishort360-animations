@@ -4,3 +4,9 @@ public/audio/*.mp3
 .DS_Store
 
 public/renders/*.mp4
+
+# MediShort360 JSON pipeline
+output/
+public/audio/
+public/renders/
+projects/*/transcript.prev.json

@@ -1,0 +1,147 @@
+{
+  "scenes": [
+    {
+      "id": "uci",
+      "from": 0,
+      "to": 8.34,
+      "kind": "environment",
+      "component": "Clip",
+      "props": {
+        "src": "renders/icu.mp4"
+      },
+      "action": "Apertura en UCI: paciente con manos y pies de coloración violácea",
+      "structures": [],
+      "camera": "static",
+      "label": "PACIENTE EN UCI",
+      "transitionIn": 10,
+      "factIds": [],
+      "assetIds": [
+        "makehuman-head-feet"
+      ]
+    },
+    {
+      "id": "infusion",
+      "from": 8.34,
+      "to": 14.28,
+      "kind": "environment",
+      "component": "Clip",
+      "props": {
+        "src": "renders/infusion.mp4"
+      },
+      "action": "Infusión del vasopresor (norepinefrina) hacia el paciente",
+      "structures": [],
+      "camera": "static",
+      "label": "NOREPINEFRINA",
+      "transitionIn": 10,
+      "factIds": [
+        "f1"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "arteriola",
+      "from": 14.28,
+      "to": 23.04,
+      "kind": "anatomy",
+      "component": "Clip",
+      "props": {
+        "src": "renders/arteriole.mp4"
+      },
+      "action": "La arteriola se estrecha y los eritrocitos fluyen con mayor resistencia",
+      "structures": [
+        "arteriola",
+        "endotelio",
+        "eritrocitos"
+      ],
+      "camera": "static",
+      "label": "VASOCONSTRICCIÓN",
+      "transitionIn": 10,
+      "factIds": [
+        "f1",
+        "f2"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "mano",
+      "from": 23.04,
+      "to": 31.82,
+      "kind": "anatomy",
+      "component": "Clip",
+      "props": {
+        "src": "renders/hand.mp4"
+      },
+      "action": "La mano articulada cambia de color distal y la microcirculación se amplía",
+      "structures": [
+        "mano",
+        "vasos distales",
+        "piel"
+      ],
+      "camera": "static",
+      "label": "PERFUSIÓN DISTAL",
+      "transitionIn": 10,
+      "factIds": [
+        "f3"
+      ],
+      "assetIds": [
+        "webxr-hand"
+      ]
+    },
+    {
+      "id": "shock",
+      "from": 31.82,
+      "to": 38.4,
+      "kind": "anatomy",
+      "component": "ShockMicrocirculation",
+      "props": {},
+      "action": "Corte ilustrativo: flujo heterogéneo de eritrocitos en capilares durante el shock",
+      "structures": [
+        "capilares",
+        "eritrocitos",
+        "tejido"
+      ],
+      "camera": "static",
+      "label": "EL SHOCK TAMBIÉN INFLUYE",
+      "transitionIn": 10,
+      "factIds": [
+        "f4"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "valoracion",
+      "from": 38.4,
+      "to": 48.2,
+      "kind": "environment",
+      "component": "Clip",
+      "props": {
+        "src": "renders/nursing.mp4"
+      },
+      "action": "Enfermería valora color, temperatura, relleno capilar y pulsos",
+      "structures": [],
+      "camera": "static",
+      "label": "VALORACIÓN DE ENFERMERÍA",
+      "transitionIn": 10,
+      "factIds": [
+        "f5"
+      ],
+      "assetIds": [],
+      "callout": "Color · temperatura · relleno capilar · pulsos"
+    },
+    {
+      "id": "cierre",
+      "from": 48.2,
+      "to": 50.83,
+      "kind": "brand",
+      "component": "Outro",
+      "props": {},
+      "action": "Cierre animado de marca",
+      "structures": [],
+      "camera": "static",
+      "label": "SIGUE APRENDIENDO",
+      "transitionIn": 10,
+      "factIds": [],
+      "assetIds": []
+    }
+  ]
+}

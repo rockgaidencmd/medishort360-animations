@@ -50,3 +50,16 @@ Para otro tema, crea una composición Remotion independiente y reutiliza compone
 ## Estado
 
 La prueba visual y el video completo son composiciones separadas. Revisa el MP4 completo antes de publicarlo.
+
+
+## Flujo de proyectos por escenas
+
+Se añadió un flujo para preparar videos desde `projects/<id>/` con `manifest.json`, `transcript.json`, `scenes.json` y `facts.json`. La composición queda registrada en `src/index.tsx`; sus herramientas están en `src/pipeline/`, `src/motion/` y `scripts/`.
+
+```bash
+npm run sync
+npm run validate -- vasopresores
+npm run render:draft -- vasopresores
+```
+
+El audio original y los MP4 de trabajo se guardan localmente en `public/audio/` y `public/renders/`, que están excluidos de Git. Por eso, el proyecto JSON de vasopresores se registra ahora, pero no se puede renderizar hasta copiar esos medios al entorno de Codespaces o a la carpeta local. El render final también requiere completar la revisión clínica y las licencias indicadas en `facts.json` y `public/models/assets.json`.

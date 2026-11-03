@@ -1,0 +1,22 @@
+{
+  "assets": [
+    {
+      "id": "webxr-hand",
+      "file": "public/models/webxr-hand.glb",
+      "source": "https://github.com/immersive-web/webxr-input-profiles",
+      "license": "MIT",
+      "attribution": "WebXR Input Profiles — Immersive Web Community Group (MIT). Ajusta el nombre de archivo al real.",
+      "commercialUse": true,
+      "approvedBy": null
+    },
+    {
+      "id": "makehuman-head-feet",
+      "file": "public/models/makehuman-head-feet.glb",
+      "source": "https://www.makehumancommunity.org",
+      "license": "CC0 1.0",
+      "attribution": "Superficies de cabeza y pies generadas con MakeHuman (CC0). Ajusta el nombre de archivo al real.",
+      "commercialUse": true,
+      "approvedBy": null
+    }
+  ]
+}

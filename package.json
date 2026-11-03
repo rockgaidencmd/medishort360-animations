@@ -11,7 +11,15 @@
     "render:3d": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx Arteriole3DProof output/vasopresores-geometria-3d-v1.mp4 --codec h264 --audio-codec aac --gl=swangle --concurrency 2",
     "render:hand": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx HandPerfusion3DProof output/vasopresores-mano-perfusion-3d-v1.mp4 --codec h264 --audio-codec aac --gl=swangle --concurrency 2",
     "render:icu": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx ICUOpening3DProof output/vasopresores-apertura-uci-3d-v2.mp4 --codec h264 --audio-codec aac --gl=swangle --concurrency 2",
-    "render:review": "node scripts/render-review.mjs"
+    "render:review": "node scripts/render-review.mjs",
+    "sync": "npx --yes tsx@4 scripts/sync-projects.ts",
+    "new": "npx --yes tsx@4 scripts/new-project.ts",
+    "validate": "npx --yes tsx@4 scripts/validate.ts",
+    "validate:final": "npx --yes tsx@4 scripts/validate.ts --final",
+    "render:draft": "npx --yes tsx@4 scripts/render.ts",
+    "render:final": "npx --yes tsx@4 scripts/render.ts --final",
+    "qa": "npx --yes tsx@4 scripts/qa.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",
@@ -20,7 +28,8 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "remotion": "4.0.540",
-    "three": "^0.187.0"
+    "three": "^0.187.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/react": "19.1.8",

@@ -1,0 +1,6 @@
+# MediShort360
+node_modules/
+output/
+public/audio/
+public/renders/
+projects/*/transcript.prev.json

@@ -1,0 +1,39 @@
+{
+  "facts": [
+    {
+      "id": "f1",
+      "text": "La norepinefrina produce vasoconstricción que eleva la presión arterial.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "f2",
+      "text": "La constricción de arterias pequeñas aumenta la resistencia vascular y puede disminuir el flujo hacia las extremidades.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "f3",
+      "text": "Con perfusión insuficiente los tejidos reciben menos oxígeno; pueden aparecer frialdad, coloración violácea o piel moteada.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "f4",
+      "text": "El propio shock también puede causar estos signos, no solo el medicamento.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "f5",
+      "text": "Enfermería vigila coloración, temperatura, relleno capilar y pulsos periféricos, y comunica de inmediato cualquier deterioro.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null
+    }
+  ]
+}

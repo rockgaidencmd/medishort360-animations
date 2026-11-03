@@ -1,0 +1,32 @@
+/** Única fuente de colores, tipografía y layout. No escribir colores sueltos en las escenas. */
+export const theme = {
+  colors: {
+    bg: '#284b59',
+    panel: '#244453',
+    panelDeep: '#15313d',
+    label: '#ffe0a9',
+    text: '#ecf6e9',
+    caption: '#fff2dd',
+    mint: '#bce4dc',
+    mintBright: '#5fe1c1',
+    amber: '#efb47d',
+    skin: '#f2c1ab',
+    blood: '#b73e5b',
+    bloodDeep: '#742b49',
+    rose: '#c87c91',
+    shadow: '#163444',
+  },
+  font: {family: 'Arial, sans-serif'},
+  size: {label: 35, caption: 30, brand: 25, callout: 29},
+  layout: {
+    margin: 48,
+    labelTop: 132,
+    labelHeight: 110,
+    calloutTop: 290,
+    captionBottom: 130,
+    captionHeight: 130,
+    captionLeft: 150,
+    captionRight: 70,
+  },
+  defaultTransitionFrames: 10,
+} as const;

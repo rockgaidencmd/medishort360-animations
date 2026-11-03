@@ -1,0 +1,127 @@
+{
+  "source": "manual-cues",
+  "language": "es",
+  "durationSec": 50.83,
+  "segments": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 5.4,
+      "text": "¿Por qué algunos pacientes presentan manos y pies morados?"
+    },
+    {
+      "id": 1,
+      "start": 5.96,
+      "end": 7.86,
+      "text": "¡Hola, hijos de Florence Nightingale!"
+    },
+    {
+      "id": 2,
+      "start": 8.34,
+      "end": 10.45,
+      "text": "Medicamentos como la norepinefrina"
+    },
+    {
+      "id": 3,
+      "start": 10.45,
+      "end": 13.8,
+      "text": "Producen vasoconstricción para elevar la presión arterial"
+    },
+    {
+      "id": 4,
+      "start": 14.28,
+      "end": 14.75,
+      "text": "Observa"
+    },
+    {
+      "id": 5,
+      "start": 15.22,
+      "end": 17.14,
+      "text": "Las arterias pequeñas se estrechan"
+    },
+    {
+      "id": 6,
+      "start": 17.56,
+      "end": 19.6,
+      "text": "Aumenta la resistencia vascular"
+    },
+    {
+      "id": 7,
+      "start": 19.6,
+      "end": 22.44,
+      "text": "Puede disminuir el flujo hacia las extremidades"
+    },
+    {
+      "id": 8,
+      "start": 23.04,
+      "end": 25.0,
+      "text": "Cuando la perfusión es insuficiente"
+    },
+    {
+      "id": 9,
+      "start": 25,
+      "end": 27.2,
+      "text": "Los tejidos reciben menos oxígeno"
+    },
+    {
+      "id": 10,
+      "start": 27.2,
+      "end": 31.3,
+      "text": "Pueden aparecer frialdad, coloración violácea o piel moteada"
+    },
+    {
+      "id": 11,
+      "start": 31.82,
+      "end": 34.0,
+      "text": "Pero cuidado"
+    },
+    {
+      "id": 12,
+      "start": 34,
+      "end": 37.84,
+      "text": "También puede deberse al propio shock; no solo al medicamento"
+    },
+    {
+      "id": 13,
+      "start": 38.4,
+      "end": 40.35,
+      "text": "Como enfermeros debemos vigilar"
+    },
+    {
+      "id": 14,
+      "start": 40.35,
+      "end": 41.4,
+      "text": "Coloración"
+    },
+    {
+      "id": 15,
+      "start": 41.4,
+      "end": 42.35,
+      "text": "Temperatura"
+    },
+    {
+      "id": 16,
+      "start": 42.35,
+      "end": 43.25,
+      "text": "Relleno capilar"
+    },
+    {
+      "id": 17,
+      "start": 43.25,
+      "end": 44.55,
+      "text": "Pulsos periféricos"
+    },
+    {
+      "id": 18,
+      "start": 44.55,
+      "end": 47.84,
+      "text": "Comunicar inmediatamente cualquier deterioro"
+    },
+    {
+      "id": 19,
+      "start": 48.2,
+      "end": 50.15,
+      "text": "Síguenos en MediShort360"
+    }
+  ]
+}
