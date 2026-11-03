@@ -9,8 +9,8 @@ Un único repositorio, rockgaidencmd/medishort360-animations, contiene el motor 
 |---|---|---|
 | Node.js + TypeScript | Ejecutar y coordinar las etapas | Disponible; coordinador pendiente |
 | Whisper local en el servidor | Transcripción y tiempos iniciales | Integración pendiente; alineación debe revisarse |
-| Three.js + React Three Fiber | Geometría, materiales, luces, cámara y animación anatómica | Integración y prueba pendientes |
-| @remotion/three | Integrar escenas 3D en Remotion | Pendiente |
+| Three.js + React Three Fiber | Geometría, materiales, luces, cámara y animación anatómica | Integrado en pruebas de arteriola y mano |
+| @remotion/three | Integrar escenas 3D en Remotion | Integrado; render por software comprobado en el servidor actual |
 | Remotion + React | Composición, sincronización, rótulos y render por fotograma | Instalado |
 | SVG | Motion graphics, máscaras, indicadores y elementos vectoriales animados | Disponible |
 | FFmpeg + ffprobe | Ensamblado, codificación H.264/AAC y controles técnicos | Disponible en el entorno actual |
@@ -56,8 +56,8 @@ No hace falta un repositorio por herramienta. Las herramientas se instalan como 
 ## Criterio para incorporar una dependencia
 Debe resolver una necesidad concreta, tener licencia compatible, renderizar de forma determinista y funcionar en el servidor elegido. Primero se prueba una escena corta. No se considera integrada por haber creado una carpeta o documentado su nombre.
 
-## Primera validación pendiente
-Probar @remotion/three con una escena de arteriola deformable y eritrocitos bicóncavos, sincronizada con un fragmento del audio existente. Verificar render en la nube y calidad visual antes de ampliar la integración a mano/paciente.
+## Validación inicial y siguiente revisión
+La prueba de arteriola deformable y eritrocitos bicóncavos se renderizó con el audio existente y fue aprobada como base técnica. La siguiente prueba incorpora una mano articulada de WebXR Input Profiles (MIT), cambio distal y ampliación de microcirculación. La calidad anatómica y visual de esta escena sigue sujeta a revisión; el personaje/paciente todavía no está integrado.
 La v4 queda como prototipo de composición; no demuestra todavía el funcionamiento de esta arquitectura.
 
 ## Alcance actual y límites
@@ -68,3 +68,4 @@ No se contratarán servicios ni se generará otra narración sin autorización.
 - https://github.com/remotion-dev/template-three
 - https://github.com/remotion-dev/remotion/tree/main/packages/three
 - https://github.com/Z-Anatomy/Models-of-human-anatomy
+
