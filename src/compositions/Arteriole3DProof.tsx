@@ -61,7 +61,7 @@ export const Arteriole3DProof: React.FC = () => {
         </mesh>)}
         {/* Biconcave erythrocytes keep their size during vasoconstriction. */}
         {Array.from({length:20},(_,i)=> {
-          const x=((i*.61+travel)%10.2)-5.1;
+          const x=((i*.61+travel)%8.2)-4.1;
           return <mesh key={`r${i}`} geometry={cellGeometry} position={[x,Math.sin(i*2.7+t*.7)*radius*.4,Math.cos(i*1.9+t*.4)*radius*.45]} rotation={[.7+Math.sin(t+i)*.45,i*.8+t*.4,t*.6+i*.4]}>
             <meshStandardMaterial color={i%3?'#ba2749':'#dc5262'} roughness={.36} metalness={.05}/>
           </mesh>;
