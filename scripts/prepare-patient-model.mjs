@@ -34,7 +34,7 @@ for(const x of [-.3078,.3078]){
 const feet=new THREE.Group();feet.name='MakeHumanFeetSurface';
 const footGeo=geometry(v=>v[1]<-6.7);
 const colors=[];const c1=new THREE.Color('#d7a181'),c2=new THREE.Color('#8272a8');
-for(let i=0;i<footGeo.attributes.position.count;i++){const z=footGeo.attributes.position.getZ(i)/.62;const amount=THREE.MathUtils.smoothstep(z,.9,2.8)*.72;colors.push(...c1.clone().lerp(c2,amount).toArray());}
+for(let i=0;i<footGeo.attributes.position.count;i++){const z=footGeo.attributes.position.getZ(i)/.62;const x=footGeo.attributes.position.getX(i),y=footGeo.attributes.position.getY(i);const amount=THREE.MathUtils.smoothstep(z,.9,2.8)*.85;const field=Math.sin(y*12+1.7*Math.sin(x*15))+.65*Math.sin(x*21+Math.sin(z*10))+.3*Math.sin((x+y)*29);const network=1-THREE.MathUtils.smoothstep(Math.abs(field),.09,.32);const color=c1.clone().lerp(c2,amount).lerp(new THREE.Color('#8a668f'),network*.42);colors.push(...color.toArray());}
 footGeo.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));feet.add(new THREE.Mesh(footGeo,new THREE.MeshStandardMaterial({vertexColors:true,roughness:.65})));
 fs.mkdirSync('public/models',{recursive:true});
 const exporter=new GLTFExporter();

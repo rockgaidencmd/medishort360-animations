@@ -34,9 +34,9 @@
       "sourceSha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
       "license": "CC0-1.0",
       "licenseFile": "public/models/MAKEHUMAN-ASSETS-CC0.md",
-      "sha256": "f27d2557069502582dda83a3e0b98735d3a00c4cf94d9b5c226f8b061b8e7d15",
-      "bytes": 109020,
-      "modifications": "Skin surface cropped and rescaled; procedural eyes, brows and scalp for head; vertex color for feet. No source program code bundled.",
+      "sha256": "7420f0271a07a35523c62f82f4d7e6079ba3719f0b71e4f7f40f29cb4fa6e223",
+      "bytes": 109016,
+      "modifications": "Skin surface cropped and rescaled; procedural eyes, brows and scalp for head; vertex color for feet. No source program code bundled. Increased distal violet coloration and schematic irregular reticular vertex coloring.",
       "scope": "General human surface model; not validated patient-specific anatomy."
     }
   ]

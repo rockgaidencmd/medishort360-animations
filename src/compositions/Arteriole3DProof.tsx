@@ -8,7 +8,7 @@ const clamp = {extrapolateLeft: 'clamp' as const, extrapolateRight: 'clamp' as c
 import {Wall} from '../anatomy/VesselWall3D';
 import {createErythrocyteGeometry} from '../anatomy/Erythrocyte3D';
 
-export const Arteriole3DProof: React.FC = () => {
+export const Arteriole3DProof:React.FC<{audio?:boolean;overlays?:boolean}>=({audio=true,overlays=true})=> {
   const frame=useCurrentFrame(), {fps,width,height}=useVideoConfig(), t=frame/fps;
   const contraction=interpolate(t,[.95,2.85],[0,1],clamp);
   const radius=1.12-.35*contraction + Math.sin(t*6.7)*.014;
@@ -46,10 +46,10 @@ export const Arteriole3DProof: React.FC = () => {
         })}
       </group>
     </ThreeCanvas>
-    <div style={{position:'absolute',top:60,left:52,right:52,color:'#f6eee7',letterSpacing:3,fontSize:25,fontWeight:700}}>MEDISHORT360</div>
+    {overlays && <><div style={{position:'absolute',top:60,left:52,right:52,color:'#f6eee7',letterSpacing:3,fontSize:25,fontWeight:700}}>MEDISHORT360</div>
     <div style={{position:'absolute',top:160,left:52,right:52,color:t<3.15?'#ffd395':'#a9eee1',fontSize:38,fontWeight:700,letterSpacing:2}}>{term}</div>
     <div style={{position:'absolute',top:223,left:52,right:52,color:'#efdbdf',fontSize:25}}>Corte longitudinal · representación didáctica</div>
     <div style={{position:'absolute',bottom:210,left:150,right:65,padding:'22px 28px',borderRadius:18,background:'rgba(45,29,49,.85)',color:'#fff0e2',fontSize:32,lineHeight:1.3}}>{t<.85?'Observa':t<3.15?'Las arterias pequeñas se estrechan':t<5.3?'Aumenta la resistencia vascular':'Puede disminuir el flujo hacia las extremidades'}</div>
-    <Audio src={staticFile('audio/vasopresores-original.mp3')} startFrom={Math.round(14.28*fps)}/>
+    </>}{audio && <Audio src={staticFile('audio/vasopresores-original.mp3')} startFrom={Math.round(14.28*fps)}/>}
   </AbsoluteFill>;
 };

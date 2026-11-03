@@ -6,7 +6,7 @@ import {clone} from 'three/addons/utils/SkeletonUtils.js';
 import {staticFile} from 'remotion';
 
 /** Surface visualization model, not a patient-specific anatomical dataset. */
-export const PerfusedHand3D: React.FC<{time:number; distalTone:number; mottling:number; onReady:()=>void}> = ({time,distalTone,mottling,onReady}) => {
+export const PerfusedHand3D: React.FC<{time:number; distalTone:number; mottling:number; blanch?:number; onReady:()=>void}> = ({time,distalTone,mottling,blanch=0,onReady}) => {
   const gltf=useLoader(GLTFLoader,staticFile('models/hand-right-webxr.glb'));
   const hand=useMemo(()=>clone(gltf.scene),[gltf.scene]);
   const {gl,scene,camera}=useThree();
@@ -70,7 +70,7 @@ export const PerfusedHand3D: React.FC<{time:number; distalTone:number; mottling:
     {/* Forearm continues into the linen; fingertips and nails remain individual objects. */}
     <mesh geometry={forearm} material={material} castShadow/>
     {[[.0343,-.105,-.011],[.0371,-.114,.016],[.0323,-.100,.044],[.0253,-.076,.060],[.0048,-.032,-.065]].map((p,i)=><mesh key={i} position={p as [number,number,number]} scale={[.0004,i===4?.0055:.006,.0042]}>
-      <sphereGeometry args={[1,24,16]}/><meshStandardMaterial color={new THREE.Color('#eac5b0').lerp(new THREE.Color('#8a6f98'),distalTone*.6)} roughness={.4}/>
+      <sphereGeometry args={[1,24,16]}/><meshStandardMaterial color={new THREE.Color('#eac5b0').lerp(new THREE.Color('#8a6f98'),distalTone*.6).lerp(new THREE.Color('#f4e6d3'),i===0?blanch:0)} roughness={.4}/>
     </mesh>)}
   </group>;
 };

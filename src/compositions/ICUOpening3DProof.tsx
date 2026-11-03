@@ -10,10 +10,10 @@ const CameraRig:React.FC<{time:number}>=({time:t})=> {
  const {camera,gl,scene}=useThree();
  useLayoutEffect(()=>{
   const d=interpolate(t,[0,4.6,8.4],[1,.87,.93],cl);
-  camera.up.set(0,0,1);camera.position.set((6.8-t*.10)*d,-16.8*d,15.0*d);camera.lookAt(0,.9,.7);camera.updateProjectionMatrix();scene.updateMatrixWorld(true);gl.render(scene,camera);
+  const zoom=interpolate(t,[8.34,13.5],[0,1],cl);camera.up.set(0,0,1);camera.position.set(((6.8-t*.10)*d)*(1-zoom)-1.0*zoom,(-16.8*d)*(1-zoom)-1.5*zoom,(15.0*d)*(1-zoom)+3.4*zoom);camera.lookAt(-1.27*zoom,.9*(1-zoom)+.7*zoom,.7*(1-zoom)+1.22*zoom);camera.updateProjectionMatrix();scene.updateMatrixWorld(true);gl.render(scene,camera);
  },[t,camera,gl,scene]);return null;
 };
-export const ICUOpening3DProof:React.FC=()=> {
+export const ICUOpening3DProof:React.FC<{audio?:boolean;overlays?:boolean}>=({audio=true,overlays=true})=> {
  const frame=useCurrentFrame(),{fps,width,height}=useVideoConfig(),t=frame/fps;
  const [handle]=useState(()=>delayRender('Loading licensed patient surface and articulated hand'));
  const ready=useRef(new Set<string>()),done=useRef(false);
@@ -39,9 +39,9 @@ export const ICUOpening3DProof:React.FC=()=> {
    <ICUEquipment3D time={t}/>
    <CameraRig time={t}/>
   </ThreeCanvas>
-  <div style={{position:'absolute',left:48,top:48,color:'#eef5e9',fontSize:25,fontWeight:700,letterSpacing:3,textShadow:'0 2px 8px #183745'}}>MEDISHORT360</div>
+  {overlays && <><div style={{position:'absolute',left:48,top:48,color:'#eef5e9',fontSize:25,fontWeight:700,letterSpacing:3,textShadow:'0 2px 8px #183745'}}>MEDISHORT360</div>
   <div style={{position:'absolute',left:48,right:48,top:140,fontSize:37,letterSpacing:2,color:'#ffe2ac',fontWeight:700,textShadow:'0 3px 12px #193c49'}}>{label}</div>
   <div style={{position:'absolute',left:150,right:70,bottom:145,padding:'18px 24px',borderRadius:18,background:'rgba(21,49,61,.87)',color:'#fff2dd',fontSize:30,lineHeight:1.25}}>{t<2.1?'¿Por qué algunos pacientes en UCI':t<3.8?'tienen las manos y los pies morados':t<5.6?'cuando reciben vasopresores?':t<7.95?'¡Hola, hijos de Florence Nightingale!':''}</div>
-  <Audio src={staticFile('audio/vasopresores-original.mp3')}/>
+  </>}{audio && <Audio src={staticFile('audio/vasopresores-original.mp3')}/>}
  </AbsoluteFill>;
 };

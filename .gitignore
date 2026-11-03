@@ -2,3 +2,5 @@ node_modules/
 output/*.mp4
 public/audio/*.mp3
 .DS_Store
+
+public/renders/*.mp4

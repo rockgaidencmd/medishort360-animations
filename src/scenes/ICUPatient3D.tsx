@@ -45,7 +45,7 @@ export const ICUPatient3D:React.FC<{time:number;onSurfaces:()=>void;onHand:()=>v
    <mesh geometry={blanket} castShadow receiveShadow><meshStandardMaterial color="#568695" roughness={.9} side={THREE.DoubleSide}/></mesh>
   </group>
   <group position={[-1.27,.7,1.22]} scale={.25} rotation={[0,0,Math.PI-.12]}>
-   <Suspense fallback={null}><PerfusedHand3D time={t} distalTone={.77} mottling={0} onReady={onHand}/></Suspense>
+   <Suspense fallback={null}><PerfusedHand3D time={t} distalTone={.86} mottling={.82} onReady={onHand}/></Suspense>
   </group>
   {/* Bed frame, side rails and wheels are separate objects. */}
   <mesh position={[0,0,-.50]} castShadow><boxGeometry args={[3.95,11.4,.35]}/><meshStandardMaterial color="#6b8d97" metalness={.35} roughness={.4}/></mesh>
