@@ -1,0 +1,30 @@
+{
+  "status": "Production direction; transitions not yet assembled into final composition.",
+  "route": [
+    {
+      "sourceStart": 0,
+      "sourceEnd": 8.34,
+      "action": "ICU context, distal violet and mottled coloration visible on hand and feet."
+    },
+    {
+      "sourceStart": 8.34,
+      "sourceEnd": 10.46,
+      "action": "Show medication administration, then move camera continuously towards hand."
+    },
+    {
+      "sourceStart": 10.46,
+      "sourceEnd": 14.28,
+      "action": "Hand to skin cutaway to arteriole; deform wall when vasoconstriction is named."
+    },
+    {
+      "sourceStart": 14.28,
+      "sourceEnd": 17.34,
+      "action": "Keep lumen and moving erythrocytes visible during explanation of narrowing."
+    }
+  ],
+  "constraints": [
+    "Use anatomical camera travel and a magnified cutaway transition, not separate static plates.",
+    "Mottling is irregular violet vascular pattern, never black circular lesions.",
+    "The shock segment must explain alternative causes; findings are not inevitable."
+  ]
+}

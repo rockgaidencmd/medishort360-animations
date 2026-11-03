@@ -1,0 +1,6 @@
+{
+  "name": "MEDISHORT360 Animations",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y ffmpeg && npm install",
+  "forwardPorts": [3000]
+}

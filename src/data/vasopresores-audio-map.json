@@ -1,0 +1,18 @@
+{
+  "audio": "public/audio/vasopresores-original.mp3",
+  "durationSeconds": 50.834,
+  "proofWindow": {"sourceStart": 8.34, "sourceEnd": 17.34, "duration": 9.0},
+  "segments": [
+    {"start": 0.00, "end": 5.38, "text": "¿Por qué algunos pacientes en UCI tienen las manos y los pies morados cuando reciben vasopresores?"},
+    {"start": 5.96, "end": 7.86, "text": "¡Hola, hijos de Florence Nightingale!"},
+    {"start": 8.34, "end": 13.80, "text": "Medicamentos como la norepinefrina producen vasoconstricción para elevar la presión arterial."},
+    {"start": 14.28, "end": 14.72, "text": "Observa."},
+    {"start": 15.22, "end": 17.14, "text": "Las arterias pequeñas se estrechan."},
+    {"start": 17.56, "end": 22.44, "text": "Aumenta la resistencia vascular y puede disminuir el flujo sanguíneo hacia las extremidades."},
+    {"start": 23.04, "end": 31.30, "text": "Cuando la perfusión es insuficiente, los tejidos reciben menos oxígeno y pueden aparecer frialdad, coloración violácea o piel moteada."},
+    {"start": 31.82, "end": 37.84, "text": "Pero cuidado. Estos cambios también pueden deberse al propio estado de choque. No solamente al medicamento."},
+    {"start": 38.40, "end": 47.84, "text": "Como enfermeros debemos vigilar la coloración, temperatura, relleno capilar y pulsos periféricos, y comunicar inmediatamente cualquier deterioro."},
+    {"start": 48.20, "end": 50.12, "text": "Síguenos en MediShorts 360."}
+  ],
+  "transcriptionNotes": "Alineación inicial generada localmente con Whisper tiny y corregida a mano en palabras evidentes. Revisar el texto oído antes de usarlo como subtítulo final."
+}

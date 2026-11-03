@@ -1,0 +1,43 @@
+{
+  "assets": [
+    {
+      "path": "public/models/hand-right-webxr.glb",
+      "source": "https://github.com/immersive-web/webxr-input-profiles",
+      "package": "@webxr-input-profiles/assets",
+      "version": "1.0.20",
+      "packagePath": "dist/profiles/generic-hand/right.glb",
+      "license": "MIT",
+      "licenseFile": "public/models/WEBXR-LICENSE.md",
+      "sha256": "291790c14f7f88a7f9bd35330c47392ed8e8d395ae6728f4bb7089f1bc1f2b96",
+      "bytes": 94004,
+      "modifications": "Original GLB unchanged. Runtime skin material, subtle joint motion, supplementary nails and schematic forearm geometry.",
+      "scope": "Low-polygon visual surface model for hand interaction; not medical anatomy validation."
+    },
+    {
+      "path": "public/models/patient-head-surface.glb",
+      "source": "https://github.com/makehumancommunity/makehuman",
+      "sourceCommit": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+      "sourcePath": "makehuman/data/3dobjs/base.obj",
+      "sourceSha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+      "license": "CC0-1.0",
+      "licenseFile": "public/models/MAKEHUMAN-ASSETS-CC0.md",
+      "sha256": "c82e3763aa655df62c555874c3507a4d14ee34742b16aba8d25b1e72c6d9c3b5",
+      "bytes": 314744,
+      "modifications": "Skin surface cropped and rescaled; procedural eyes, brows and scalp for head; vertex color for feet. No source program code bundled.",
+      "scope": "General human surface model; not validated patient-specific anatomy."
+    },
+    {
+      "path": "public/models/patient-feet-surface.glb",
+      "source": "https://github.com/makehumancommunity/makehuman",
+      "sourceCommit": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+      "sourcePath": "makehuman/data/3dobjs/base.obj",
+      "sourceSha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+      "license": "CC0-1.0",
+      "licenseFile": "public/models/MAKEHUMAN-ASSETS-CC0.md",
+      "sha256": "7420f0271a07a35523c62f82f4d7e6079ba3719f0b71e4f7f40f29cb4fa6e223",
+      "bytes": 109016,
+      "modifications": "Skin surface cropped and rescaled; procedural eyes, brows and scalp for head; vertex color for feet. No source program code bundled. Increased distal violet coloration and schematic irregular reticular vertex coloring.",
+      "scope": "General human surface model; not validated patient-specific anatomy."
+    }
+  ]
+}

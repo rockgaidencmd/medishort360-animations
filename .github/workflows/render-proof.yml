@@ -1,0 +1,20 @@
+name: Render vasopresores proof
+on:
+  workflow_dispatch:
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: test -f public/audio/vasopresores-original.mp3
+      - run: npm ci
+      - run: npm run render:proof
+      - uses: actions/upload-artifact@v4
+        with:
+          name: medishort360-vasopresores-prueba
+          path: output/vasopresores-prueba-v4.mp4
+          retention-days: 30
