@@ -22,12 +22,12 @@ export const MedicalProof: React.FC<{audio?: boolean}> = ({audio = true}) => {
   const cameraDrift = Math.sin(t * 0.7);
   const handPulse = Math.sin(t * Math.PI * 2.2);
 
-  const patientOpacity = interpolate(t, [0, .3, 2.9, 3.65, 4.2], [1, 1, 1, .35, 0], cl);
-  const handOpacity = interpolate(t, [.12, .6, 2.95, 3.45, 3.8], [0, 1, 1, .75, 0], cl);
-  const handScale = interpolate(t, [0, 2.7, 3.55], [1, 1.12, 1.85], cl);
-  const handX = interpolate(t, [0, 2.7, 3.55], [0, -35, -320], cl);
-  const handY = interpolate(t, [0, 2.7, 3.55], [900, 855, 425], cl);
-  const distalTone = interpolate(t, [.35, 1.15, 2.4], [0, .25, .65], cl) + Math.max(0, handPulse) * .08;
+  const roomOpacity = interpolate(t, [0, 2.5, 2.98, 3.16], [1, 1, .12, 0], cl);
+  const patientOpacity = interpolate(t, [0, .18, 3.05, 3.72, 4.1], [1, 1, 1, .38, 0], cl);
+  const patientScale = interpolate(t, [0, 2.7, 3.56], [1, 1.12, 1.76], cl);
+  const patientX = interpolate(t, [0, 2.7, 3.56], [-35, -70, -300], cl);
+  const patientY = interpolate(t, [0, 2.7, 3.56], [640, 580, -150], cl);
+  const distalTone = interpolate(t, [.45, 1.22, 2.55], [0, .48, .9], cl) + Math.max(0, handPulse) * .06;
   const skinOpacity = interpolate(t, [3.08, 3.72, 4.92, 5.4], [0, 1, 1, 0], cl);
   const skinAperture = interpolate(t, [3.02, 3.82], [0, 145], cl);
   const vesselOpacity = interpolate(t, [4.65, 5.28, 9], [0, 1, 1], cl);
@@ -65,38 +65,52 @@ export const MedicalProof: React.FC<{audio?: boolean}> = ({audio = true}) => {
 
   return (
     <AbsoluteFill style={{background: '#102f3b', overflow: 'hidden', fontFamily: 'Arial, sans-serif'}}>
-      {/* ICU plate: contextual monitor, IV line and pump remain visible as the camera finds the hand. */}
-      <AbsoluteFill style={{opacity: patientOpacity}}>
-        <Img src={staticFile('backgrounds/icu-room.webp')} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `translate3d(${cameraDrift * -9}px, ${respiratory * -5}px, 0) scale(${interpolate(t, [0, 3.2], [1.04, 1.14], cl) + Math.max(0, respiratory) * .006})`, filter: `brightness(${1 + respiratory * .012}) saturate(1.04)`}} />
+      {/* Illustrated ICU plate. The foreground patient is a separate plane for the camera move. */}
+      <AbsoluteFill style={{opacity: roomOpacity}}>
+        <Img src={staticFile('backgrounds/icu-illustrated.webp')} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `translate3d(${cameraDrift * -28}px, ${respiratory * -12}px, 0) scale(${interpolate(t, [0, 3.2], [1.05, 1.2], cl) + Math.max(0, respiratory) * .01})`, filter: `brightness(${1 + respiratory * .018}) saturate(1.05)`}} />
         {/* Independent light layers create foreground/background parallax rather than a single still plate. */}
-        <div style={{position: 'absolute', inset: '-12%', opacity: .38 + Math.max(0, respiratory) * .12, transform: `translate3d(${cameraDrift * 18}px, ${respiratory * 10}px, 0)`, background: 'radial-gradient(ellipse at 82% 24%, rgba(112,219,222,.28), transparent 36%), radial-gradient(ellipse at 18% 72%, rgba(50,118,146,.28), transparent 42%)'}} />
-        {/* Live monitor trace and small IV droplets travel independently over the room plate. */}
+        <div style={{position: 'absolute', inset: '-12%', opacity: .48 + Math.max(0, respiratory) * .16, transform: `translate3d(${cameraDrift * 42}px, ${respiratory * 17}px, 0)`, background: 'radial-gradient(ellipse at 85% 28%, rgba(112,219,222,.34), transparent 34%), radial-gradient(ellipse at 18% 72%, rgba(50,118,146,.32), transparent 40%)'}} />
+        {/* Monitor trace and IV drops are animated as their own motion-graphic layers. */}
         <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
           <defs>
             <linearGradient id="ecgGlow"><stop stopColor="#62e8c2" stopOpacity="0"/><stop offset=".28" stopColor="#62e8c2"/><stop offset=".72" stopColor="#a5ffe0"/><stop offset="1" stopColor="#62e8c2" stopOpacity="0"/></linearGradient>
             <filter id="ecgBloom"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           </defs>
-          <path d="M168 265 H242 L266 257 L285 278 L309 229 L333 302 L355 265 H424 L447 255 L466 265 H530" fill="none" stroke="#123b3d" strokeWidth="12" opacity=".44" />
-          <path d="M168 265 H242 L266 257 L285 278 L309 229 L333 302 L355 265 H424 L447 255 L466 265 H530" fill="none" stroke="url(#ecgGlow)" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="68 590" strokeDashoffset={-monitorSweep} filter="url(#ecgBloom)" />
-          <path d="M766 280 C760 330 800 390 790 450" fill="none" stroke="#9de9dd" strokeWidth="4" strokeDasharray="2 22" strokeLinecap="round" opacity=".58" />
+          <path d="M111 465 H162 L177 454 L190 477 L207 409 L224 501 L239 465 H286 L301 455 L318 465 H340" fill="none" stroke="#123b3d" strokeWidth="10" opacity=".4" />
+          <path d="M111 465 H162 L177 454 L190 477 L207 409 L224 501 L239 465 H286 L301 455 L318 465 H340" fill="none" stroke="url(#ecgGlow)" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="58 440" strokeDashoffset={-monitorSweep} filter="url(#ecgBloom)" />
+          <path d="M965 466 C974 520 950 576 960 648" fill="none" stroke="#9de9dd" strokeWidth="4" strokeDasharray="2 19" strokeLinecap="round" opacity=".58" />
           {[0, 1, 2].map((i) => {
             const p = (fluidPhase + i / 3) % 1;
-            const x = 766 + 34 * p + 11 * Math.sin(p * Math.PI * 2);
-            const y = 280 + 170 * p;
+            const x = 965 + 10 * Math.sin(p * Math.PI * 2);
+            const y = 466 + 180 * p;
             return <g key={i} transform={`translate(${x} ${y})`} opacity={.45 + .4 * Math.sin(p * Math.PI)}><circle r="4" fill="#d5fff5"/><circle r="9" fill="#83e4d8" opacity=".16" /></g>;
           })}
         </svg>
       </AbsoluteFill>
 
-      {/* The hand is a detailed original cutout. Slow scale and drift create the anatomical push-in. */}
-      <div style={{position: 'absolute', left: handX, top: handY + handPulse * 8, width: 1080, height: 540, opacity: handOpacity, transform: `scale(${handScale}) rotate(${handPulse * .62}deg)`, transformOrigin: '55% 54%', filter: 'drop-shadow(0 20px 30px rgba(8,23,34,.48))'}}>
-        <Img src={staticFile('anatomy/hand.webp')} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain'}} />
-        {/* A soft distal blue-violet wash, masked to the hand silhouette, becomes more visible with the narration. */}
-        <div style={{position: 'absolute', inset: 0, opacity: distalTone, background: 'linear-gradient(90deg, transparent 38%, rgba(75,83,157,.68) 76%, rgba(74,78,151,.88))', maskImage: `url(${staticFile('anatomy/hand.webp')})`, WebkitMaskImage: `url(${staticFile('anatomy/hand.webp')})`, maskSize: '100% 100%', WebkitMaskSize: '100% 100%', mixBlendMode: 'multiply'}} />
+      {/* The patient is a foreground plane, independent from the room; camera zoom targets the five-finger hand. */}
+      <div style={{position:'absolute',left:patientX,top:patientY,width:1150,height:767,opacity:patientOpacity,transform:`scale(${patientScale}) rotate(${respiratory*.22}deg)`,transformOrigin:'52% 72%',filter:'drop-shadow(0 24px 35px rgba(8,23,35,.38))'}}>
+        <Img src={staticFile('anatomy/patient-cutout.webp')} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'contain'}} />
+        <svg width="1150" height="767" viewBox="0 0 1536 1024" style={{position:'absolute',inset:0,overflow:'visible'}}>
+          <defs>
+            <linearGradient id="distalBlue" x1="0" y1=".18" x2="0" y2="1">
+              <stop stopColor="#6b68ad" stopOpacity="0"/><stop offset=".42" stopColor="#6765ad" stopOpacity=".32"/><stop offset="1" stopColor="#5a58a4" stopOpacity=".72"/>
+            </linearGradient>
+            <radialGradient id="breathGlow"><stop stopColor="#b7f3e2" stopOpacity=".16"/><stop offset="1" stopColor="#b7f3e2" stopOpacity="0"/></radialGradient>
+          </defs>
+          <g opacity={distalTone} fill="url(#distalBlue)">
+            <path d="M585 825 Q613 816 637 837 L663 916 Q671 947 649 959 Q623 955 612 922 L590 878Z"/>
+            <path d="M681 852 Q708 839 729 860 L763 964 Q767 994 741 1007 Q715 999 705 969 L684 909Z"/>
+            <path d="M790 854 Q817 838 840 863 L873 965 Q877 995 850 1009 Q824 999 814 972 L793 910Z"/>
+            <path d="M887 816 Q916 802 940 827 L972 906 Q979 933 951 946 Q925 938 914 910 L891 866Z"/>
+            <path d="M875 727 Q906 712 932 730 L961 782 Q965 807 938 817 Q910 809 895 784Z"/>
+          </g>
+          <ellipse cx="760" cy="520" rx={155 + respiratory*7} ry={94 + respiratory*4} fill="url(#breathGlow)" />
+        </svg>
       </div>
 
       {/* Skin cutaway bridges the real hand to the vessel view during the camera dive. */}
-      <AbsoluteFill style={{opacity: skinOpacity, clipPath: `circle(${skinAperture}% at 68% 22%)`, background: '#45253b', overflow: 'hidden'}}>
+      <AbsoluteFill style={{opacity: skinOpacity, clipPath: `circle(${skinAperture}% at 46% 53%)`, background: '#45253b', overflow: 'hidden'}}>
         {/* Epidermis and deeper dermis move at different rates to give the skin cutaway actual depth. */}
         <Img src={staticFile('anatomy/skin-microcirculation.webp')} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: `translate3d(${cameraDrift * -12}px, ${respiratory * -7}px, 0) scale(${interpolate(t, [3.15, 4.9], [1.04, 1.2], cl)})`}} />
         <Img src={staticFile('anatomy/skin-microcirculation.webp')} style={{position: 'absolute', inset: '-4%', width: '108%', height: '108%', objectFit: 'cover', opacity: .58, transform: `translate3d(${cameraDrift * 21}px, ${Math.sin(t * 1.7) * 13}px, 0) scale(${interpolate(t, [3.15, 4.9], [1.07, 1.25], cl)})`, maskImage: 'linear-gradient(180deg, transparent 28%, rgba(0,0,0,.35) 42%, #000 62%)', WebkitMaskImage: 'linear-gradient(180deg, transparent 28%, rgba(0,0,0,.35) 42%, #000 62%)'}} />
