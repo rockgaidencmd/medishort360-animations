@@ -1,6 +1,6 @@
 # MEDISHORT360 — Motor de animación médica 2.5D
 
-Base inicial con Remotion, React, TypeScript, SVG y FFmpeg. La prueba de vasopresores dura 9 segundos y usa un tramo real del MP3 original (8,34–17,34 s): norepinefrina, vasoconstricción y estrechamiento arteriolar.
+Motor de composición con Remotion, React, TypeScript, SVG y FFmpeg. La prueba de vasopresores dura 9 segundos y usa el tramo real del MP3 original (8,34–17,34 s): norepinefrina, vasoconstricción y estrechamiento arteriolar. Combina ilustraciones anatómicas originales, capas transparentes, movimiento de cámara y glóbulos rojos animados.
 
 ## Requisitos
 
@@ -37,7 +37,10 @@ El workflow manual también puede generar un artefacto, pero solo si el MP3 est�
 
 ## Estructura y expansión
 
-- `src/components/MedicalProof.tsx`: escena 2.5D ilustrada y animada con SVG.
+- `src/components/MedicalProof.tsx`: composición Remotion, movimiento de cámara, audio sincronizado y estados visuales.
+- `src/anatomy/`: elementos anatómicos SVG reutilizables.
+- `public/anatomy/`: recursos anatómicos originales de mano, microcirculación y arteriolas.
+- `public/backgrounds/`: fondos ilustrados para contextualizar las escenas.
 - `src/data/vasopresores-audio-map.json`: transcripción inicial y marcas temporales.
 - `public/audio/`: audio local de cada producción.
 - `output/`: renders locales, fuera de Git.
