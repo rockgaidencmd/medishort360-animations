@@ -57,7 +57,7 @@ No hace falta un repositorio por herramienta. Las herramientas se instalan como 
 Debe resolver una necesidad concreta, tener licencia compatible, renderizar de forma determinista y funcionar en el servidor elegido. Primero se prueba una escena corta. No se considera integrada por haber creado una carpeta o documentado su nombre.
 
 ## Validación inicial y siguiente revisión
-La prueba de arteriola deformable y eritrocitos bicóncavos se renderizó con el audio existente y fue aprobada como base técnica. La siguiente prueba incorpora una mano articulada de WebXR Input Profiles (MIT), cambio distal y ampliación de microcirculación. La calidad anatómica y visual de esta escena sigue sujeta a revisión; el personaje/paciente todavía no está integrado.
+La prueba de arteriola deformable y eritrocitos bicóncavos se renderizó con el audio existente y fue aprobada como base técnica. La siguiente prueba incorpora una mano articulada de WebXR Input Profiles (MIT), cambio distal y ampliación de microcirculación. La calidad anatómica y visual de esta escena sigue sujeta a revisión; la apertura UCI añade superficies de cabeza y pies MakeHuman (CC0), cama y equipo procedimentales. El montaje completo y sus transiciones siguen pendientes.
 La v4 queda como prototipo de composición; no demuestra todavía el funcionamiento de esta arquitectura.
 
 ## Alcance actual y límites
