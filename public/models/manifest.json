@@ -12,6 +12,32 @@
       "bytes": 94004,
       "modifications": "Original GLB unchanged. Runtime skin material, subtle joint motion, supplementary nails and schematic forearm geometry.",
       "scope": "Low-polygon visual surface model for hand interaction; not medical anatomy validation."
+    },
+    {
+      "path": "public/models/patient-head-surface.glb",
+      "source": "https://github.com/makehumancommunity/makehuman",
+      "sourceCommit": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+      "sourcePath": "makehuman/data/3dobjs/base.obj",
+      "sourceSha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+      "license": "CC0-1.0",
+      "licenseFile": "public/models/MAKEHUMAN-ASSETS-CC0.md",
+      "sha256": "c82e3763aa655df62c555874c3507a4d14ee34742b16aba8d25b1e72c6d9c3b5",
+      "bytes": 314744,
+      "modifications": "Skin surface cropped and rescaled; procedural eyes, brows and scalp for head; vertex color for feet. No source program code bundled.",
+      "scope": "General human surface model; not validated patient-specific anatomy."
+    },
+    {
+      "path": "public/models/patient-feet-surface.glb",
+      "source": "https://github.com/makehumancommunity/makehuman",
+      "sourceCommit": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+      "sourcePath": "makehuman/data/3dobjs/base.obj",
+      "sourceSha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+      "license": "CC0-1.0",
+      "licenseFile": "public/models/MAKEHUMAN-ASSETS-CC0.md",
+      "sha256": "f27d2557069502582dda83a3e0b98735d3a00c4cf94d9b5c226f8b061b8e7d15",
+      "bytes": 109020,
+      "modifications": "Skin surface cropped and rescaled; procedural eyes, brows and scalp for head; vertex color for feet. No source program code bundled.",
+      "scope": "General human surface model; not validated patient-specific anatomy."
     }
   ]
 }

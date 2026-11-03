@@ -9,7 +9,8 @@
     "render:full": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx VasopresoresFull output/vasopresores-completo.mp4 --codec h264 --audio-codec aac",
     "render:shock": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx VasopresoresShockSegment output/vasopresores-shock-prueba.mp4 --codec h264 --audio-codec aac",
     "render:3d": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx Arteriole3DProof output/vasopresores-geometria-3d-v1.mp4 --codec h264 --audio-codec aac --gl=swangle --concurrency 2",
-    "render:hand": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx HandPerfusion3DProof output/vasopresores-mano-perfusion-3d-v1.mp4 --codec h264 --audio-codec aac --gl=swangle --concurrency 2"
+    "render:hand": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx HandPerfusion3DProof output/vasopresores-mano-perfusion-3d-v1.mp4 --codec h264 --audio-codec aac --gl=swangle --concurrency 2",
+    "render:icu": "node -r ./scripts/node-network-shim.cjs node_modules/@remotion/cli/remotion-cli.js render src/index.tsx ICUOpening3DProof output/vasopresores-apertura-uci-3d-v1.mp4 --codec h264 --audio-codec aac --gl=swangle --concurrency 2"
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",
