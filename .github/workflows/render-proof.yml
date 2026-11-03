@@ -16,5 +16,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: medishort360-vasopresores-prueba
-          path: output/vasopresores-prueba.mp4
+          path: output/vasopresores-prueba-v4.mp4
           retention-days: 30

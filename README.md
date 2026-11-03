@@ -20,14 +20,14 @@ npm run render:proof
 npm run render:full
 ```
 
-Las salidas quedan en `output/vasopresores-prueba.mp4` y `output/vasopresores-completo.mp4`, en vertical 1080 × 1920, 30 FPS, H.264 con audio AAC. El repositorio no incluye el MP3: al ser público, añadirlo aquí lo haría público también.
+Las salidas quedan en `output/vasopresores-prueba-v4.mp4` y `output/vasopresores-completo.mp4`, en vertical 1080 × 1920, 30 FPS, H.264 con audio AAC. El repositorio no incluye el MP3: al ser público, añadirlo aquí lo haría público también.
 
 ## Render en la nube desde Android con Codespaces
 
 1. Abre esta rama en GitHub y elige **Code → Codespaces → Create codespace**.
 2. En el explorador de archivos de VS Code web, crea `public/audio/` y sube allí `vasopresores-original.mp3` desde el teléfono. El MP3 está excluido de Git.
 3. Abre la terminal y ejecuta `npm run render:proof`.
-4. Descarga `output/vasopresores-prueba.mp4` desde el explorador de archivos de Codespaces.
+4. Descarga `output/vasopresores-prueba-v4.mp4` desde el explorador de archivos de Codespaces.
 
 El contenedor instala Node y FFmpeg automáticamente. El audio permanece en el Codespace y no se publica en este repositorio.
 
