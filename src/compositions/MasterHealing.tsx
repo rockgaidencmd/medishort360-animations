@@ -1,3 +1,4 @@
+import {MacroHealing} from '../anatomy/MacroHealing';
 import React,{useMemo} from 'react';
 import {AbsoluteFill,interpolate,spring,useCurrentFrame,useVideoConfig} from 'remotion';
 import {z} from 'zod';
@@ -45,24 +46,14 @@ export const MasterHealingView:React.FC<MasterProps&{t:number}>=p=>{
  </div>
  <div style={{position:'absolute',left:54,top:987,width:972,display:'flex',gap:12}}>{data.phases.map((q,i)=><div key={q.id} style={{height:12,flex:1,borderRadius:8,background:i<=phaseIndex?c.shirt:c.ground}}/>)}</div>
  <div style={{position:'absolute',top:1020,left:36,width:1008,height:680,borderRadius:48,overflow:'hidden',background:c.dermis,border:`8px solid ${c.shirt}`,boxSizing:'border-box',boxShadow:`0 0 ${flash*65}px ${theme.colors.mintBright}`}}>
- <svg width="992" height="664" viewBox="0 0 992 664"><defs><linearGradient id="dermis"><stop stopColor={c.newSkin}/><stop offset="1" stopColor={c.dermis}/></linearGradient></defs>
- <rect width="992" height="664" fill="url(#dermis)"/>
- <path d="M0 100 Q230 75 496 100 T992 100 V185 H0Z" fill={c.epidermis}/><path d="M0 90 Q200 70 496 90 T992 90" stroke={c.corneum} strokeWidth="25" fill="none"/>
- <path d="M0 600 Q220 540 400 580 T992 580 V664 H0Z" fill={c.fat}/>
- <path d={`M${496-150*shrink} 90 L${496-95*shrink} ${450-300*repair} Q496 ${500-300*repair} ${496+95*shrink} ${450-300*repair} L${496+150*shrink} 90Z`} fill={c.wound} opacity={shrink}/>
- <path d="M-30 500 Q180 500 240 440 Q290 390 350 460 M640 470 Q760 400 1020 480" stroke={c.capillary} strokeWidth="30" fill="none"/>
- {Array.from({length:7},(_,i)=>{const x=(t*140+i*155)%1150-80;return <ellipse key={i} cx={x} cy={480+Math.sin(x/170)*26} rx="78" ry="52" fill={c.clot} opacity={blood}/>;})}
- {Array.from({length:8},(_,i)=><path key={i} d={`M80 ${290+i*23} Q${300+Math.sin(t+i)*30} ${230+i*25} 890 ${320+i*19}`} stroke={c.collagen} strokeWidth="6" fill="none" opacity={repair} strokeDasharray="1000" strokeDashoffset={(1-repair)*1000}/>)}
- <text x="28" y="52" fontSize="36" fontWeight="800" fill={c.ink}>MICROSCOPIO · ×{p.zoomBottom}</text>
- <text x="28" y="645" fontSize="30" fill={c.ink}>Esquema didáctico · fases por revisar</text>
- </svg>
- {phaseCells.slice(0,4).map((name,i)=>{const Cell=cellComponents[name];const arrival=clamp(local/(i===0?1.6:3));const travel=interpolate(arrival,[0,1],[-220,0]);const x=92+i%2*460+travel;const y=140+Math.floor(i/2)*205+Math.sin(arrival*Math.PI)*60;return <div key={name} style={{position:'absolute',left:x,top:y,width:360,height:220}}><svg width="360" height="220" style={{position:'absolute'}}><path d="M0 100 Q80 50 170 100" fill="none" stroke={c.shirt} strokeWidth="7" strokeDasharray="12 10"/><path d="M150 80 L175 100 150 120" fill="none" stroke={c.shirt} strokeWidth="7"/></svg><div style={{position:'absolute',left:65,top:0,transform:`scale(${1+.012*Math.sin(t*2+i)})`}}>{name==='capilares_nuevos'?<svg width="280" height="280" viewBox="0 0 280 280"><path d="M40 250 V120 Q40 30 140 30 T240 120 V250" fill="none" stroke={c.capillary} strokeWidth="28" strokeDasharray="800" strokeDashoffset={(1-smooth(0,3,local))*800}/></svg>:<Cell size={280*p.zoomBottom/8} t={t} seed={42+i}/>}</div><div style={{position:'absolute',top:174,left:0,fontSize:36,whiteSpace:'nowrap',background:c.paper,padding:'3px 10px',borderRadius:14}}>{label[name]}</div></div>;})}
+ <MacroHealing phaseIndex={phaseIndex} local={local} t={t} zoom={p.zoomBottom}/>
  </div>
  <div style={{position:'absolute',top:1730,left:54,fontSize:30}}>MEDISHORT360</div>
  </AbsoluteFill>
  {closing>0&&<AbsoluteFill style={{background:c.paper,opacity:closing,justifyContent:'center',alignItems:'center',gap:30}}><svg width="320" height="320" viewBox="0 0 320 320"><circle cx="160" cy="160" r={140+Math.sin(t*2)*3} fill={c.macrophage}/><path d="M75 160 L140 220 250 95" fill="none" stroke={c.shirt} strokeWidth="27" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="300" strokeDashoffset={(1-closing)*300}/></svg><div style={{fontSize:80}}>Piel recuperada</div><div style={{fontSize:48}}>MEDISHORT360</div></AbsoluteFill>}
  </AbsoluteFill>;
 };
+
 
 
 
