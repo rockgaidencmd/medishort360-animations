@@ -17,6 +17,33 @@
       "attribution": "Superficies de cabeza y pies generadas con MakeHuman (CC0). Ajusta el nombre de archivo al real.",
       "commercialUse": true,
       "approvedBy": null
+    },
+    {
+      "id": "hand-right-webxr",
+      "file": "public/models/hand-right-webxr.glb",
+      "source": "https://github.com/immersive-web/webxr-input-profiles",
+      "license": "MIT",
+      "attribution": "Procedencia y modificaciones documentadas en public/models/manifest.json; licencia conservada en public/models/WEBXR-LICENSE.md.",
+      "commercialUse": true,
+      "approvedBy": null
+    },
+    {
+      "id": "patient-head-surface",
+      "file": "public/models/patient-head-surface.glb",
+      "source": "https://github.com/makehumancommunity/makehuman",
+      "license": "CC0-1.0",
+      "attribution": "Procedencia y modificaciones documentadas en public/models/manifest.json; licencia conservada en public/models/MAKEHUMAN-ASSETS-CC0.md.",
+      "commercialUse": true,
+      "approvedBy": null
+    },
+    {
+      "id": "patient-feet-surface",
+      "file": "public/models/patient-feet-surface.glb",
+      "source": "https://github.com/makehumancommunity/makehuman",
+      "license": "CC0-1.0",
+      "attribution": "Procedencia y modificaciones documentadas en public/models/manifest.json; licencia conservada en public/models/MAKEHUMAN-ASSETS-CC0.md.",
+      "commercialUse": true,
+      "approvedBy": null
     }
   ]
 }
