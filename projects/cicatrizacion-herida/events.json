@@ -1,0 +1,336 @@
+{
+  "source": "whisper-word-timestamps",
+  "transcriptSha256": "236099d9a7359381ad8e9b2d4400fa3529e64efe1e1f99963fe58aded4b9e52e",
+  "durationSec": 54.753,
+  "fps": 30,
+  "advanceSec": 0.1,
+  "events": [
+    {
+      "key": "tripAt",
+      "phrase": "tropieza",
+      "wordIndices": [
+        7
+      ],
+      "wordStart": 3.06,
+      "wordEnd": 3.6,
+      "visualStart": 2.96,
+      "leadSec": 0.1,
+      "captureFrame": 92
+    },
+    {
+      "key": "impactAt",
+      "phrase": "cae",
+      "wordIndices": [
+        8
+      ],
+      "wordStart": 4.02,
+      "wordEnd": 4.44,
+      "visualStart": 3.92,
+      "leadSec": 0.1,
+      "captureFrame": 121
+    },
+    {
+      "key": "armAt",
+      "phrase": "antebrazo",
+      "wordIndices": [
+        13
+      ],
+      "wordStart": 5.44,
+      "wordEnd": 6.02,
+      "visualStart": 5.34,
+      "leadSec": 0.1,
+      "captureFrame": 164
+    },
+    {
+      "key": "blood",
+      "phrase": "sangra",
+      "wordIndices": [
+        16
+      ],
+      "wordStart": 6.9,
+      "wordEnd": 7.44,
+      "visualStart": 6.8,
+      "leadSec": 0.1,
+      "captureFrame": 207
+    },
+    {
+      "key": "hemostasis",
+      "phrase": "Hemostasia",
+      "wordIndices": [
+        25
+      ],
+      "wordStart": 11.98,
+      "wordEnd": 12.7,
+      "visualStart": 11.88,
+      "leadSec": 0.1,
+      "captureFrame": 360
+    },
+    {
+      "key": "inflammation",
+      "phrase": "Inflamación",
+      "wordIndices": [
+        45
+      ],
+      "wordStart": 20.68,
+      "wordEnd": 21.4,
+      "visualStart": 20.58,
+      "leadSec": 0.1,
+      "captureFrame": 621
+    },
+    {
+      "key": "proliferation",
+      "phrase": "Proliferación",
+      "wordIndices": [
+        65
+      ],
+      "wordStart": 30.82,
+      "wordEnd": 31.62,
+      "visualStart": 30.72,
+      "leadSec": 0.1,
+      "captureFrame": 925
+    },
+    {
+      "key": "remodeling",
+      "phrase": "Remodelación",
+      "wordIndices": [
+        85
+      ],
+      "wordStart": 40.92,
+      "wordEnd": 41.64,
+      "visualStart": 40.82,
+      "leadSec": 0.1,
+      "captureFrame": 1228
+    },
+    {
+      "key": "platelets",
+      "phrase": "plaquetas",
+      "wordIndices": [
+        27
+      ],
+      "wordStart": 13.5,
+      "wordEnd": 14.04,
+      "visualStart": 13.4,
+      "leadSec": 0.1,
+      "captureFrame": 405
+    },
+    {
+      "key": "fibrin",
+      "phrase": "fibrina",
+      "wordIndices": [
+        33
+      ],
+      "wordStart": 15.72,
+      "wordEnd": 16.18,
+      "visualStart": 15.62,
+      "leadSec": 0.1,
+      "captureFrame": 472
+    },
+    {
+      "key": "redCells",
+      "phrase": "glóbulos rojos",
+      "wordIndices": [
+        39,
+        40
+      ],
+      "wordStart": 17.72,
+      "wordEnd": 18.66,
+      "visualStart": 17.62,
+      "leadSec": 0.1,
+      "captureFrame": 532
+    },
+    {
+      "key": "clot",
+      "phrase": "coágulo",
+      "wordIndices": [
+        44
+      ],
+      "wordStart": 19.6,
+      "wordEnd": 20.02,
+      "visualStart": 19.5,
+      "leadSec": 0.1,
+      "captureFrame": 588
+    },
+    {
+      "key": "neutrophils",
+      "phrase": "neutrófilos",
+      "wordIndices": [
+        47
+      ],
+      "wordStart": 22.2,
+      "wordEnd": 22.78,
+      "visualStart": 22.1,
+      "leadSec": 0.1,
+      "captureFrame": 666
+    },
+    {
+      "key": "macrophage",
+      "phrase": "macrófago",
+      "wordIndices": [
+        56
+      ],
+      "wordStart": 26.56,
+      "wordEnd": 27.08,
+      "visualStart": 26.46,
+      "leadSec": 0.1,
+      "captureFrame": 797
+    },
+    {
+      "key": "scabDark",
+      "phrase": "costra se oscurece",
+      "wordIndices": [
+        62,
+        63,
+        64
+      ],
+      "wordStart": 29.16,
+      "wordEnd": 30.3,
+      "visualStart": 29.06,
+      "leadSec": 0.1,
+      "captureFrame": 875
+    },
+    {
+      "key": "fibroblasts",
+      "phrase": "fibroblastos",
+      "wordIndices": [
+        67
+      ],
+      "wordStart": 32.32,
+      "wordEnd": 33.08,
+      "visualStart": 32.22,
+      "leadSec": 0.1,
+      "captureFrame": 970
+    },
+    {
+      "key": "collagen",
+      "phrase": "colágeno",
+      "wordIndices": [
+        69
+      ],
+      "wordStart": 33.7,
+      "wordEnd": 34.4,
+      "visualStart": 33.6,
+      "leadSec": 0.1,
+      "captureFrame": 1012
+    },
+    {
+      "key": "capillary",
+      "phrase": "capilar nuevo",
+      "wordIndices": [
+        73,
+        74
+      ],
+      "wordStart": 35.5,
+      "wordEnd": 36.18,
+      "visualStart": 35.4,
+      "leadSec": 0.1,
+      "captureFrame": 1065
+    },
+    {
+      "key": "keratinocytes",
+      "phrase": "queratinocitos",
+      "wordIndices": [
+        76
+      ],
+      "wordStart": 36.86,
+      "wordEnd": 37.64,
+      "visualStart": 36.76,
+      "leadSec": 0.1,
+      "captureFrame": 1106
+    },
+    {
+      "key": "closeWound",
+      "phrase": "cierran",
+      "wordIndices": [
+        82
+      ],
+      "wordStart": 39.32,
+      "wordEnd": 39.78,
+      "visualStart": 39.22,
+      "leadSec": 0.1,
+      "captureFrame": 1180
+    },
+    {
+      "key": "alignCollagen",
+      "phrase": "colágeno se alinea",
+      "wordIndices": [
+        87,
+        88,
+        89
+      ],
+      "wordStart": 42.36,
+      "wordEnd": 43.52,
+      "visualStart": 42.26,
+      "leadSec": 0.1,
+      "captureFrame": 1271
+    },
+    {
+      "key": "retreatCapillary",
+      "phrase": "disminuyen los capilares",
+      "wordIndices": [
+        90,
+        91,
+        92
+      ],
+      "wordStart": 43.82,
+      "wordEnd": 45.18,
+      "visualStart": 43.72,
+      "leadSec": 0.1,
+      "captureFrame": 1315
+    },
+    {
+      "key": "scabDrop",
+      "phrase": "costra se desprende",
+      "wordIndices": [
+        95,
+        96,
+        97
+      ],
+      "wordStart": 45.52,
+      "wordEnd": 46.68,
+      "visualStart": 45.42,
+      "leadSec": 0.1,
+      "captureFrame": 1366
+    },
+    {
+      "key": "skinNew",
+      "phrase": "piel nueva",
+      "wordIndices": [
+        100,
+        101
+      ],
+      "wordStart": 47.9,
+      "wordEnd": 48.46,
+      "visualStart": 47.8,
+      "leadSec": 0.1,
+      "captureFrame": 1437
+    },
+    {
+      "key": "recovered",
+      "phrase": "Piel recuperada",
+      "wordIndices": [
+        105,
+        106
+      ],
+      "wordStart": 50.4,
+      "wordEnd": 51.38,
+      "visualStart": 50.3,
+      "leadSec": 0.1,
+      "captureFrame": 1512
+    },
+    {
+      "key": "brand",
+      "phrase": "Síguenos en MediShort 360",
+      "wordIndices": [
+        107,
+        108,
+        109,
+        110
+      ],
+      "wordStart": 51.92,
+      "wordEnd": 53.94,
+      "visualStart": 51.82,
+      "leadSec": 0.1,
+      "captureFrame": 1558
+    }
+  ]
+}
