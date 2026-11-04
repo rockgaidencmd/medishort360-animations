@@ -26,6 +26,7 @@ export const MasterHealingView:React.FC<MasterProps&{t:number}>=p=>{
  {open<1&&<AbsoluteFill style={{opacity:1-open,transform:`translate(${t>p.impactAt&&t<p.impactAt+.4?Math.sin(t*90)*10*(1-smooth(p.impactAt,p.impactAt+.4,t)):0}px)`}}><ChildRig t={t} state="fall" tripAt={p.tripAt} impactAt={p.impactAt} shake/><div style={{position:'absolute',top:100,left:54,fontSize:theme.master.phaseTitle}}>Una pequeña herida</div></AbsoluteFill>}
  <AbsoluteFill style={{opacity:open,transform:`translateY(${(1-open)*120}px)`}}>
  <div style={{position:'absolute',top:24,left:54,fontSize:40}}>MEDISHORT360 · VERSIÓN VIGENTE</div>
+ <div style={{position:'absolute',top:100,right:54,zIndex:2,fontSize:theme.master.figure,whiteSpace:'nowrap',background:c.paper,borderRadius:24,padding:'4px 20px'}}>{p.showDayCounter&&<>Día {h>=.8?'21+':day}</>}</div>
  <div style={{position:'absolute',left:0,top:80,width:1080,height:650,overflow:'hidden'}}>
  <div style={{width:1080,height:648,transform:`translate(80px,80px) scale(${shot.zoom*(1+.012*Math.sin(t*1.5))})`,transformOrigin:'43.5% 50.2%'}}><ArmSurface t={t} healing={1} woundWidth={8}/></div>
  <svg width="1080" height="650" style={{position:'absolute',top:0}}>
@@ -48,7 +49,7 @@ export const MasterHealingView:React.FC<MasterProps&{t:number}>=p=>{
  <svg width="1080" height="1720" style={{position:'absolute',top:0,pointerEvents:'none'}}><path d="M425 560 L60 1020 M675 560 L1020 1020" stroke={theme.colors.mintBright} strokeWidth={4+flash*7} opacity={.3+flash*.5} fill="none"/></svg>
  <div style={{position:'absolute',top:820,left:30,width:1020,height:160,background:c.ink,borderRadius:30,color:c.paper,display:'flex',alignItems:'center',padding:'14px 26px',boxSizing:'border-box',gap:22,transform:`translateY(${(1-pop)*8}px)`,boxShadow:`0 0 ${flash*40}px ${theme.colors.mintBright}`}}>
  <div style={{flex:1}}><div style={{fontSize:theme.master.phaseTitle,lineHeight:1.05}}>{phase.nombre}</div><div style={{fontSize:theme.master.support,marginTop:8}}>{phase.dias}</div></div>
- {p.showDayCounter&&<div style={{fontSize:theme.master.figure}}>Día {h>=.8?'21+':day}</div>}<div style={{fontSize:theme.master.figure}}>{Math.round(h*100)}%</div>
+ <div style={{fontSize:theme.master.figure}}>{Math.round(h*100)}%</div>
  </div>
  <div style={{position:'absolute',left:54,top:987,width:972,display:'flex',gap:12}}>{data.phases.map((q,i)=><div key={q.id} style={{height:16,flex:1,borderRadius:8,background:i<=phaseIndex?c.shirt:c.ground,position:'relative'}}>{(i<phaseIndex||h>=1)&&<svg width="40" height="40" style={{position:'absolute',right:5,top:-25}} viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill={c.shirt}/><path d="M9 20 L17 28 31 12" fill="none" stroke={c.paper} strokeWidth="5" strokeLinecap="round"/></svg>}</div>)}</div>
  <div style={{position:'absolute',top:1020,left:36,width:1008,height:680,borderRadius:48,overflow:'hidden',background:c.dermis,border:`8px solid ${c.shirt}`,boxSizing:'border-box',boxShadow:`0 0 ${flash*65}px ${theme.colors.mintBright}`}}>
