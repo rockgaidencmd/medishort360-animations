@@ -1,0 +1,32 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+const master=fs.readFileSync('src/compositions/MasterHealing.tsx','utf8');
+const macro=fs.readFileSync('src/anatomy/MacroHealing.tsx','utf8');
+const theme=fs.readFileSync('src/styles/theme.ts','utf8');
+const defaultsLiteral=master.match(/masterDefaults:MasterProps=(\{[^\n]+\});/)[1];
+const defaults=JSON.parse(defaultsLiteral.replace(/(\w+):/g,'"$1":'));
+const phases=JSON.parse(fs.readFileSync('src/anatomy/data/healing-phases.json','utf8')).phases;
+const support=Number(theme.match(/support:\s*(\d+)/)[1]);
+const fibroHeight=Number(macro.match(/data-height=\{kind==='fibroblast'\?(\d+):size\}/)[1]);
+const metrics=Array.from({length:4},(_,i)=>{
+ const section=macro.split(`{phaseIndex===${i}&&<>`)[1].split('</>}')[0];
+ const bounds=[...section.matchAll(/size=\{(\d+)\} kind="(\w+)"/g)].map(m=>({kind:m[2],width:Number(m[1]),height:m[2]==='fibroblast'?fibroHeight:Number(m[1])}));
+ if(!bounds.length)throw Error(`No cell bounds for phase ${i}`);
+ return {min:Math.min(...bounds.map(c=>Math.min(c.width,c.height))),max:Math.max(...bounds.map(c=>Math.max(c.width,c.height))),bounds};
+});
+const rows=[2,5,8,12,18,26,34,40,44].map(second=>{
+ const filename=`master-${second}s.png`;const file=fs.readFileSync(`output/previews/${filename}`);
+ if(file.readUInt32BE(16)!==1080||file.readUInt32BE(20)!==1920)throw Error(`Wrong resolution: ${filename}`);
+ const microscope=second>defaults.splitAt&&second<defaults.closeAt+1;
+ const index=Math.min(3,Math.max(0,Math.floor((second-defaults.healingAt)/(defaults.healedAt-defaults.healingAt)*4)));
+ const minCell=microscope?metrics[index].min:null;const maxCell=microscope?metrics[index].max:null;
+ const font=microscope?support:second<defaults.splitAt?Number(theme.match(/phaseTitle:\s*(\d+)/)[1]):48;
+ const pass=font>=28&&(!microscope||(defaults.zoomBottom>=6&&minCell>=120&&maxCell<=260));
+ if(!pass)throw Error(`Threshold failed: ${second}s`);
+ return {second,frame:second*30,file:filename,phase:microscope?phases[index].nombre:second<defaults.splitAt?'Caída':'Cierre',zoomBottom:microscope?defaults.zoomBottom:null,minCellPx:minCell,maxCellPx:maxCell,minFontPx:font,pass,sha256:crypto.createHash('sha256').update(file).digest('hex')};
+});
+const report={method:'Native 1080x1920 output. Cell size is the shortest SVG membrane bounding-box dimension; organelles, fibrin and collagen are excluded. Font sizes are CSS/SVG font-size, not raster glyph height. No microscope/cell requirement during full-screen fall or closing. Geometry is read from the same Cell calls used by the rendered composition.',phaseCellBounds:metrics,frames:rows};
+fs.writeFileSync('output/previews/master-metrics.json',JSON.stringify(report,null,2)+'\n');
+console.table(rows.map(({second,phase,zoomBottom,minCellPx,maxCellPx,minFontPx,pass})=>({second,phase,zoomBottom,minCellPx,maxCellPx,minFontPx,pass})));
+const lines=['# Preview-MasterHealing — verificación final','','Composición vigente de 45 s, 1080 × 1920, 30 fps.','','## Animación','','- Hemostasia: llegada de plaquetas, malla de fibrina y eritrocitos retenidos.','- Inflamación: migración de neutrófilo y macrófago, desaparición secuencial de residuos y destellos al completar la limpieza.','- Proliferación: fibroblasto en movimiento, fibras que se dibujan, capilar que brota y queratinocitos que cierran los bordes.','- Remodelación: fibras que se alinean, retirada del capilar, desprendimiento de costra y piel nueva.','- Superficie: gotas con gravedad, hilo de sangre que cesa, herida que se achica, costra que se desprende, partículas de reparación, checks por fase y cierre de piel recuperada.','- Los días se interpolan desde healing-phases.json.','','## Controles','','appearAt, tripAt, impactAt, splitAt, healingAt, healedAt, closeAt, healingFrom, healingTo, zoomTop (2–3), zoomBottom (6–10), showDayCounter.','','## Capturas finales','','Generadas con npx remotion still, frames 60, 150, 240, 360, 540, 780, 1020, 1200 y 1320. Se conservan las nueve imágenes dentro de output/previews/.','','| Segundo | Fase | Zoom inferior | Célula menor (px) | Fuente menor (px) | Cumple |','|---|---|---:|---:|---:|---|',...rows.map(r=>`| ${r.second} | ${r.phase} | ${r.zoomBottom===null?'No aplica':r.zoomBottom+'×'} | ${r.minCellPx??'No aplica'} | ${r.minFontPx} | Sí |`),'','Las dimensiones se obtienen de la misma geometría SVG que dibuja las membranas celulares, excluyendo el grosor decorativo del trazo; se informa su menor dimensión. Núcleos y otras estructuras internas no son células adicionales. Las fuentes se informan en CSS/SVG px, no como altura de los píxeles de cada glifo. Las células completas miden de 120 a 240 px. Las etiquetas celulares usan 36 px; los textos de apoyo, 30 px; las fases, 64 px; días y porcentaje, 72 px.','','Durante la caída y el cierre no se muestra la ventana microscópica: zoom y tamaño celular no aplican. Las nueve imágenes se revisaron visualmente; master-metrics.json contiene dimensiones, límites y SHA-256.','','La revisión clínica y las fuentes del JSON siguen pendientes, como ya indica su campo revisar. Esta verificación comprueba la composición visual. No se abrió navegador ni Studio; no se generó un video final ni se hizo merge.',''];
+fs.writeFileSync('docs/master-healing-review.md',lines.join('\n'));

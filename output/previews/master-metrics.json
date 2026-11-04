@@ -1,0 +1,189 @@
+{
+  "method": "Native 1080x1920 output. Cell size is the shortest SVG membrane bounding-box dimension; organelles, fibrin and collagen are excluded. Font sizes are CSS/SVG font-size, not raster glyph height. No microscope/cell requirement during full-screen fall or closing. Geometry is read from the same Cell calls used by the rendered composition.",
+  "phaseCellBounds": [
+    {
+      "min": 120,
+      "max": 140,
+      "bounds": [
+        {
+          "kind": "platelet",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "kind": "platelet",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "kind": "red",
+          "width": 140,
+          "height": 140
+        },
+        {
+          "kind": "red",
+          "width": 140,
+          "height": 140
+        }
+      ]
+    },
+    {
+      "min": 200,
+      "max": 240,
+      "bounds": [
+        {
+          "kind": "neutrophil",
+          "width": 200,
+          "height": 200
+        },
+        {
+          "kind": "macrophage",
+          "width": 240,
+          "height": 240
+        }
+      ]
+    },
+    {
+      "min": 140,
+      "max": 240,
+      "bounds": [
+        {
+          "kind": "fibroblast",
+          "width": 240,
+          "height": 140
+        },
+        {
+          "kind": "keratinocyte",
+          "width": 160,
+          "height": 160
+        },
+        {
+          "kind": "keratinocyte",
+          "width": 160,
+          "height": 160
+        }
+      ]
+    },
+    {
+      "min": 160,
+      "max": 160,
+      "bounds": [
+        {
+          "kind": "keratinocyte",
+          "width": 160,
+          "height": 160
+        }
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "second": 2,
+      "frame": 60,
+      "file": "master-2s.png",
+      "phase": "Caída",
+      "zoomBottom": null,
+      "minCellPx": null,
+      "maxCellPx": null,
+      "minFontPx": 64,
+      "pass": true,
+      "sha256": "a1661e4914465b5e5c0f1a6926290efadeba8aed0bc2fb85a1547c1d9ac04758"
+    },
+    {
+      "second": 5,
+      "frame": 150,
+      "file": "master-5s.png",
+      "phase": "Caída",
+      "zoomBottom": null,
+      "minCellPx": null,
+      "maxCellPx": null,
+      "minFontPx": 64,
+      "pass": true,
+      "sha256": "007bf6cc9c60de1d2b066dd0ccecb84402a65fe34e03f158e64e0ea0e2897fe4"
+    },
+    {
+      "second": 8,
+      "frame": 240,
+      "file": "master-8s.png",
+      "phase": "Hemostasia",
+      "zoomBottom": 8,
+      "minCellPx": 120,
+      "maxCellPx": 140,
+      "minFontPx": 30,
+      "pass": true,
+      "sha256": "fb93104de6205500742009b1d00a6deafecb6e08e6a96cbc9784d2432427e3e8"
+    },
+    {
+      "second": 12,
+      "frame": 360,
+      "file": "master-12s.png",
+      "phase": "Hemostasia",
+      "zoomBottom": 8,
+      "minCellPx": 120,
+      "maxCellPx": 140,
+      "minFontPx": 30,
+      "pass": true,
+      "sha256": "381657ef3f02a78526662e916ba7a52e64a4905d115875b6d7c10caa3d31ea1d"
+    },
+    {
+      "second": 18,
+      "frame": 540,
+      "file": "master-18s.png",
+      "phase": "Inflamación",
+      "zoomBottom": 8,
+      "minCellPx": 200,
+      "maxCellPx": 240,
+      "minFontPx": 30,
+      "pass": true,
+      "sha256": "ecb1c6ff3382cbfc654ff0d068ec8769985172624bb74e264443ec9a3ad73c8c"
+    },
+    {
+      "second": 26,
+      "frame": 780,
+      "file": "master-26s.png",
+      "phase": "Proliferación",
+      "zoomBottom": 8,
+      "minCellPx": 140,
+      "maxCellPx": 240,
+      "minFontPx": 30,
+      "pass": true,
+      "sha256": "cda204a97bf28585b9831270bf831de9589f66acdda2f7d8bae26103763b52d0"
+    },
+    {
+      "second": 34,
+      "frame": 1020,
+      "file": "master-34s.png",
+      "phase": "Remodelación",
+      "zoomBottom": 8,
+      "minCellPx": 160,
+      "maxCellPx": 160,
+      "minFontPx": 30,
+      "pass": true,
+      "sha256": "4f53bb0175c4addad9ee181d0561c0b635f929b704cc1c39d22344c797db7167"
+    },
+    {
+      "second": 40,
+      "frame": 1200,
+      "file": "master-40s.png",
+      "phase": "Remodelación",
+      "zoomBottom": 8,
+      "minCellPx": 160,
+      "maxCellPx": 160,
+      "minFontPx": 30,
+      "pass": true,
+      "sha256": "9c4eb5814eb8e8b88a5f9dc95b4173e204137dc3b8707dd974ed4762a6f69352"
+    },
+    {
+      "second": 44,
+      "frame": 1320,
+      "file": "master-44s.png",
+      "phase": "Cierre",
+      "zoomBottom": null,
+      "minCellPx": null,
+      "maxCellPx": null,
+      "minFontPx": 48,
+      "pass": true,
+      "sha256": "2537ea6ac7962ab12e2abf7c6eef5a211346d19c9ea9d93778cd45b30b9950df"
+    }
+  ]
+}
