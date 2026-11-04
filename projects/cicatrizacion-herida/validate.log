@@ -1,0 +1,16 @@
+
+> medishort360-animations@0.1.0 validate
+> npx --yes tsx@4 scripts/validate.ts cicatrizacion-herida
+
+⚠ [recursos] asset webxr-hand: archivo no encontrado: public/models/webxr-hand.glb
+⚠ [recursos] asset makehuman-head-feet: archivo no encontrado: public/models/makehuman-head-feet.glb
+⚠ [cicatrizacion-herida] dato hemostasia-sangrado: falta fuente o revisión (source / reviewedBy)
+⚠ [cicatrizacion-herida] dato hemostasia-tapon: falta fuente o revisión (source / reviewedBy)
+⚠ [cicatrizacion-herida] dato inflamacion-limpieza: falta fuente o revisión (source / reviewedBy)
+⚠ [cicatrizacion-herida] dato costra: falta fuente o revisión (source / reviewedBy)
+⚠ [cicatrizacion-herida] dato colageno: falta fuente o revisión (source / reviewedBy)
+⚠ [cicatrizacion-herida] dato capilar: falta fuente o revisión (source / reviewedBy)
+⚠ [cicatrizacion-herida] dato queratinocitos: falta fuente o revisión (source / reviewedBy)
+⚠ [cicatrizacion-herida] dato remodelacion: falta fuente o revisión (source / reviewedBy)
+⚠ [cicatrizacion-herida] dato piel-recuperada: falta fuente o revisión (source / reviewedBy)
+✔ [cicatrizacion-herida] sin errores

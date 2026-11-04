@@ -1,0 +1,4 @@
+
+> medishort360-animations@0.1.0 typecheck
+> tsc --noEmit
+
