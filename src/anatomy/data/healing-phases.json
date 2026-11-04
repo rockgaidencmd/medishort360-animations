@@ -1,36 +1,74 @@
 {
   "phases": [
     {
-      "id": "hemostasia", "nombre": "Hemostasia", "dias": "minutos a horas",
-      "healingDesde": 0, "healingHasta": 0.12,
-      "celulas": ["plaquetas", "fibrina", "eritrocitos"],
+      "id": "hemostasia",
+      "nombre": "Hemostasia",
+      "dias": "minutos a horas",
+      "healingDesde": 0,
+      "healingHasta": 0.12,
+      "celulas": [
+        "plaquetas",
+        "fibrina",
+        "eritrocitos"
+      ],
       "superficie": "sangrado leve que cede y se forma un coágulo",
       "corte": "los vasos lesionados se contraen, las plaquetas forman un tapón y la fibrina lo refuerza",
-      "fuentes": null, "revisar": true
+      "fuentes": null,
+      "revisar": true,
+      "dayFrom": 0,
+      "dayTo": 0
     },
     {
-      "id": "inflamacion", "nombre": "Inflamación", "dias": "1 a 4 días",
-      "healingDesde": 0.12, "healingHasta": 0.35,
-      "celulas": ["neutrofilos", "macrofagos"],
+      "id": "inflamacion",
+      "nombre": "Inflamación",
+      "dias": "1 a 4 días",
+      "healingDesde": 0.12,
+      "healingHasta": 0.35,
+      "celulas": [
+        "neutrofilos",
+        "macrofagos"
+      ],
       "superficie": "borde enrojecido, leve hinchazón, la costra se forma y oscurece",
       "corte": "vasos dilatados; los neutrófilos limpian bacterias y residuos y luego llegan los macrófagos",
-      "fuentes": null, "revisar": true
+      "fuentes": null,
+      "revisar": true,
+      "dayFrom": 1,
+      "dayTo": 4
     },
     {
-      "id": "proliferacion", "nombre": "Proliferación", "dias": "4 días a 3 semanas",
-      "healingDesde": 0.35, "healingHasta": 0.8,
-      "celulas": ["fibroblastos", "colageno", "capilares_nuevos", "queratinocitos"],
-      "superficie": "la costra se seca y firme; debajo aparece piel rosada nueva",
+      "id": "proliferacion",
+      "nombre": "Proliferación",
+      "dias": "4 días a 3 semanas",
+      "healingDesde": 0.35,
+      "healingHasta": 0.8,
+      "celulas": [
+        "fibroblastos",
+        "colageno",
+        "capilares_nuevos",
+        "queratinocitos"
+      ],
+      "superficie": "la costra se seca y queda firme; debajo aparece piel rosada nueva",
       "corte": "los fibroblastos fabrican colágeno, brotan capilares nuevos y los queratinocitos migran bajo la costra para cerrar la herida",
-      "fuentes": null, "revisar": true
+      "fuentes": null,
+      "revisar": true,
+      "dayFrom": 4,
+      "dayTo": 21
     },
     {
-      "id": "remodelacion", "nombre": "Remodelación", "dias": "semanas a meses",
-      "healingDesde": 0.8, "healingHasta": 1,
-      "celulas": ["colageno"],
+      "id": "remodelacion",
+      "nombre": "Remodelación",
+      "dias": "semanas a meses",
+      "healingDesde": 0.8,
+      "healingHasta": 1,
+      "celulas": [
+        "colageno"
+      ],
       "superficie": "la costra cae y la piel se va normalizando",
       "corte": "el colágeno se reorganiza y refuerza el tejido; disminuyen los capilares nuevos",
-      "fuentes": null, "revisar": true
+      "fuentes": null,
+      "revisar": true,
+      "dayFrom": 21,
+      "dayTo": 21
     }
   ]
 }
