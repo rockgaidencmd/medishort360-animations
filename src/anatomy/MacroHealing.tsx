@@ -42,7 +42,7 @@ export const MacroHealing:React.FC<MacroProps>=({phaseIndex,local,t,zoom,eventTi
  <g opacity={shown('platelets')}><Cell x={180+a*250} y={205+Math.sin(a*Math.PI)*65} size={120} kind="platelet" t={t}/></g>
  <g opacity={shown('platelets')}><Cell x={760-a*210} y={260-Math.sin(a*Math.PI)*45} size={120} kind="platelet" t={t+.8}/></g>
  <g opacity={shown('platelets')}><Tag x={80} y={365}>{'Plaquetas'}</Tag></g><g opacity={shown('fibrin')}><Tag x={630} y={365}>{'Fibrina'}</Tag></g>
- {[0,1,2,3,4,5].map(i=><path key={i} d={`M${340+i*35} 155 Q${650-i*35} 290 ${350+i*40} 400 M345 ${165+i*40} L645 ${345-i*30}`} opacity={shown('fibrin')} stroke={c.fibrin} strokeWidth="8" fill="none" strokeDasharray="600" strokeDashoffset={(1-timed('fibrin',1.2,3))*600}/>)}
+ {[0,1,2,3,4,5].map(i=><path key={i} d={`M${340+i*35} 155 Q${650-i*35} 290 ${350+i*40} 400 M345 ${165+i*40} L645 ${345-i*30}`} opacity={shown('fibrin')} stroke={c.fibrin} strokeWidth="8" fill="none" pathLength={e?1:undefined} strokeDasharray={e?1:600} strokeDashoffset={e?.fibrin!==undefined ? .94*(1-timed('fibrin',1.2,3)):(1-timed('fibrin',1.2,3))*600}/>)}
  <g opacity={shown('redCells')}><Cell x={175+timed('redCells',.5,2)*230} y={485-timed('redCells',.5,2)*90} size={140} kind="red" t={t}/></g><g opacity={shown('redCells')}><Cell x={820-timed('redCells',1.3,2.5)*225} y={490-timed('redCells',1.3,2.5)*100} size={140} kind="red" t={t+.6}/></g>
  <g opacity={shown('redCells')}><Tag x={330} y={585}>{'Glóbulos rojos atrapados'}</Tag></g><Spark x={495} y={270} at={1.6} local={e?t-e.platelets:local}/><Spark x={495} y={370} at={4.2} local={e?t-e.clot+4.2:local}/>
  </>}
@@ -56,9 +56,9 @@ export const MacroHealing:React.FC<MacroProps>=({phaseIndex,local,t,zoom,eventTi
  <Spark x={420} y={250} at={3} local={e?t-e.neutrophils:local}/><Spark x={600} y={310} at={5} local={e?t-e[repairSparkKey]:local}/>
  </>}
  {phaseIndex===2&&<>
- {[0,1,2,3,4].map(i=><path key={i} d={`M180 ${330+i*29} Q400 ${265+i*33+Math.sin(t+i)*4} 620 ${340+i*24}`} fill="none" opacity={shown('collagen')} stroke={c.collagen} strokeWidth="9" strokeDasharray="600" strokeDashoffset={(1-build)*600}/>)}
+ {[0,1,2,3,4].map(i=><path key={i} d={`M180 ${330+i*29} Q400 ${265+i*33+Math.sin(t+i)*4} 620 ${340+i*24}`} fill="none" opacity={shown('collagen')} stroke={c.collagen} strokeWidth="9" pathLength={e?1:undefined} strokeDasharray={e?1:600} strokeDashoffset={e?.collagen!==undefined ? .94*(1-build):(1-build)*600}/>)}
  <g opacity={shown('fibroblasts')}><Arrow d="M150 300 Q330 220 430 340" progress={t}/></g><g opacity={shown('fibroblasts')}><Cell x={165+fibroMove*190} y={290+Math.sin(fibroMove*Math.PI)*35} size={240} kind="fibroblast" t={t}/></g><g opacity={shown('fibroblasts')}><Tag x={50} y={450}>{'Fibroblasto'}</Tag></g>
- <path d="M680 530 V350 Q680 240 760 240 T840 350 V530" stroke={c.capillary} opacity={shown('capillary')} strokeWidth="25" fill="none" strokeDasharray="800" strokeDashoffset={(1-timed('capillary',.5,5))*800}/><g opacity={shown('capillary')}><Tag x={615} y={590}>{'Capilar nuevo'}</Tag></g>
+ <path d="M680 530 V350 Q680 240 760 240 T840 350 V530" stroke={c.capillary} opacity={shown('capillary')} strokeWidth="25" fill="none" pathLength={e?1:undefined} strokeDasharray={e?1:800} strokeDashoffset={e?.capillary!==undefined ? .96*(1-timed('capillary',.5,5)):(1-timed('capillary',.5,5))*800}/><g opacity={shown('capillary')}><Tag x={615} y={590}>{'Capilar nuevo'}</Tag></g>
  <g opacity={shown(keratinKey)}><Cell x={160+keratinMove*255} y={160} size={160} kind="keratinocyte" t={t}/></g><g opacity={shown(keratinKey)}><Cell x={815-keratinMove*240} y={160} size={160} kind="keratinocyte" t={t+.6}/></g>
  <g opacity={shown('keratinocytes')}><Tag x={330} y={85}>{'Queratinocitos'}</Tag></g><g opacity={shown('keratinocytes')}><Arrow d="M255 162 H365" progress={t}/></g><g opacity={shown('keratinocytes')}><Arrow d="M725 162 H620" progress={t}/></g>
  <g opacity={shown('collagen')}><Tag x={335} y={520}>{'Colágeno'}</Tag></g><Spark x={490} y={160} at={6.5} local={e?t-e.closeWound+6.5:local}/><Spark x={760} y={310} at={5.5} local={e?t-e.capillary:local}/>
