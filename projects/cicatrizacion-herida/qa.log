@@ -1,0 +1,17 @@
+
+> medishort360-animations@0.1.0 qa
+> npx --yes tsx@4 scripts/qa.ts cicatrizacion-herida --draft
+
+✔ video presente: ok
+✔ audio presente: ok
+✔ códec H.264: códec: h264
+✔ pixel format yuv420p (compatibilidad Android/iOS): pix_fmt: yuv420p
+✔ resolución: 540x960 (esperado 540x960)
+✔ fps: 30.00 (esperado 30)
+✔ audio AAC: códec: aac
+✔ duración = audio original: 54.77 s vs 54.753 s
+✔ duración = archivo de audio: 54.77 s vs 54.75 s
+✔ sin cuadros negros: ok
+✔ sin tramos congelados > 1 s: ok
+
+QA técnico: APROBADO (falta revisión humana de anatomía y sincronía)

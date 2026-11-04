@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "wordCount": 111,
+  "eventCount": 26,
+  "asrTimesUnchanged": true,
+  "allEventsDerivedFromWords": true,
+  "maxEarlyVisualStartSec": 0.10666666666666735,
+  "maximumCaptureQuantizationSec": 0.026666666666666394,
+  "contiguousScenes": true,
+  "monotonicHealing": true,
+  "phaseBoundariesFromAudio": true,
+  "frames": 1643,
+  "transcriptDurationSec": 54.753,
+  "frameDurationSec": 54.766666666666666
+}
