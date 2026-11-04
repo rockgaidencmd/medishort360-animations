@@ -3,7 +3,7 @@ import {theme} from '../styles/theme';
 import {clamp, smooth} from './healing';
 import phases from './data/healing-phases.json';
 const c=theme.anatomy;
-export type MacroProps={phaseIndex:number;local:number;t:number;zoom:number};
+export type MacroProps={phaseIndex:number;local:number;t:number;zoom:number;eventTimes?:Record<string,number>;phaseEnd?:number};
 export const MACRO_MIN_CELL_PX=[120,200,140,160] as const;
 /** All visible cell membranes have explicit output-pixel bounds. Organelles and fibrin are not cells. */
 const Cell:React.FC<{x:number;y:number;size:number;kind:'platelet'|'red'|'neutrophil'|'macrophage'|'fibroblast'|'keratinocyte';t:number}>=({x,y,size,kind,t})=>{
@@ -17,8 +17,13 @@ const Cell:React.FC<{x:number;y:number;size:number;kind:'platelet'|'red'|'neutro
 const Tag:React.FC<{x:number;y:number;children:React.ReactNode}>=({x,y,children})=><g transform={`translate(${x} ${y})`}><rect x="-8" y="-35" width={String(children).length*21+20} height="47" rx="12" fill={c.paper} opacity=".96"/><text fontSize={theme.master.cellLabel} fontWeight="800" fill={c.ink}>{children}</text></g>;
 const Arrow:React.FC<{d:string;progress:number}>=({d,progress})=><path d={d} fill="none" stroke={c.shirt} strokeWidth="7" strokeDasharray="12 11" strokeDashoffset={-progress*100} markerEnd="url(#macro-arrow)"/>;
 const Spark:React.FC<{x:number;y:number;at:number;local:number}>=({x,y,at,local})=>{const q=clamp((local-at)/.75);return <g opacity={local>=at?1-q:0}><circle cx={x} cy={y} r={28+q*80} fill="none" stroke={theme.colors.mintBright} strokeWidth="12"/>{[0,1,2,3,4,5].map(i=><path key={i} d={`M${x+Math.cos(i)*45} ${y+Math.sin(i)*45} l${Math.cos(i)*q*80} ${Math.sin(i)*q*80}`} stroke={c.paper} strokeWidth="9"/>)}</g>;};
-export const MacroHealing:React.FC<MacroProps>=({phaseIndex,local,t,zoom})=>{
- const phase=phases.phases[phaseIndex];const travel=(at:number,duration:number)=>smooth(at,at+duration,local);const a=travel(0,1.6);const clean=travel(2,3);const build=travel(1,6);const align=travel(0,6);
+export const MacroHealing:React.FC<MacroProps>=({phaseIndex,local,t,zoom,eventTimes:e,phaseEnd=Infinity})=>{
+ const phase=phases.phases[phaseIndex];const travel=(at:number,duration:number)=>smooth(at,at+duration,local);
+ const shown=(key:string)=>!e||t>=e[key]?1:0;
+ const timed=(key:string,at:number,duration:number)=>e?smooth(e[key],Math.max(e[key]+1/30,Math.min(e[key]+duration,phaseEnd-1/30)),t):travel(at,duration);
+ const keratinKey=phaseIndex===3?'skinNew':'keratinocytes';const repairSparkKey=phaseIndex===3?'alignCollagen':'macrophage';const a=timed('platelets',0,1.6);const clean=timed('macrophage',2,3);const build=timed('collagen',1,6);const fibroMove=timed('fibroblasts',1,6);const align=timed('alignCollagen',0,6);const retreat=timed('retreatCapillary',0,6);const dropElapsed=e?Math.max(0,t-e.scabDrop):local;const skinMove=e?timed('skinNew',0,2):align;
+ const keratinMove=e?.closeWound!==undefined ? .6*smooth(e.keratinocytes,e.closeWound,t)+.4*timed('closeWound',2,5):travel(2,5);
+ const cleanup=(i:number)=>e?(i<3?timed('neutrophils',0,3):timed('macrophage',0,2.5)):travel(i<3?1.5+i*.5:4+(i-3)*.6,1.1);
  // Tissue is drawn in microscope units (1 unit = 8 pixels at the reference ×8).
  // Cell glyphs and labels stay in output pixels for readability across the supported zoom range.
  return <svg width="992" height="664" viewBox="0 0 992 664" aria-label={`Microscopio: ${phase.nombre}`} data-zoom={zoom}>
@@ -33,38 +38,39 @@ export const MacroHealing:React.FC<MacroProps>=({phaseIndex,local,t,zoom})=>{
  <text x="28" y="48" fontSize={theme.master.cellLabel} fontWeight="800" fill={c.ink}>MICROSCOPIO · ×{zoom}</text>
  {phaseIndex===0&&<>
  <path d="M405 90 L430 300 Q496 355 562 300 L590 90" fill={c.wound}/>
- <Arrow d="M160 160 Q245 70 405 180" progress={t}/><Arrow d="M815 335 Q730 225 610 240" progress={t}/>
- <Cell x={180+a*250} y={205+Math.sin(a*Math.PI)*65} size={120} kind="platelet" t={t}/>
- <Cell x={760-a*210} y={260-Math.sin(a*Math.PI)*45} size={120} kind="platelet" t={t+.8}/>
- <Tag x={80} y={365}>{'Plaquetas'}</Tag><Tag x={630} y={365}>{'Fibrina'}</Tag>
- {[0,1,2,3,4,5].map(i=><path key={i} d={`M${340+i*35} 155 Q${650-i*35} 290 ${350+i*40} 400 M345 ${165+i*40} L645 ${345-i*30}`} stroke={c.fibrin} strokeWidth="8" fill="none" strokeDasharray="600" strokeDashoffset={(1-travel(1.2,3))*600}/>)}
- <Cell x={175+travel(.5,2)*230} y={485-travel(.5,2)*90} size={140} kind="red" t={t}/><Cell x={820-travel(1.3,2.5)*225} y={490-travel(1.3,2.5)*100} size={140} kind="red" t={t+.6}/>
- <Tag x={330} y={585}>{'Glóbulos rojos atrapados'}</Tag><Spark x={495} y={270} at={1.6} local={local}/><Spark x={495} y={370} at={4.2} local={local}/>
+ <g opacity={shown('platelets')}><Arrow d="M160 160 Q245 70 405 180" progress={t}/></g><g opacity={shown('fibrin')}><Arrow d="M815 335 Q730 225 610 240" progress={t}/></g>
+ <g opacity={shown('platelets')}><Cell x={180+a*250} y={205+Math.sin(a*Math.PI)*65} size={120} kind="platelet" t={t}/></g>
+ <g opacity={shown('platelets')}><Cell x={760-a*210} y={260-Math.sin(a*Math.PI)*45} size={120} kind="platelet" t={t+.8}/></g>
+ <g opacity={shown('platelets')}><Tag x={80} y={365}>{'Plaquetas'}</Tag></g><g opacity={shown('fibrin')}><Tag x={630} y={365}>{'Fibrina'}</Tag></g>
+ {[0,1,2,3,4,5].map(i=><path key={i} d={`M${340+i*35} 155 Q${650-i*35} 290 ${350+i*40} 400 M345 ${165+i*40} L645 ${345-i*30}`} opacity={shown('fibrin')} stroke={c.fibrin} strokeWidth="8" fill="none" strokeDasharray="600" strokeDashoffset={(1-timed('fibrin',1.2,3))*600}/>)}
+ <g opacity={shown('redCells')}><Cell x={175+timed('redCells',.5,2)*230} y={485-timed('redCells',.5,2)*90} size={140} kind="red" t={t}/></g><g opacity={shown('redCells')}><Cell x={820-timed('redCells',1.3,2.5)*225} y={490-timed('redCells',1.3,2.5)*100} size={140} kind="red" t={t+.6}/></g>
+ <g opacity={shown('redCells')}><Tag x={330} y={585}>{'Glóbulos rojos atrapados'}</Tag></g><Spark x={495} y={270} at={1.6} local={e?t-e.platelets:local}/><Spark x={495} y={370} at={4.2} local={e?t-e.clot+4.2:local}/>
  </>}
  {phaseIndex===1&&<>
- <Arrow d="M165 445 Q160 270 375 230" progress={t}/><Arrow d="M840 480 Q850 350 680 300" progress={t}/>
- {[0,1,2,3,4].map(i=><g key={i} opacity={1-travel(i<3?1.5+i*.5:4+(i-3)*.6,1.1)} transform={`translate(${400+i*38} ${220+(i%2)*80})`}><path d="M-10 -20 Q25 -25 20 5 T-15 20Z" fill={c.ink}/><path d="M-18 -22 l-10 -10 M20 12 l13 15" stroke={c.ink} strokeWidth="5"/></g>)}
- <Cell x={165+travel(0,3)*240} y={400-travel(0,3)*135} size={200} kind="neutrophil" t={t}/>
- <Cell x={815-clean*200} y={440-clean*120} size={240} kind="macrophage" t={t}/>
- <Tag x={95} y={570}>{'Neutrófilo'}</Tag><Tag x={635} y={570}>{'Macrófago'}</Tag>
+ <g opacity={shown('neutrophils')}><Arrow d="M165 445 Q160 270 375 230" progress={t}/></g><g opacity={shown('macrophage')}><Arrow d="M840 480 Q850 350 680 300" progress={t}/></g>
+ {[0,1,2,3,4].map(i=><g key={i} opacity={1-cleanup(i)} transform={`translate(${400+i*38} ${220+(i%2)*80})`}><path d="M-10 -20 Q25 -25 20 5 T-15 20Z" fill={c.ink}/><path d="M-18 -22 l-10 -10 M20 12 l13 15" stroke={c.ink} strokeWidth="5"/></g>)}
+ <g opacity={shown('neutrophils')}><Cell x={165+timed('neutrophils',0,3)*240} y={400-timed('neutrophils',0,3)*135} size={200} kind="neutrophil" t={t}/></g>
+ <g opacity={shown('macrophage')}><Cell x={815-clean*200} y={440-clean*120} size={240} kind="macrophage" t={t}/></g>
+ <g opacity={shown('neutrophils')}><Tag x={95} y={570}>{'Neutrófilo'}</Tag></g><g opacity={shown('macrophage')}><Tag x={635} y={570}>{'Macrófago'}</Tag></g>
  <path d={`M${425+Math.sin(t*2)*8} 230 Q490 ${180+clean*80} 550 270`} fill="none" stroke={c.macrophage} strokeWidth={12+clean*24} opacity={clean}/>
- <Spark x={420} y={250} at={3} local={local}/><Spark x={600} y={310} at={5} local={local}/>
+ <Spark x={420} y={250} at={3} local={e?t-e.neutrophils:local}/><Spark x={600} y={310} at={5} local={e?t-e[repairSparkKey]:local}/>
  </>}
  {phaseIndex===2&&<>
- {[0,1,2,3,4].map(i=><path key={i} d={`M180 ${330+i*29} Q400 ${265+i*33+Math.sin(t+i)*4} 620 ${340+i*24}`} fill="none" stroke={c.collagen} strokeWidth="9" strokeDasharray="600" strokeDashoffset={(1-build)*600}/>)}
- <Arrow d="M150 300 Q330 220 430 340" progress={t}/><Cell x={165+build*190} y={290+Math.sin(build*Math.PI)*35} size={240} kind="fibroblast" t={t}/><Tag x={50} y={450}>{'Fibroblasto'}</Tag>
- <path d="M680 530 V350 Q680 240 760 240 T840 350 V530" stroke={c.capillary} strokeWidth="25" fill="none" strokeDasharray="800" strokeDashoffset={(1-travel(.5,5))*800}/><Tag x={615} y={590}>{'Capilar nuevo'}</Tag>
- <Cell x={160+travel(2,5)*255} y={160} size={160} kind="keratinocyte" t={t}/><Cell x={815-travel(2,5)*240} y={160} size={160} kind="keratinocyte" t={t+.6}/>
- <Tag x={330} y={85}>{'Queratinocitos'}</Tag><Arrow d="M255 162 H365" progress={t}/><Arrow d="M725 162 H620" progress={t}/>
- <Tag x={335} y={520}>{'Colágeno'}</Tag><Spark x={490} y={160} at={6.5} local={local}/><Spark x={760} y={310} at={5.5} local={local}/>
+ {[0,1,2,3,4].map(i=><path key={i} d={`M180 ${330+i*29} Q400 ${265+i*33+Math.sin(t+i)*4} 620 ${340+i*24}`} fill="none" opacity={shown('collagen')} stroke={c.collagen} strokeWidth="9" strokeDasharray="600" strokeDashoffset={(1-build)*600}/>)}
+ <g opacity={shown('fibroblasts')}><Arrow d="M150 300 Q330 220 430 340" progress={t}/></g><g opacity={shown('fibroblasts')}><Cell x={165+fibroMove*190} y={290+Math.sin(fibroMove*Math.PI)*35} size={240} kind="fibroblast" t={t}/></g><g opacity={shown('fibroblasts')}><Tag x={50} y={450}>{'Fibroblasto'}</Tag></g>
+ <path d="M680 530 V350 Q680 240 760 240 T840 350 V530" stroke={c.capillary} opacity={shown('capillary')} strokeWidth="25" fill="none" strokeDasharray="800" strokeDashoffset={(1-timed('capillary',.5,5))*800}/><g opacity={shown('capillary')}><Tag x={615} y={590}>{'Capilar nuevo'}</Tag></g>
+ <g opacity={shown(keratinKey)}><Cell x={160+keratinMove*255} y={160} size={160} kind="keratinocyte" t={t}/></g><g opacity={shown(keratinKey)}><Cell x={815-keratinMove*240} y={160} size={160} kind="keratinocyte" t={t+.6}/></g>
+ <g opacity={shown('keratinocytes')}><Tag x={330} y={85}>{'Queratinocitos'}</Tag></g><g opacity={shown('keratinocytes')}><Arrow d="M255 162 H365" progress={t}/></g><g opacity={shown('keratinocytes')}><Arrow d="M725 162 H620" progress={t}/></g>
+ <g opacity={shown('collagen')}><Tag x={335} y={520}>{'Colágeno'}</Tag></g><Spark x={490} y={160} at={6.5} local={e?t-e.closeWound+6.5:local}/><Spark x={760} y={310} at={5.5} local={e?t-e.capillary:local}/>
  </>}
  {phaseIndex===3&&<>
  {[0,1,2,3,4,5].map(i=><path key={i} d={`M90 ${245+i*36} C300 ${160+i*50+(245+i*36-(160+i*50))*align} 650 ${370+i*15+(245+i*36-(370+i*15))*align} 915 ${245+i*36}`} fill="none" stroke={c.collagen} strokeWidth="12"/>)}
- <path d="M735 530 V360 Q735 265 820 265 T900 360 V530" stroke={c.capillary} strokeWidth={24*(1-align)} fill="none" opacity={1-align}/>
- <path d={`M320 ${118-local*8} Q495 ${80-local*8} 670 ${118-local*8}`} stroke={c.scab} strokeWidth="24" fill="none" opacity={1-travel(0,4)} transform={`rotate(${local*4} 495 110)`}/>
- <Cell x={190+align*230} y={480-Math.sin(align*Math.PI)*30} size={160} kind="keratinocyte" t={t}/><Tag x={50} y={590}>{'Piel nueva'}</Tag>
- <Arrow d="M250 190 H740" progress={t}/><Tag x={310} y={85}>{'Colágeno alineado'}</Tag><Spark x={500} y={325} at={5} local={local}/>
+ <path d="M735 530 V360 Q735 265 820 265 T900 360 V530" stroke={c.capillary} strokeWidth={24*(1-retreat)} fill="none" opacity={1-retreat}/>
+ <path d={`M320 ${118-dropElapsed*8} Q495 ${80-dropElapsed*8} 670 ${118-dropElapsed*8}`} stroke={c.scab} strokeWidth="24" fill="none" opacity={1-timed('scabDrop',0,4)} transform={`rotate(${dropElapsed*4} 495 110)`}/>
+ <g opacity={shown(keratinKey)}><Cell x={190+skinMove*230} y={480-Math.sin(skinMove*Math.PI)*30} size={160} kind="keratinocyte" t={t}/></g><g opacity={shown('skinNew')}><Tag x={50} y={590}>{'Piel nueva'}</Tag></g>
+ <g opacity={shown('alignCollagen')}><Arrow d="M250 190 H740" progress={t}/></g><g opacity={shown('alignCollagen')}><Tag x={310} y={85}>{'Colágeno alineado'}</Tag></g><Spark x={500} y={325} at={5} local={e?t-e[repairSparkKey]:local}/>
  </>}
  </g></svg>;
 };
+
 
