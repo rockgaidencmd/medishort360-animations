@@ -34,10 +34,10 @@ export const MasterHealingView:React.FC<MasterProps&{t:number}>=p=>{
  <div style={{position:'absolute',left:0,top:80,width:1080,height:650,overflow:'hidden'}}>
  <div style={{width:1080,height:648,transform:`translate(80px,80px) scale(${shot.zoom*(1+.012*Math.sin(t*1.5))})`,transformOrigin:'43.5% 50.2%'}}><ArmSurface t={t} healing={1} woundWidth={8}/></div>
  <svg width="1080" height="650" style={{position:'absolute',top:0}}>
- <defs><radialGradient id="wet"><stop stopColor={c.newSkin}/><stop offset=".35" stopColor={c.wound}/><stop offset="1" stopColor={c.clot}/></radialGradient></defs>
+ <defs><radialGradient id="wet"><stop stopColor={c.newSkin}/><stop offset=".35" stopColor={e?woundColor:c.wound}/><stop offset="1" stopColor={c.clot}/></radialGradient></defs>
  <g transform="translate(550 400)">
  <ellipse rx={210*shrink+25} ry={95*shrink+14} fill={h<.35?c.wound:c.newSkin} opacity={(1-h)*.22}/>
- <path d={`M${-170*shrink} 0 Q-110 ${-65*shrink} 0 ${-48*shrink} Q160 ${-70*shrink} ${170*shrink} 0 Q100 ${70*shrink} 0 ${55*shrink} Q-155 ${70*shrink} ${-170*shrink} 0`} fill={c.newSkin} opacity={smooth(.55,.88,h)}/><path d={`M${-170*shrink} 0 Q-110 ${-65*shrink} 0 ${-48*shrink} Q160 ${-70*shrink} ${170*shrink} 0 Q100 ${70*shrink} 0 ${55*shrink} Q-155 ${70*shrink} ${-170*shrink} 0`} fill={e?woundColor:h<.12?'url(#wet)':woundColor} opacity={1-smooth(.88,1,h)}/>
+ <path d={`M${-170*shrink} 0 Q-110 ${-65*shrink} 0 ${-48*shrink} Q160 ${-70*shrink} ${170*shrink} 0 Q100 ${70*shrink} 0 ${55*shrink} Q-155 ${70*shrink} ${-170*shrink} 0`} fill={c.newSkin} opacity={smooth(.55,.88,h)}/><path d={`M${-170*shrink} 0 Q-110 ${-65*shrink} 0 ${-48*shrink} Q160 ${-70*shrink} ${170*shrink} 0 Q100 ${70*shrink} 0 ${55*shrink} Q-155 ${70*shrink} ${-170*shrink} 0`} fill={e?(t<e.scabDark?'url(#wet)':woundColor):h<.12?'url(#wet)':woundColor} opacity={1-smooth(.88,1,h)}/>
  {(e?scabAlpha>0:h>.12&&h<.94)&&<g opacity={scabAlpha} transform={`translate(${drop*100} ${drop*200}) rotate(${(e?drop:smooth(.7,.94,h))*25})`}>
  <path d={`M${-165*shrink} 0 Q0 ${-70*shrink} ${165*shrink} 0 Q0 ${65*shrink} ${-165*shrink} 0`} fill={c.scab} stroke={c.scabLight} strokeWidth="7"/>
  <path d={`M${-165*shrink} 0 q${-30*(e?drop:smooth(.6,.82,h))} ${-40*(e?drop:smooth(.6,.82,h))} 40 -20`} fill="none" stroke={c.scabLight} strokeWidth="10"/>
@@ -64,6 +64,7 @@ export const MasterHealingView:React.FC<MasterProps&{t:number}>=p=>{
  {closing>0&&<AbsoluteFill style={{background:c.paper,opacity:closing,justifyContent:'center',alignItems:'center',gap:30}}><svg width="320" height="320" viewBox="0 0 320 320"><circle cx="160" cy="160" r={140+Math.sin(t*2)*3} fill={c.macrophage}/><path d="M75 160 L140 220 250 95" fill="none" stroke={c.shirt} strokeWidth="27" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="300" strokeDashoffset={(1-closing)*300}/></svg><div style={{fontSize:80}}>Piel recuperada</div><div style={{fontSize:48}}>MEDISHORT360</div></AbsoluteFill>}
  </AbsoluteFill>;
 };
+
 
 
 
