@@ -61,7 +61,7 @@ export const MasterHealingView:React.FC<MasterProps&{t:number}>=p=>{
  </div>
  <div style={{position:'absolute',top:1730,left:54,fontSize:theme.master.support}}>MEDISHORT360</div>
  </AbsoluteFill>
- {closing>0&&<AbsoluteFill style={{background:c.paper,opacity:closing,justifyContent:'center',alignItems:'center',gap:30}}><svg width="320" height="320" viewBox="0 0 320 320"><circle cx="160" cy="160" r={140+Math.sin(t*2)*3} fill={c.macrophage}/><path d="M75 160 L140 220 250 95" fill="none" stroke={c.shirt} strokeWidth="27" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="300" strokeDashoffset={(1-closing)*300}/></svg><div style={{fontSize:80}}>Piel recuperada</div><div style={{fontSize:48}}>MEDISHORT360</div></AbsoluteFill>}
+ {closing>0&&<AbsoluteFill style={{background:c.paper,opacity:closing,justifyContent:'center',alignItems:'center',gap:30}}><svg width="320" height="320" viewBox="0 0 320 320" style={{filter:e?`drop-shadow(0 0 ${18+8*Math.sin(t*4)}px ${theme.colors.mintBright})`:undefined}}><circle cx="160" cy="160" r={140+Math.sin(t*2)*3} fill={c.macrophage}/><path d="M75 160 L140 220 250 95" fill="none" stroke={c.shirt} strokeWidth="27" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="300" strokeDashoffset={(1-closing)*300}/></svg><div style={{fontSize:80}}>Piel recuperada</div><div style={{fontSize:48}}>MEDISHORT360</div></AbsoluteFill>}
  </AbsoluteFill>;
 };
 

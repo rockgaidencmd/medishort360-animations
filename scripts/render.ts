@@ -1,4 +1,5 @@
-import {mkdirSync} from 'node:fs';
+import {mkdirSync,existsSync,readFileSync} from 'node:fs';
+import {join} from 'node:path';
 import {spawnSync} from 'node:child_process';
 
 const argv = process.argv.slice(2);
@@ -9,7 +10,9 @@ if (!project) {
   process.exit(1);
 }
 const final = rest.includes('--final');
-const entry = process.env.REMOTION_ENTRY ?? 'src/index.ts';
+const renderOptionsFile=join('projects',project,'render-options.json');
+const renderOptions=existsSync(renderOptionsFile)?JSON.parse(readFileSync(renderOptionsFile,'utf8')):{};
+const entry = process.env.REMOTION_ENTRY ?? renderOptions.entry ?? 'src/index.ts';
 
 const run = (cmd: string, args: string[]) => {
   console.log(`\n$ ${cmd} ${args.join(' ')}`);
@@ -30,4 +33,5 @@ const gl = process.env.GL ?? 'angle';
 if (gl) flags.push(`--gl=${gl}`);
 
 run('npx', ['remotion', 'render', entry, project, out, '--codec=h264', ...flags]);
+if(!final&&renderOptions.normalizeDraftRange===true) run('node',['scripts/normalize-cicatrizacion-draft.mjs',project]);
 run('npx', ['tsx', 'scripts/qa.ts', project, out, ...(final ? [] : ['--draft'])]);
