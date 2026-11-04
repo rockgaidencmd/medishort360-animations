@@ -18,3 +18,5 @@ La medida del contenedor MP4 y de su pista de video es 54.766667 s. El MP3 mide 
 El comprobador de sincronía verifica 111 palabras, 26 eventos, conservación de todos los tiempos tras las correcciones ortográficas, escenas contiguas y healing monotónico por fases reales. Los eventos se adelantan 0.1 s respecto a Whisper; el mayor adelanto efectivo al cuantizar escenas/fotogramas es 0.106667 s, menor que 0.15 s. Whisper no equivale a una revisión fonética humana.
 
 Las fuentes y revisiones clínicas siguen null, según la solicitud. Las advertencias de dos rutas antiguas de recursos ausentes no se usan en este proyecto SVG y no se borraron ni sustituyeron los registros de otros proyectos.
+
+Actualización: render-options.json activa la normalización automáticamente solo para cicatrizacion-herida. La ejecución final de npm run render:draft -- cicatrizacion-herida terminó con código cero y QA aprobado, sin configurar REMOTION_ENTRY. El check final incorpora el brillo pulsante al inicio de Piel recuperada; solo se actualizó esa captura, porque el cambio queda limitado al cierre con eventTimes.
