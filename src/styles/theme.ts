@@ -40,6 +40,7 @@ export const theme = {
     captionLeft: 150,
     captionRight: 70,
   },
+  master: {cellLabel: 36, support: 30, phaseTitle: 64, figure: 72, microscopeWidth: 992, microscopeHeight: 664, minZoom: 6, maxZoom: 10},
   defaultTransitionFrames: 10,
 } as const;
 

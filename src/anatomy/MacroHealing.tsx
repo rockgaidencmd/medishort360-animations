@@ -14,21 +14,23 @@ const Cell:React.FC<{x:number;y:number;size:number;kind:'platelet'|'red'|'neutro
  <path d={`M${-r*.55} ${-r*.6} Q0 ${-r*.9} ${r*.4} ${-r*.6}`} stroke={c.paper} strokeWidth="6" fill="none" opacity=".55"/>
  </g>;
 };
-const Tag:React.FC<{x:number;y:number;children:React.ReactNode}>=({x,y,children})=><g transform={`translate(${x} ${y})`}><rect x="-8" y="-35" width={String(children).length*21+20} height="47" rx="12" fill={c.paper} opacity=".96"/><text fontSize="36" fontWeight="800" fill={c.ink}>{children}</text></g>;
+const Tag:React.FC<{x:number;y:number;children:React.ReactNode}>=({x,y,children})=><g transform={`translate(${x} ${y})`}><rect x="-8" y="-35" width={String(children).length*21+20} height="47" rx="12" fill={c.paper} opacity=".96"/><text fontSize={theme.master.cellLabel} fontWeight="800" fill={c.ink}>{children}</text></g>;
 const Arrow:React.FC<{d:string;progress:number}>=({d,progress})=><path d={d} fill="none" stroke={c.shirt} strokeWidth="7" strokeDasharray="12 11" strokeDashoffset={-progress*100} markerEnd="url(#macro-arrow)"/>;
 const Spark:React.FC<{x:number;y:number;at:number;local:number}>=({x,y,at,local})=>{const q=clamp((local-at)/.75);return <g opacity={local>=at?1-q:0}><circle cx={x} cy={y} r={28+q*80} fill="none" stroke={theme.colors.mintBright} strokeWidth="12"/>{[0,1,2,3,4,5].map(i=><path key={i} d={`M${x+Math.cos(i)*45} ${y+Math.sin(i)*45} l${Math.cos(i)*q*80} ${Math.sin(i)*q*80}`} stroke={c.paper} strokeWidth="9"/>)}</g>;};
 export const MacroHealing:React.FC<MacroProps>=({phaseIndex,local,t,zoom})=>{
  const phase=phases.phases[phaseIndex];const travel=(at:number,duration:number)=>smooth(at,at+duration,local);const a=travel(0,1.6);const clean=travel(2,3);const build=travel(1,6);const align=travel(0,6);
- // Zoom is a true SVG viewBox magnification (8 logical units become 1 output unit at ×8).
- // Counter-scale physical cell dimensions so every allowed zoom preserves legible 120–260 px membranes.
- return <svg width="992" height="664" viewBox={`0 0 ${992/zoom} ${664/zoom}`} aria-label={`Microscopio: ${phase.nombre}`} data-zoom={zoom}>
- <g transform={`scale(${1/zoom})`}>
+ // Tissue is drawn in microscope units (1 unit = 8 pixels at the reference ×8).
+ // Cell glyphs and labels stay in output pixels for readability across the supported zoom range.
+ return <svg width="992" height="664" viewBox="0 0 992 664" aria-label={`Microscopio: ${phase.nombre}`} data-zoom={zoom}>
+ <g>
  <defs><marker id="macro-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 0 10Z" fill={c.shirt}/></marker><linearGradient id="macro-tissue" x2="0" y2="1"><stop stopColor={c.newSkin}/><stop offset="1" stopColor={c.dermis}/></linearGradient></defs>
+ <g transform={`translate(496 332) scale(${zoom/8}) translate(-496 -332)`}>
  <rect width="992" height="664" fill="url(#macro-tissue)"/>
  <path d="M0 105 Q250 80 496 105 T992 105 V165 H0Z" fill={c.epidermis}/><path d="M0 91 Q250 66 496 91 T992 91" fill="none" stroke={c.corneum} strokeWidth="24"/>
  <path d="M0 591 Q220 553 480 586 T992 580 V664 H0Z" fill={c.fat}/>
  <path d="M10 505 H330 M660 505 H985" stroke={c.capillary} strokeWidth={phaseIndex===1?42:30} fill="none"/>
- <text x="28" y="48" fontSize="36" fontWeight="800" fill={c.ink}>MICROSCOPIO · ×{zoom}</text>
+ </g>
+ <text x="28" y="48" fontSize={theme.master.cellLabel} fontWeight="800" fill={c.ink}>MICROSCOPIO · ×{zoom}</text>
  {phaseIndex===0&&<>
  <path d="M405 90 L430 300 Q496 355 562 300 L590 90" fill={c.wound}/>
  <Arrow d="M160 160 Q245 70 405 180" progress={t}/><Arrow d="M815 335 Q730 225 610 240" progress={t}/>
