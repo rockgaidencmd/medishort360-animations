@@ -43,7 +43,7 @@ export const MacroHealing:React.FC<MacroProps>=({phaseIndex,local,t,zoom})=>{
  </>}
  {phaseIndex===1&&<>
  <Arrow d="M165 445 Q160 270 375 230" progress={t}/><Arrow d="M840 480 Q850 350 680 300" progress={t}/>
- {[0,1,2,3,4].map(i=><g key={i} opacity={1-travel(1+i*.45,1.1)} transform={`translate(${400+i*38} ${220+(i%2)*80})`}><path d="M-10 -20 Q25 -25 20 5 T-15 20Z" fill={c.ink}/><path d="M-18 -22 l-10 -10 M20 12 l13 15" stroke={c.ink} strokeWidth="5"/></g>)}
+ {[0,1,2,3,4].map(i=><g key={i} opacity={1-travel(i<3?1.5+i*.5:4+(i-3)*.6,1.1)} transform={`translate(${400+i*38} ${220+(i%2)*80})`}><path d="M-10 -20 Q25 -25 20 5 T-15 20Z" fill={c.ink}/><path d="M-18 -22 l-10 -10 M20 12 l13 15" stroke={c.ink} strokeWidth="5"/></g>)}
  <Cell x={165+travel(0,3)*240} y={400-travel(0,3)*135} size={200} kind="neutrophil" t={t}/>
  <Cell x={815-clean*200} y={440-clean*120} size={240} kind="macrophage" t={t}/>
  <Tag x={95} y={570}>{'Neutrófilo'}</Tag><Tag x={635} y={570}>{'Macrófago'}</Tag>
@@ -67,3 +67,4 @@ export const MacroHealing:React.FC<MacroProps>=({phaseIndex,local,t,zoom})=>{
  </>}
  </g></svg>;
 };
+

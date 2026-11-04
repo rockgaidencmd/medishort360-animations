@@ -17,7 +17,7 @@ export const masterHealingAt=(t:number,p:MasterProps)=>{const progress=clamp((t-
 export const MasterHealing:React.FC<MasterProps>=p=>{const f=useCurrentFrame();return <MasterHealingView {...p} t={f/useVideoConfig().fps}/>;};
 // REVISAR: coreografía didáctica; las fases y días proceden del JSON pendiente de revisión clínica.
 export const MasterHealingView:React.FC<MasterProps&{t:number}>=p=>{
- const {t}=p;const h=masterHealingAt(t,p);const phase=phaseAt(h);const phaseIndex=data.phases.indexOf(phase);const phaseStart=p.healingAt+phaseIndex*(p.healedAt-p.healingAt)/4;const local=Math.max(0,t-phaseStart);const {fps}=useVideoConfig();const pop=spring({frame:Math.max(0,local*fps),fps,config:{damping:17}});const open=smooth(p.splitAt,p.healingAt,t);const closing=smooth(p.closeAt,p.closeAt+1,t);const flash=(1-smooth(0,.65,local))*Number(t>=p.healingAt);const blood=1-smooth(.02,.12,h);const shrink=1-smooth(0,.96,h);const status=h>=.999?'Sanada':h<.04?'Sangrando':h<.12?'Coagulando':h<.35?'Limpiando':'Reconstruyendo';
+ const {t}=p;const h=masterHealingAt(t,p);const phase=phaseAt(h);const phaseIndex=data.phases.indexOf(phase);const phaseStart=p.healingAt+phaseIndex*(p.healedAt-p.healingAt)/4;const local=Math.max(0,t-phaseStart);const {fps}=useVideoConfig();const pop=spring({frame:Math.max(0,local*fps),fps,config:{damping:17}});const open=smooth(p.splitAt,Math.min(p.healingAt,p.splitAt+1.5),t);const closing=smooth(p.closeAt,p.closeAt+1,t);const flash=(1-smooth(0,.65,local))*Number(t>=p.healingAt);const blood=1-smooth(.02,.12,h);const shrink=1-smooth(0,.96,h);const status=h>=.999?'Sanada':h<.04?'Sangrando':h<.12?'Coagulando':h<.35?'Limpiando':'Reconstruyendo';
  const dust=useMemo(()=>Array.from({length:18},(_,i)=>({x:sample(42,i)*1080,y:sample(72,i)*1720,r:2+sample(9,i)*5})),[]);
  const shot=shotAt(t,[{from:0,to:p.splitAt,zoom:1,focusX:435,focusY:301},{from:p.splitAt,to:p.healingAt,zoom:p.zoomTop,focusX:435,focusY:301,ease:'smooth',blurBackground:3}]);
  const phaseProgress=clamp((h-phase.healingDesde)/(phase.healingHasta-phase.healingDesde));const day=Math.floor(phase.dayFrom+(phase.dayTo-phase.dayFrom)*phaseProgress);const repair=smooth(.35,.95,h);const woundColor=h<.12?c.wound:h<.75?c.scab:c.newSkin;
@@ -60,6 +60,7 @@ export const MasterHealingView:React.FC<MasterProps&{t:number}>=p=>{
  {closing>0&&<AbsoluteFill style={{background:c.paper,opacity:closing,justifyContent:'center',alignItems:'center',gap:30}}><svg width="320" height="320" viewBox="0 0 320 320"><circle cx="160" cy="160" r={140+Math.sin(t*2)*3} fill={c.macrophage}/><path d="M75 160 L140 220 250 95" fill="none" stroke={c.shirt} strokeWidth="27" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="300" strokeDashoffset={(1-closing)*300}/></svg><div style={{fontSize:80}}>Piel recuperada</div><div style={{fontSize:48}}>MEDISHORT360</div></AbsoluteFill>}
  </AbsoluteFill>;
 };
+
 
 
 
