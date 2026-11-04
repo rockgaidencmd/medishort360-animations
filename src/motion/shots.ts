@@ -1,0 +1,3 @@
+import {interpolate, Easing} from 'remotion';
+export type Shot = {from:number;to:number;zoom:number;focusX:number;focusY:number;ease?:'smooth'|'linear';blurBackground?:number};
+export const shotAt=(t:number,shots:Shot[])=>{const next=shots.find(s=>t<s.to)??shots[shots.length-1];const i=shots.indexOf(next);const prev=shots[Math.max(0,i-1)];const p=interpolate(t,[next.from,next.to],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:next.ease==='linear'?Easing.linear:Easing.inOut(Easing.cubic)});return {zoom:prev.zoom+(next.zoom-prev.zoom)*p,focusX:prev.focusX+(next.focusX-prev.focusX)*p,focusY:prev.focusY+(next.focusY-prev.focusY)*p,blurBackground:(next.blurBackground??0)*p};};

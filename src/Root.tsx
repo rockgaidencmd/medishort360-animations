@@ -1,3 +1,4 @@
+import {MasterHealing, masterSchema, masterDefaults} from './compositions/MasterHealing';
 import {previewCompositions} from './compositions/previews';
 import {ICUInfusionBridge,NursingReview} from './compositions/ReviewSegments';
 import {Vasopresores3DReview} from './compositions/Vasopresores3DReview';
@@ -22,8 +23,10 @@ export const Root: React.FC = () => <>
   <Composition id="VasopresoresFull" component={VasopresoresFull} durationInFrames={1525} fps={30} width={1080} height={1920}/>
   <Composition id="VasopresoresShockSegment" component={ShockSegment} durationInFrames={192} fps={30} width={1080} height={1920}/>
   {projectCompositions()}
+  <Composition id="Preview-MasterHealing" component={MasterHealing} schema={masterSchema} defaultProps={masterDefaults} durationInFrames={1350} fps={30} width={1080} height={1920}/>
   {previewCompositions()}
 </>;
+
 
 
 

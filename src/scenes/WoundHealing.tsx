@@ -1,3 +1,4 @@
+import {MasterHealingView,masterDefaults} from '../compositions/MasterHealing';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {ArmSurface} from '../anatomy/ArmSurface';
@@ -19,7 +20,9 @@ export const HealingView:React.FC<HealingViewProps>=({healing=0,view='both',woun
  </AbsoluteFill>;
 };
 export const WoundHealing:React.FC<SceneProps>=({t,durationSec,props})=>{
+ if(props.view==='split') return <MasterHealingView {...masterDefaults} {...props} t={t} />;
  const from=typeof props.healingFrom==='number'?props.healingFrom:0;const to=typeof props.healingTo==='number'?props.healingTo:1;
  const view=props.view==='section'||props.view==='surface'?props.view:'both';
  return <HealingView t={t} healing={clamp(from+(to-from)*clamp(t/Math.max(durationSec-1/30,1/30)))} view={view} woundWidth={typeof props.woundWidth==='number'?props.woundWidth:270} woundDepth={props.woundDepth==='profunda'?'profunda':'superficial'} showCells={props.showCells!==false} showLabels={props.showLabels!==false}/>;
 };
+
