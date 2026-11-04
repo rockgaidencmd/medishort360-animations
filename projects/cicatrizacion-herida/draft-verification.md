@@ -13,7 +13,7 @@ Se corrigió únicamente el rango de color del MP4 mediante scripts/normalize-ci
 
 Después se ejecutó npm run qa -- cicatrizacion-herida --draft: APROBADO. Video H.264 yuv420p, audio AAC, resolución/fps correctos, duración dentro de un fotograma del MP3 original, sin cuadros negros ni congelación de más de un segundo. Medición exacta en draft-media-info.json; comprobaciones detalladas en qa-report.json.
 
-La medida del contenedor MP4 es 54.767 s; la pista de video 54.766667 s. El MP3 mide 54.752625 s: diferencia del contenedor 0.014375 s, debida a cuantización de fotogramas. No se afirma igualdad subfotograma.
+La medida del contenedor MP4 y de su pista de video es 54.766667 s. El MP3 mide 54.752625 s: diferencia de 0.014042 s, debida a cuantización de fotogramas. No se afirma igualdad subfotograma.
 
 El comprobador de sincronía verifica 111 palabras, 26 eventos, conservación de todos los tiempos tras las correcciones ortográficas, escenas contiguas y healing monotónico por fases reales. Los eventos se adelantan 0.1 s respecto a Whisper; el mayor adelanto efectivo al cuantizar escenas/fotogramas es 0.106667 s, menor que 0.15 s. Whisper no equivale a una revisión fonética humana.
 

@@ -1,0 +1,189 @@
+{
+  "source": "Whisper word start; first frame at or after the word, never an estimated timeline.",
+  "captures": [
+    {
+      "key": "blood",
+      "phrase": "sangra",
+      "wordIndices": [
+        16
+      ],
+      "wordStart": 6.9,
+      "wordEnd": 7.44,
+      "visualStart": 6.8,
+      "leadSec": 0.1,
+      "captureFrame": 207,
+      "file": "output/previews/audio-sangra-6.900s.png",
+      "videoFrameTime": 6.9,
+      "frameQuantizationSec": 0,
+      "sha256": "024f7356743072f186c5a4c9ea974c7fe2049a5b535963769447832049417e81",
+      "observed": "Gotas e hilo de sangre en la herida; todavía no se adelanta la tarjeta de Hemostasia.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "platelets",
+      "phrase": "plaquetas",
+      "wordIndices": [
+        27
+      ],
+      "wordStart": 13.5,
+      "wordEnd": 14.04,
+      "visualStart": 13.4,
+      "leadSec": 0.1,
+      "captureFrame": 405,
+      "file": "output/previews/audio-plaquetas-13.500s.png",
+      "videoFrameTime": 13.5,
+      "frameQuantizationSec": 0,
+      "sha256": "4d2e997d0e27129c4d18969c8995c5b7403fa6674ce3af09754cc0417a654e28",
+      "observed": "Plaquetas y etiqueta visibles; comienza su llegada al corte.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "fibrin",
+      "phrase": "fibrina",
+      "wordIndices": [
+        33
+      ],
+      "wordStart": 15.72,
+      "wordEnd": 16.18,
+      "visualStart": 15.62,
+      "leadSec": 0.1,
+      "captureFrame": 472,
+      "file": "output/previews/audio-fibrina-15.720s.png",
+      "videoFrameTime": 15.733333333333333,
+      "frameQuantizationSec": 0.013333333333331865,
+      "sha256": "d9448ce82bc527607c50f3dff43d76566758764a53294502571abdc0bcf4321f",
+      "observed": "Primeros trazos de la malla y etiqueta Fibrina visibles; los glóbulos rojos aún esperan su palabra.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "neutrophils",
+      "phrase": "neutrófilos",
+      "wordIndices": [
+        47
+      ],
+      "wordStart": 22.2,
+      "wordEnd": 22.78,
+      "visualStart": 22.1,
+      "leadSec": 0.1,
+      "captureFrame": 666,
+      "file": "output/previews/audio-neutrofilos-22.200s.png",
+      "videoFrameTime": 22.2,
+      "frameQuantizationSec": 0,
+      "sha256": "6fb75f47baebdf62b48c9df34557f593ddf1ccf672c13b17eb66bd4dd6943e88",
+      "observed": "Neutrófilo y etiqueta visibles, comienza su migración; macrófago aún oculto.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "macrophage",
+      "phrase": "macrófago",
+      "wordIndices": [
+        56
+      ],
+      "wordStart": 26.56,
+      "wordEnd": 27.08,
+      "visualStart": 26.46,
+      "leadSec": 0.1,
+      "captureFrame": 797,
+      "file": "output/previews/audio-macrofago-26.560s.png",
+      "videoFrameTime": 26.566666666666666,
+      "frameQuantizationSec": 0.006666666666667709,
+      "sha256": "2819d22f3ea4f939cb894c3a636125e63a00377892d21742e412922374b23402",
+      "observed": "Macrófago y etiqueta visibles junto a los residuos que continúan limpiándose.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "fibroblasts",
+      "phrase": "fibroblastos",
+      "wordIndices": [
+        67
+      ],
+      "wordStart": 32.32,
+      "wordEnd": 33.08,
+      "visualStart": 32.22,
+      "leadSec": 0.1,
+      "captureFrame": 970,
+      "file": "output/previews/audio-fibroblastos-32.320s.png",
+      "videoFrameTime": 32.333333333333336,
+      "frameQuantizationSec": 0.013333333333335418,
+      "sha256": "d368a1289670c9945407de3bd6d628f84ca440a572f571c2beaffb9d4ec0469d",
+      "observed": "Fibroblasto y etiqueta visibles; todavía no se adelantan queratinocitos ni capilar.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "capillary",
+      "phrase": "capilar nuevo",
+      "wordIndices": [
+        73,
+        74
+      ],
+      "wordStart": 35.5,
+      "wordEnd": 36.18,
+      "visualStart": 35.4,
+      "leadSec": 0.1,
+      "captureFrame": 1065,
+      "file": "output/previews/audio-capilar-35.500s.png",
+      "videoFrameTime": 35.5,
+      "frameQuantizationSec": 0,
+      "sha256": "b3a1aaebda0fe2a3aad82c409cdd0872b21022142060cbb3d25f1e4ca28bb9eb",
+      "observed": "Etiqueta Capilar nuevo y primer tramo del brote visibles; el vaso termina de crecer después.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "keratinocytes",
+      "phrase": "queratinocitos",
+      "wordIndices": [
+        76
+      ],
+      "wordStart": 36.86,
+      "wordEnd": 37.64,
+      "visualStart": 36.76,
+      "leadSec": 0.1,
+      "captureFrame": 1106,
+      "file": "output/previews/audio-queratinocitos-36.860s.png",
+      "videoFrameTime": 36.86666666666667,
+      "frameQuantizationSec": 0.006666666666667709,
+      "sha256": "fda6024d89cfddf282edc579010c01d2aafd109795fabfe8eac304fe96924ff5",
+      "observed": "Queratinocitos y etiqueta visibles; comienza el avance hacia los bordes.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "scabDrop",
+      "phrase": "costra se desprende",
+      "wordIndices": [
+        95,
+        96,
+        97
+      ],
+      "wordStart": 45.52,
+      "wordEnd": 46.68,
+      "visualStart": 45.42,
+      "leadSec": 0.1,
+      "captureFrame": 1366,
+      "file": "output/previews/audio-costra-se-desprende-45.520s.png",
+      "videoFrameTime": 45.53333333333333,
+      "frameQuantizationSec": 0.013333333333328312,
+      "sha256": "3e9c00b98576b616098cc47faf30e09f5254abc04034fe98b67b970a6270c533",
+      "observed": "La costra inicia su desprendimiento en el antebrazo y la ventana inferior. La frase del audio es costra se desprende.",
+      "matchesVisualOnset": true
+    },
+    {
+      "key": "recovered",
+      "phrase": "Piel recuperada",
+      "wordIndices": [
+        105,
+        106
+      ],
+      "wordStart": 50.4,
+      "wordEnd": 51.38,
+      "visualStart": 50.3,
+      "leadSec": 0.1,
+      "captureFrame": 1512,
+      "file": "output/previews/audio-piel-recuperada-50.400s.png",
+      "videoFrameTime": 50.4,
+      "frameQuantizationSec": 0,
+      "sha256": "b560a3e10ad5d81edd8abf2eefc4270ce9766b8d86e2d896ca06929e55742c71",
+      "observed": "Check grande, brillo y Piel recuperada visibles junto al subtítulo Piel.",
+      "matchesVisualOnset": true
+    }
+  ]
+}
