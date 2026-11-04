@@ -194,11 +194,11 @@
       "id": 4,
       "start": 11.98,
       "end": 12.7,
-      "text": "Hemostacia.",
+      "text": "Hemostasia.",
       "confidence": 0.854,
       "words": [
         {
-          "word": "Hemostacia.",
+          "word": "Hemostasia.",
           "start": 11.98,
           "end": 12.7,
           "confidence": 0.635
@@ -584,7 +584,7 @@
       "id": 14,
       "start": 36.72,
       "end": 40.26,
-      "text": "Los keratinocitos avanzan bajo la costra y cierran la herida.",
+      "text": "Los queratinocitos avanzan bajo la costra y cierran la herida.",
       "confidence": 0.862,
       "words": [
         {
@@ -594,7 +594,7 @@
           "confidence": 0.996
         },
         {
-          "word": "keratinocitos",
+          "word": "queratinocitos",
           "start": 36.86,
           "end": 37.64,
           "confidence": 0.824
@@ -668,7 +668,7 @@
       "id": 16,
       "start": 42.24,
       "end": 46.68,
-      "text": "El colágeno se alinia, disminuyen los capilares y la costra se desprende.",
+      "text": "El colágeno se alinea, disminuyen los capilares y la costra se desprende.",
       "confidence": 0.862,
       "words": [
         {
@@ -690,7 +690,7 @@
           "confidence": 0.992
         },
         {
-          "word": "alinia,",
+          "word": "alinea,",
           "start": 43.06,
           "end": 43.52,
           "confidence": 0.818
