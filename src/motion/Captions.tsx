@@ -33,12 +33,12 @@ export const buildChunks = (transcript: Transcript): Chunk[] => {
   return chunks;
 };
 
-export const Captions: React.FC<{transcript: Transcript}> = ({transcript}) => {
+export const Captions: React.FC<{transcript: Transcript; wordByWord?: boolean; bottom?: number}> = ({transcript,wordByWord=false,bottom}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
-  const chunks = useMemo(() => buildChunks(transcript), [transcript]);
-  const chunk = chunks.find((c) => t >= c.start - 0.05 && t < c.end + 0.2);
+  const chunks = useMemo(() => wordByWord?transcript.segments.flatMap(seg=>(seg.words??[]).map(w=>({start:w.start,end:w.end,words:[{text:w.word,start:w.start,end:w.end}],phrase:false}))):buildChunks(transcript), [transcript,wordByWord]);
+  const chunk = chunks.find((c) => wordByWord?(t>=c.start&&t<c.end):(t >= c.start - 0.05 && t < c.end + 0.2));
   if (!chunk) return null;
 
   const {colors, layout, size} = theme;
@@ -50,7 +50,7 @@ export const Captions: React.FC<{transcript: Transcript}> = ({transcript}) => {
         position: 'absolute',
         left: layout.captionLeft,
         right: layout.captionRight,
-        bottom: layout.captionBottom,
+        bottom: bottom??layout.captionBottom,
         minHeight: layout.captionHeight,
         padding: '18px 24px',
         boxSizing: 'border-box',

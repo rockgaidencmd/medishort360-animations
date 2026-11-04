@@ -1,3 +1,76 @@
 {
-  "facts": []
+  "facts": [
+    {
+      "id": "hemostasia-sangrado",
+      "text": "El sangrado cede y se forma un coágulo.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#hemostasia.superficie"
+    },
+    {
+      "id": "hemostasia-tapon",
+      "text": "Las plaquetas forman un tapón y la fibrina lo refuerza.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#hemostasia.corte"
+    },
+    {
+      "id": "inflamacion-limpieza",
+      "text": "Los neutrófilos limpian bacterias y residuos y luego llegan los macrófagos.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#inflamacion.corte"
+    },
+    {
+      "id": "costra",
+      "text": "La costra se forma y oscurece.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#inflamacion.superficie"
+    },
+    {
+      "id": "colageno",
+      "text": "Los fibroblastos fabrican colágeno.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#proliferacion.corte"
+    },
+    {
+      "id": "capilar",
+      "text": "Brotan capilares nuevos.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#proliferacion.corte"
+    },
+    {
+      "id": "queratinocitos",
+      "text": "Los queratinocitos migran bajo la costra para cerrar la herida.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#proliferacion.corte"
+    },
+    {
+      "id": "remodelacion",
+      "text": "El colágeno se reorganiza y refuerza el tejido; disminuyen los capilares nuevos.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#remodelacion.corte"
+    },
+    {
+      "id": "piel-recuperada",
+      "text": "La costra cae y la piel se va normalizando.",
+      "source": null,
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "origin": "src/anatomy/data/healing-phases.json#remodelacion.superficie"
+    }
+  ]
 }

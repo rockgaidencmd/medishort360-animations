@@ -21,7 +21,7 @@ const SceneLayer: React.FC<{scene: Scene; ext: number; lengthFrames: number}> = 
         <Comp t={(frame - ext) / fps} durationSec={lengthFrames / fps} props={scene.props} />
       </Camera>
       {scene.callout ? <Callout text={scene.callout} frame={frame} /> : null}
-      {scene.label ? <LabelBar text={scene.label} frame={frame} /> : null}
+      {scene.label && !scene.props.internalLabel ? <LabelBar text={scene.label} frame={frame} /> : null}
     </AbsoluteFill>
   );
 };
@@ -33,6 +33,7 @@ const SceneLayer: React.FC<{scene: Scene; ext: number; lengthFrames: number}> = 
 export const ProjectVideo: React.FC<ProjectVideoProps> = ({project}) => {
   const {fps, durationInFrames} = useVideoConfig();
   const {manifest, scenes, transcript} = project;
+  const controls=scenes[0]?.props??{};
 
   return (
     <AbsoluteFill style={{background: theme.colors.bg, fontFamily: theme.font.family}}>
@@ -48,8 +49,8 @@ export const ProjectVideo: React.FC<ProjectVideoProps> = ({project}) => {
           </Sequence>
         );
       })}
-      <Watermark text={manifest.brand} />
-      <Captions transcript={transcript} />
+      {!controls.internalBrand&&<Watermark text={manifest.brand} />}
+      <Captions transcript={transcript} wordByWord={controls.wordCaptions===true} bottom={typeof controls.captionBottom==='number'?controls.captionBottom:undefined}/>
       <Audio src={staticFile(manifest.audio)} />
     </AbsoluteFill>
   );
