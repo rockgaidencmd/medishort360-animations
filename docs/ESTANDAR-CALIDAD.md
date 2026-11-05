@@ -2,6 +2,17 @@
 
 Este es el estándar para nuevas producciones. La referencia visual es `Preview-MasterHealing`; la referencia de montaje con audio es `projects/cicatrizacion-herida/`. Una pieza existente no queda automáticamente aprobada para otro contenido clínico.
 
+## REGLA DE GANCHO — todos los videos
+
+Esta regla se aplica a todos los tipos de video y a sus recetas específicas.
+
+- **0–3 s: impacto visual.** Mostrar un fenómeno o una complicación visible que enfermería reconozca, con una pregunta corta en pantalla. El gancho debe entenderse incluso sin sonido.
+- **3–8 s: saludo y contexto.** Decir «¡Hola, hijos de Florence Nightingale!» después del gancho, sin detener la acción visual.
+- Nunca abrir con «Hoy hablaremos de...».
+- Después del saludo y contexto, desarrollar la explicación animada con zoom anatómico; al final, presentar los cuidados de enfermería y una conclusión que responda la pregunta inicial.
+- Cada escena debe explicar algo nuevo.
+- Todo texto de impacto, como «PRECIPITA», debe permanecer en pantalla el tiempo suficiente para leerse y estar respaldado por una fuente identificable. Registrar la referencia en el índice de afirmaciones del guion y, en Fase 2, en `facts.json`, vinculada a la escena mediante `factIds`.
+
 ## Formato y duración
 
 - Vertical: 1080 × 1920, 30 fps. Objetivo de guion sin audio: 40 a 50 segundos.

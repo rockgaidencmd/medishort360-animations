@@ -12,6 +12,10 @@ Memoria operativa del repositorio. Consultar antes de cada video y actualizar al
 6. **El navegador de Codex falla en este entorno.** Verificar con `npx remotion still`; no abrir navegador ni Studio como paso de producción.
 7. **La herida de la caída se representa como raspón o abrasión superficial.** No dibujar una cortada profunda como sustituto. Confirmar con la fuente el caso concreto antes de añadir otro tipo de lesión.
 
+## Observación sobre el gancho
+
+El video de vasopresores abrió con un fenómeno visible y funcionó mejor que el de anfotericina, que abrió con un saludo y 'Hoy hablaremos de...'. Es una hipótesis, no una conclusión.
+
 ## Evidencia del proyecto de cicatrización
 
 - `projects/cicatrizacion-herida/audio-metadata.json`: MP3 original de **54.752625 s**. Whisper produjo **54.753 s**, redondeado a milisegundos, y ciento once tokens con tiempo; el guion escrito contaba la marca como una sola palabra. No confundir estos conteos ni sustituirlos por la calibración anterior del usuario.

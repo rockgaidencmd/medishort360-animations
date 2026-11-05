@@ -5,7 +5,7 @@ Leer junto con [ESTANDAR-CALIDAD.md](ESTANDAR-CALIDAD.md), [BIBLIOTECA.md](BIBLI
 ## Guion común
 
 - Objetivo: **85–100 palabras**, incluidos saludo y cierre. La voz actual ronda dos palabras por segundo. La calibración aportada por el usuario fue ciento ocho palabras en cincuenta y uno coma seis segundos; es una referencia de planificación, no un tiempo de eventos.
-- Abrir exactamente con «¡Hola, hijos de Florence Nightingale!» y cerrar exactamente con «Síguenos en MediShort360.».
+- Situar el saludo «¡Hola, hijos de Florence Nightingale!» después del gancho (segundos 3–8), sin detener la acción; cerrar exactamente con «Síguenos en MediShort360.».
 - Español claro, cálido y directo para estudiantes de enfermería. Frases cortas, una idea y un evento visible por frase. Contar palabras por segmento y ajustar la distribución, no solo el total.
 - Números escritos con palabras. La grafía de la marca en el cierre es la excepción solicitada. Conservar los términos médicos necesarios y avisar cuáles requieren revisar pronunciación.
 - Sin emojis, SSML, corchetes ni acotaciones dentro del texto a leer. Los tiempos, instrucciones visuales y marcas `[REVISAR]` van fuera del bloque de lectura.
@@ -15,6 +15,17 @@ Leer junto con [ESTANDAR-CALIDAD.md](ESTANDAR-CALIDAD.md), [BIBLIOTECA.md](BIBLI
 - Si el archivo no permite sostener tres puntos, usar menos puntos documentados e informar la ausencia; no rellenar.
 - Conservar un índice de afirmaciones: frase, localización exacta en la fuente, referencia y revisión pendiente. En Fase 2 se transforma en `facts.json` con `source` identificable y `reviewedBy: null`.
 - No confundir estimaciones de Fase 1 con alineación. En Fase 2, todas las palabras y eventos salen del MP3.
+
+## REGLA DE GANCHO — todos los videos
+
+Esta regla se aplica a todos los tipos de video y a sus recetas específicas.
+
+- **0–3 s: impacto visual.** Mostrar un fenómeno o una complicación visible que enfermería reconozca, con una pregunta corta en pantalla. El gancho debe entenderse incluso sin sonido.
+- **3–8 s: saludo y contexto.** Decir «¡Hola, hijos de Florence Nightingale!» después del gancho, sin detener la acción visual.
+- Nunca abrir con «Hoy hablaremos de...».
+- Después del saludo y contexto, desarrollar la explicación animada con zoom anatómico; al final, presentar los cuidados de enfermería y una conclusión que responda la pregunta inicial.
+- Cada escena debe explicar algo nuevo.
+- Todo texto de impacto, como «PRECIPITA», debe permanecer en pantalla el tiempo suficiente para leerse y estar respaldado por una fuente identificable. Registrar la referencia en el índice de afirmaciones del guion y, en Fase 2, en `facts.json`, vinculada a la escena mediante `factIds`.
 
 ## Medicamento
 
