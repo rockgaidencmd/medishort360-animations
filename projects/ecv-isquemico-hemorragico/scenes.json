@@ -1,0 +1,487 @@
+{
+  "scenes": [
+    {
+      "id": "gancho",
+      "from": 0,
+      "to": 6.58,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 0
+      },
+      "action": "Dos vasos: oclusión y rotura en cerebro grande",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-gancho"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "arteria",
+      "from": 6.58,
+      "to": 8.26,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 6.58
+      },
+      "action": "Lupa cerebral conecta con tejido y arteria",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-arteria"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "trombo",
+      "from": 8.26,
+      "to": 10.1,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 8.26
+      },
+      "action": "Trombo crece adherido a pared",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-trombo"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "embolo",
+      "from": 10.1,
+      "to": 13.06,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 10.1
+      },
+      "action": "Émbolo viaja con estela: ejemplo alternativo",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-embolo"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "bloqueo",
+      "from": 13.06,
+      "to": 14.24,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 13.06
+      },
+      "action": "Coágulo bloquea luz arterial",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-bloqueo"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "eritrocitos",
+      "from": 14.24,
+      "to": 18.18,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 14.24
+      },
+      "action": "Eritrocitos frenan ante bloqueo",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-eritrocitos"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "flujo",
+      "from": 18.18,
+      "to": 22.42,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 18.18
+      },
+      "action": "Flechas de flujo se atenúan",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-flujo"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "neuronas",
+      "from": 22.42,
+      "to": 25.88,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 22.42
+      },
+      "action": "Actividad y brillo neuronal disminuyen",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-neuronas"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "dano",
+      "from": 25.88,
+      "to": 28.38,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 25.88
+      },
+      "action": "Núcleo gris aumenta",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-dano"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "riesgo",
+      "from": 28.38,
+      "to": 32.34,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 28.38
+      },
+      "action": "Halo ámbar pulsa con reloj pedagógico",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-riesgo"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "rotura",
+      "from": 32.34,
+      "to": 34.76,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 32.34
+      },
+      "action": "Pared se abre al decir rompe",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-rotura"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "sangre",
+      "from": 34.76,
+      "to": 38.5,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 34.76
+      },
+      "action": "Eritrocitos salen al tejido en pulsos",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-sangre"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "hematoma",
+      "from": 38.5,
+      "to": 44.36,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 38.5
+      },
+      "action": "Hematoma aumenta y deforma neuronas vecinas",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-hematoma"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "subaracnoideo",
+      "from": 44.36,
+      "to": 48.02,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 44.36
+      },
+      "action": "Sangre ocupa espacio subaracnoideo en corte meníngeo",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-subaracnoideo"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "comparacion",
+      "from": 48.02,
+      "to": 57.82,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 48.02
+      },
+      "action": "Divisor revela oclusión y rotura animadas",
+      "structures": [
+        "cerebro",
+        "arteria",
+        "tejido cerebral"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-comparacion"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "signos",
+      "from": 57.82,
+      "to": 64.42,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 57.82
+      },
+      "action": "Cara, brazo y habla cambian al nombrarlos",
+      "structures": [
+        "paciente",
+        "pupilas",
+        "neuronas"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-signos"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "valoracion",
+      "from": 64.42,
+      "to": 72.04,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 64.42
+      },
+      "action": "Pupila se contrae con luz, respiración y equipo animados",
+      "structures": [
+        "paciente",
+        "pupilas",
+        "neuronas"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-valoracion"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "comunicacion",
+      "from": 72.04,
+      "to": 76.34,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 72.04
+      },
+      "action": "Aviso se activa al decir comunica",
+      "structures": [
+        "paciente",
+        "pupilas",
+        "neuronas"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-comunicacion"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "reloj",
+      "from": 76.34,
+      "to": 79.8,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 76.34
+      },
+      "action": "Reloj grande con tejido que pierde actividad",
+      "structures": [
+        "paciente",
+        "pupilas",
+        "neuronas"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-reloj"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "cierre",
+      "from": 79.8,
+      "to": 82.16,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 79.8
+      },
+      "action": "Reconoce, comunica y vigila se iluminan",
+      "structures": [
+        "paciente",
+        "pupilas",
+        "neuronas"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-cierre"
+      ],
+      "assetIds": []
+    },
+    {
+      "id": "marca",
+      "from": 82.16,
+      "to": 85.473,
+      "kind": "anatomy",
+      "component": "ECVRedesign",
+      "props": {
+        "absoluteStart": 82.16
+      },
+      "action": "Cierre conserva reloj y tejido activo",
+      "structures": [
+        "paciente",
+        "pupilas",
+        "neuronas"
+      ],
+      "camera": "static",
+      "cameraIntensity": 0,
+      "transitionIn": 0,
+      "factIds": [
+        "audio-marca"
+      ],
+      "assetIds": []
+    }
+  ]
+}

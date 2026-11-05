@@ -1,0 +1,151 @@
+{
+  "facts": [
+    {
+      "id": "audio-gancho",
+      "text": "¿Qué pasa si un vaso del cerebro se tapa o se rompe? ¡Hola, hijos de Florence Nightingale!",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-arteria",
+      "text": "Observa la arteria. Un",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-trombo",
+      "text": "trombo se forma allí. Un",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-embolo",
+      "text": "émbolo llega desde otro lugar. Ambos pueden",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-bloqueo",
+      "text": "bloquearla. Y",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-eritrocitos",
+      "text": "después, los glóbulos rojos se detienen ante la obstrucción.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-flujo",
+      "text": "Disminuye el flujo y llega menos oxígeno al tejido cerebral. Las",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-neuronas",
+      "text": "neuronas pierden energía. En este esquema, el",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-dano",
+      "text": "gris representa tejido dañado. El",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-riesgo",
+      "text": "ámbar, tejido en riesgo, potencialmente recuperable.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-rotura",
+      "text": "¿Qué cambia cuando el vaso se rompe? La",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-sangre",
+      "text": "sangre sale por la abertura y se acumula fuera del vaso.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-hematoma",
+      "text": "Dentro del tejido cerebral puede formar un hematoma y comprimir estructuras. Pero también puede sangrar",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-subaracnoideo",
+      "text": "alrededor del cerebro, en el espacio subaracnoideo.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-comparacion",
+      "text": "Comparemos. El isquémico obstruye. El hemorrágico sangra. Pueden causar signos parecidos. La neuroimagen permite diferenciarlos.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-signos",
+      "text": "¿Qué debe reconocer enfermería? Cara asimétrica, un brazo que cae o dificultad para hablar.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-valoracion",
+      "text": "En UCI, valora conciencia, pupilas y fuerza. Vigila respiración, oxigenación y presión arterial.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-comunicacion",
+      "text": "Comunica inmediatamente cualquier deterioro al equipo responsable.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-reloj",
+      "text": "El reloj avanza. El tiempo es cerebro.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-cierre",
+      "text": "Reconoce, comunica y vigila.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio-marca",
+      "text": "Síguenos en MediShort 360.",
+      "source": "Audio original suministrado por el usuario; ver transcript.json. Revisión clínica independiente pendiente.",
+      "reviewedBy": null,
+      "reviewedAt": null
+    }
+  ]
+}

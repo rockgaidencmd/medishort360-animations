@@ -1,0 +1,4 @@
+# Estándar de calidad
+Creado en esta tarea a partir de las instrucciones del usuario; no es un documento previo recuperado.
+Vertical 1080×1920, 30 fps, código determinista, MP4 H.264 cuando se solicite producción. Conflicto desde primer segundo. Cada frase tiene una acción visible; prohibidas diapositivas con solo texto cambiante. Cambio visual principal cada 8–10 s. Anatomía identificable, mecanismo interno, escena UCI coherente. Etiquetas ≥36 px, espacio de subtítulos y sin solapamientos. Paleta semántica consistente, líneas guía y lupa; ampliación esquemática declarada. Audio original conservado; tiempos por palabra comprobados contra MP3. Sin audio no existe sincronización definitiva. Revisar anatomía, legibilidad, sincronía y archivo reproducible antes de declarar terminado. Datos específicos sin fuente: [REVISAR]. No generar voz ni usar generadores externos de video.
+Duración habitual 40–50 s; ECV: excepción 80–100 s y 170–190 palabras.

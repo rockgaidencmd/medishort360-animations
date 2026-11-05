@@ -69,3 +69,10 @@ scripts/         transcribe.py, validate.ts, render.ts, qa.ts, new-project.ts, s
 - Responder en español. Plan de escenas antes de escribir código. Iterar por escena, sin reescribir todo.
 - Tras cada cambio: `npx tsc --noEmit` y `npx tsx scripts/validate.ts <id>`.
 - El QA automático no sustituye mi revisión de anatomía y sincronía.
+
+## MODO PRODUCCIÓN
+### Fase 1 — sin audio
+Si el usuario pide crear el guion sin archivo: redactar guion y eventos estimados, revisar fuentes y marcar datos pendientes, inventariar biblioteca y crear prototipos de piezas faltantes con capturas. Guardar en docs/guiones/<id>.md y rama video/<id>. No inventar audio ni transcripción. La petición explícita de piezas autoriza sus prototipos en esta fase. No renderizar video completo ni hacer merge. Tras recibir MP3, verificar sincronía y continuar el flujo de revisión previo.
+
+### Fase 2 — audio recibido
+Aplicar las indicaciones explícitas del usuario para esta fase: conservar MP3 original, transcribir con tiempos por palabra reales y revisar errores de reconocimiento. El audio define la duración y los disparadores de acción. No repartir palabras uniformemente ni inventar tiempos. Implementar el plan autorizado con componentes parametrizables, colores desde theme.ts y animación determinista. Ejecutar typecheck y validate; distinguir sus resultados de una revisión médica. Renderizar borrador, comprobar decodificación, revisar fotogramas y generar hoja de contacto con sus marcas reales. Informar escala esquemática, tamaños en resolución de diseño y tamaños tras reducción. Commit y publicación de rama cuando estén solicitados; nunca merge sin instrucción expresa.

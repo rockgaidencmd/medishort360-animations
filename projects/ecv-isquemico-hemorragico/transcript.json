@@ -1,0 +1,1337 @@
+{
+  "source": "whisper",
+  "language": "es",
+  "model": "small",
+  "durationSec": 85.473,
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.0,
+      "end": 3.72,
+      "text": "¿Qué pasa si un vaso del cerebro se tapa o se rompe?",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "¿Qué",
+          "start": 0.0,
+          "end": 0.2,
+          "confidence": 0.935
+        },
+        {
+          "word": "pasa",
+          "start": 0.2,
+          "end": 0.46,
+          "confidence": 0.99
+        },
+        {
+          "word": "si",
+          "start": 0.46,
+          "end": 0.68,
+          "confidence": 0.997
+        },
+        {
+          "word": "un",
+          "start": 0.68,
+          "end": 0.82,
+          "confidence": 0.996
+        },
+        {
+          "word": "vaso",
+          "start": 0.82,
+          "end": 1.16,
+          "confidence": 0.992
+        },
+        {
+          "word": "del",
+          "start": 1.16,
+          "end": 1.3,
+          "confidence": 0.991
+        },
+        {
+          "word": "cerebro",
+          "start": 1.3,
+          "end": 1.78,
+          "confidence": 0.996
+        },
+        {
+          "word": "se",
+          "start": 1.78,
+          "end": 2.02,
+          "confidence": 0.998
+        },
+        {
+          "word": "tapa",
+          "start": 2.02,
+          "end": 2.36,
+          "confidence": 0.861
+        },
+        {
+          "word": "o",
+          "start": 2.36,
+          "end": 3.18,
+          "confidence": 0.576
+        },
+        {
+          "word": "se",
+          "start": 3.18,
+          "end": 3.36,
+          "confidence": 0.983
+        },
+        {
+          "word": "rompe?",
+          "start": 3.36,
+          "end": 3.72,
+          "confidence": 0.992
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "start": 4.32,
+      "end": 6.1,
+      "text": "¡Hola, hijos de Florence Nightingale!",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "¡Hola,",
+          "start": 4.32,
+          "end": 4.6,
+          "confidence": 0.879
+        },
+        {
+          "word": "hijos",
+          "start": 4.78,
+          "end": 4.94,
+          "confidence": 0.97
+        },
+        {
+          "word": "de",
+          "start": 4.94,
+          "end": 5.16,
+          "confidence": 0.995
+        },
+        {
+          "word": "Florence",
+          "start": 5.16,
+          "end": 5.38,
+          "confidence": 0.929
+        },
+        {
+          "word": "Nightingale!",
+          "start": 5.38,
+          "end": 6.1,
+          "confidence": 0.991
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 6.58,
+      "end": 7.68,
+      "text": "Observa la arteria.",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "Observa",
+          "start": 6.58,
+          "end": 7.08,
+          "confidence": 0.837
+        },
+        {
+          "word": "la",
+          "start": 7.08,
+          "end": 7.2,
+          "confidence": 0.987
+        },
+        {
+          "word": "arteria.",
+          "start": 7.2,
+          "end": 7.68,
+          "confidence": 0.991
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 8.1,
+      "end": 9.42,
+      "text": "Un trombo se forma allí.",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "Un",
+          "start": 8.1,
+          "end": 8.26,
+          "confidence": 0.978
+        },
+        {
+          "word": "trombo",
+          "start": 8.26,
+          "end": 8.64,
+          "confidence": 0.981
+        },
+        {
+          "word": "se",
+          "start": 8.64,
+          "end": 8.82,
+          "confidence": 0.997
+        },
+        {
+          "word": "forma",
+          "start": 8.82,
+          "end": 9.1,
+          "confidence": 0.997
+        },
+        {
+          "word": "allí.",
+          "start": 9.1,
+          "end": 9.42,
+          "confidence": 0.997
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 9.92,
+      "end": 11.68,
+      "text": "Un émbolo llega desde otro lugar.",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "Un",
+          "start": 9.92,
+          "end": 10.1,
+          "confidence": 0.989
+        },
+        {
+          "word": "émbolo",
+          "start": 10.1,
+          "end": 10.5,
+          "confidence": 0.62
+        },
+        {
+          "word": "llega",
+          "start": 10.5,
+          "end": 10.74,
+          "confidence": 0.997
+        },
+        {
+          "word": "desde",
+          "start": 10.74,
+          "end": 11.02,
+          "confidence": 0.989
+        },
+        {
+          "word": "otro",
+          "start": 11.02,
+          "end": 11.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "lugar.",
+          "start": 11.34,
+          "end": 11.68,
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 12.24,
+      "end": 13.58,
+      "text": "Ambos pueden bloquearla.",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "Ambos",
+          "start": 12.24,
+          "end": 12.64,
+          "confidence": 0.949
+        },
+        {
+          "word": "pueden",
+          "start": 12.64,
+          "end": 13.06,
+          "confidence": 0.977
+        },
+        {
+          "word": "bloquearla.",
+          "start": 13.06,
+          "end": 13.58,
+          "confidence": 0.995
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 14.16,
+      "end": 17.7,
+      "text": "Y después, los glóbulos rojos se detienen ante la obstrucción.",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "Y",
+          "start": 14.16,
+          "end": 14.24,
+          "confidence": 0.864
+        },
+        {
+          "word": "después,",
+          "start": 14.24,
+          "end": 14.54,
+          "confidence": 0.94
+        },
+        {
+          "word": "los",
+          "start": 15.14,
+          "end": 15.34,
+          "confidence": 0.987
+        },
+        {
+          "word": "glóbulos",
+          "start": 15.34,
+          "end": 15.8,
+          "confidence": 0.979
+        },
+        {
+          "word": "rojos",
+          "start": 15.8,
+          "end": 16.12,
+          "confidence": 0.983
+        },
+        {
+          "word": "se",
+          "start": 16.12,
+          "end": 16.36,
+          "confidence": 0.997
+        },
+        {
+          "word": "detienen",
+          "start": 16.36,
+          "end": 16.76,
+          "confidence": 0.994
+        },
+        {
+          "word": "ante",
+          "start": 16.76,
+          "end": 17.02,
+          "confidence": 0.996
+        },
+        {
+          "word": "la",
+          "start": 17.02,
+          "end": 17.16,
+          "confidence": 0.998
+        },
+        {
+          "word": "obstrucción.",
+          "start": 17.16,
+          "end": 17.7,
+          "confidence": 0.991
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 18.18,
+      "end": 21.64,
+      "text": "Disminuye el flujo y llega menos oxígeno al tejido cerebral.",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "Disminuye",
+          "start": 18.18,
+          "end": 18.76,
+          "confidence": 0.905
+        },
+        {
+          "word": "el",
+          "start": 18.76,
+          "end": 18.9,
+          "confidence": 0.998
+        },
+        {
+          "word": "flujo",
+          "start": 18.9,
+          "end": 19.38,
+          "confidence": 0.995
+        },
+        {
+          "word": "y",
+          "start": 19.38,
+          "end": 19.54,
+          "confidence": 0.976
+        },
+        {
+          "word": "llega",
+          "start": 19.54,
+          "end": 19.78,
+          "confidence": 0.997
+        },
+        {
+          "word": "menos",
+          "start": 19.78,
+          "end": 20.1,
+          "confidence": 0.955
+        },
+        {
+          "word": "oxígeno",
+          "start": 20.1,
+          "end": 20.78,
+          "confidence": 0.968
+        },
+        {
+          "word": "al",
+          "start": 20.78,
+          "end": 20.88,
+          "confidence": 0.995
+        },
+        {
+          "word": "tejido",
+          "start": 20.88,
+          "end": 21.24,
+          "confidence": 0.995
+        },
+        {
+          "word": "cerebral.",
+          "start": 21.24,
+          "end": 21.64,
+          "confidence": 0.991
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 22.28,
+      "end": 23.94,
+      "text": "Las neuronas pierden energía.",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "Las",
+          "start": 22.28,
+          "end": 22.42,
+          "confidence": 0.991
+        },
+        {
+          "word": "neuronas",
+          "start": 22.42,
+          "end": 23.06,
+          "confidence": 0.985
+        },
+        {
+          "word": "pierden",
+          "start": 23.06,
+          "end": 23.52,
+          "confidence": 0.986
+        },
+        {
+          "word": "energía.",
+          "start": 23.52,
+          "end": 23.94,
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 24.66,
+      "end": 27.76,
+      "text": "En este esquema, el gris representa tejido dañado.",
+      "confidence": 0.854,
+      "words": [
+        {
+          "word": "En",
+          "start": 24.66,
+          "end": 24.86,
+          "confidence": 0.997
+        },
+        {
+          "word": "este",
+          "start": 24.86,
+          "end": 25.06,
+          "confidence": 0.996
+        },
+        {
+          "word": "esquema,",
+          "start": 25.06,
+          "end": 25.5,
+          "confidence": 0.997
+        },
+        {
+          "word": "el",
+          "start": 25.84,
+          "end": 25.88,
+          "confidence": 0.997
+        },
+        {
+          "word": "gris",
+          "start": 25.88,
+          "end": 26.16,
+          "confidence": 0.987
+        },
+        {
+          "word": "representa",
+          "start": 26.16,
+          "end": 26.68,
+          "confidence": 0.997
+        },
+        {
+          "word": "tejido",
+          "start": 26.68,
+          "end": 27.3,
+          "confidence": 0.983
+        },
+        {
+          "word": "dañado.",
+          "start": 27.3,
+          "end": 27.76,
+          "confidence": 0.998
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 27.76,
+      "end": 31.68,
+      "text": "El ámbar, tejido en riesgo, potencialmente recuperable.",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "El",
+          "start": 27.76,
+          "end": 28.38,
+          "confidence": 0.606
+        },
+        {
+          "word": "ámbar,",
+          "start": 28.38,
+          "end": 28.72,
+          "confidence": 0.952
+        },
+        {
+          "word": "tejido",
+          "start": 28.96,
+          "end": 29.3,
+          "confidence": 0.996
+        },
+        {
+          "word": "en",
+          "start": 29.3,
+          "end": 29.42,
+          "confidence": 0.998
+        },
+        {
+          "word": "riesgo,",
+          "start": 29.42,
+          "end": 29.82,
+          "confidence": 0.999
+        },
+        {
+          "word": "potencialmente",
+          "start": 30.12,
+          "end": 31.04,
+          "confidence": 0.986
+        },
+        {
+          "word": "recuperable.",
+          "start": 31.04,
+          "end": 31.68,
+          "confidence": 0.984
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 32.34,
+      "end": 34.06,
+      "text": "¿Qué cambia cuando el vaso se rompe?",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "¿Qué",
+          "start": 32.34,
+          "end": 32.46,
+          "confidence": 0.948
+        },
+        {
+          "word": "cambia",
+          "start": 32.46,
+          "end": 32.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "cuando",
+          "start": 32.86,
+          "end": 33.04,
+          "confidence": 0.993
+        },
+        {
+          "word": "el",
+          "start": 33.04,
+          "end": 33.26,
+          "confidence": 0.998
+        },
+        {
+          "word": "vaso",
+          "start": 33.26,
+          "end": 33.54,
+          "confidence": 0.992
+        },
+        {
+          "word": "se",
+          "start": 33.54,
+          "end": 33.68,
+          "confidence": 0.998
+        },
+        {
+          "word": "rompe?",
+          "start": 33.68,
+          "end": 34.06,
+          "confidence": 0.991
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 34.58,
+      "end": 38.06,
+      "text": "La sangre sale por la abertura y se acumula fuera del vaso.",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "La",
+          "start": 34.58,
+          "end": 34.76,
+          "confidence": 0.979
+        },
+        {
+          "word": "sangre",
+          "start": 34.76,
+          "end": 35.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "sale",
+          "start": 35.04,
+          "end": 35.4,
+          "confidence": 0.987
+        },
+        {
+          "word": "por",
+          "start": 35.4,
+          "end": 35.64,
+          "confidence": 0.994
+        },
+        {
+          "word": "la",
+          "start": 35.64,
+          "end": 35.78,
+          "confidence": 0.997
+        },
+        {
+          "word": "abertura",
+          "start": 35.78,
+          "end": 36.28,
+          "confidence": 0.96
+        },
+        {
+          "word": "y",
+          "start": 36.28,
+          "end": 36.52,
+          "confidence": 0.967
+        },
+        {
+          "word": "se",
+          "start": 36.52,
+          "end": 36.64,
+          "confidence": 0.998
+        },
+        {
+          "word": "acumula",
+          "start": 36.64,
+          "end": 37.04,
+          "confidence": 0.996
+        },
+        {
+          "word": "fuera",
+          "start": 37.04,
+          "end": 37.38,
+          "confidence": 0.966
+        },
+        {
+          "word": "del",
+          "start": 37.38,
+          "end": 37.64,
+          "confidence": 0.994
+        },
+        {
+          "word": "vaso.",
+          "start": 37.64,
+          "end": 38.06,
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 38.5,
+      "end": 42.56,
+      "text": "Dentro del tejido cerebral puede formar un hematoma y comprimir estructuras.",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "Dentro",
+          "start": 38.5,
+          "end": 38.8,
+          "confidence": 0.995
+        },
+        {
+          "word": "del",
+          "start": 38.8,
+          "end": 38.96,
+          "confidence": 0.995
+        },
+        {
+          "word": "tejido",
+          "start": 38.96,
+          "end": 39.32,
+          "confidence": 0.998
+        },
+        {
+          "word": "cerebral",
+          "start": 39.32,
+          "end": 39.78,
+          "confidence": 0.942
+        },
+        {
+          "word": "puede",
+          "start": 39.78,
+          "end": 40.12,
+          "confidence": 0.859
+        },
+        {
+          "word": "formar",
+          "start": 40.12,
+          "end": 40.54,
+          "confidence": 0.999
+        },
+        {
+          "word": "un",
+          "start": 40.54,
+          "end": 40.66,
+          "confidence": 0.894
+        },
+        {
+          "word": "hematoma",
+          "start": 40.66,
+          "end": 41.14,
+          "confidence": 0.956
+        },
+        {
+          "word": "y",
+          "start": 41.14,
+          "end": 41.42,
+          "confidence": 0.988
+        },
+        {
+          "word": "comprimir",
+          "start": 41.42,
+          "end": 41.94,
+          "confidence": 0.994
+        },
+        {
+          "word": "estructuras.",
+          "start": 41.94,
+          "end": 42.56,
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 43.04,
+      "end": 47.58,
+      "text": "Pero también puede sangrar alrededor del cerebro, en el espacio subaracnoideo.",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "Pero",
+          "start": 43.04,
+          "end": 43.26,
+          "confidence": 0.98
+        },
+        {
+          "word": "también",
+          "start": 43.26,
+          "end": 43.66,
+          "confidence": 0.972
+        },
+        {
+          "word": "puede",
+          "start": 43.66,
+          "end": 43.88,
+          "confidence": 0.966
+        },
+        {
+          "word": "sangrar",
+          "start": 43.88,
+          "end": 44.36,
+          "confidence": 0.991
+        },
+        {
+          "word": "alrededor",
+          "start": 44.36,
+          "end": 44.78,
+          "confidence": 0.995
+        },
+        {
+          "word": "del",
+          "start": 44.78,
+          "end": 45.24,
+          "confidence": 0.992
+        },
+        {
+          "word": "cerebro,",
+          "start": 45.24,
+          "end": 45.7,
+          "confidence": 0.997
+        },
+        {
+          "word": "en",
+          "start": 46.0,
+          "end": 46.08,
+          "confidence": 0.997
+        },
+        {
+          "word": "el",
+          "start": 46.08,
+          "end": 46.18,
+          "confidence": 0.998
+        },
+        {
+          "word": "espacio",
+          "start": 46.18,
+          "end": 46.58,
+          "confidence": 0.998
+        },
+        {
+          "word": "subaracnoideo.",
+          "start": 46.58,
+          "end": 47.58,
+          "confidence": 0.817
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 48.02,
+      "end": 48.44,
+      "text": "Comparemos.",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "Comparemos.",
+          "start": 48.02,
+          "end": 48.44,
+          "confidence": 0.721
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "start": 49.04,
+      "end": 50.5,
+      "text": "El isquémico obstruye.",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "El",
+          "start": 49.04,
+          "end": 49.16,
+          "confidence": 0.983
+        },
+        {
+          "word": "isquémico",
+          "start": 49.16,
+          "end": 49.74,
+          "confidence": 0.904
+        },
+        {
+          "word": "obstruye.",
+          "start": 49.74,
+          "end": 50.5,
+          "confidence": 0.967
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "start": 50.86,
+      "end": 52.32,
+      "text": "El hemorrágico sangra.",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "El",
+          "start": 50.86,
+          "end": 51.0,
+          "confidence": 0.99
+        },
+        {
+          "word": "hemorrágico",
+          "start": 51.0,
+          "end": 51.68,
+          "confidence": 0.831
+        },
+        {
+          "word": "sangra.",
+          "start": 51.68,
+          "end": 52.32,
+          "confidence": 0.851
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "start": 52.84,
+      "end": 54.34,
+      "text": "Pueden causar signos parecidos.",
+      "confidence": 0.829,
+      "words": [
+        {
+          "word": "Pueden",
+          "start": 52.84,
+          "end": 53.06,
+          "confidence": 0.979
+        },
+        {
+          "word": "causar",
+          "start": 53.06,
+          "end": 53.46,
+          "confidence": 0.999
+        },
+        {
+          "word": "signos",
+          "start": 53.46,
+          "end": 53.86,
+          "confidence": 0.996
+        },
+        {
+          "word": "parecidos.",
+          "start": 53.86,
+          "end": 54.34,
+          "confidence": 0.998
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "start": 54.34,
+      "end": 57.04,
+      "text": "La neuroimagen permite diferenciarlos.",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "La",
+          "start": 54.34,
+          "end": 55.0,
+          "confidence": 0.257
+        },
+        {
+          "word": "neuroimagen",
+          "start": 55.0,
+          "end": 55.7,
+          "confidence": 0.802
+        },
+        {
+          "word": "permite",
+          "start": 55.7,
+          "end": 56.24,
+          "confidence": 0.976
+        },
+        {
+          "word": "diferenciarlos.",
+          "start": 56.24,
+          "end": 57.04,
+          "confidence": 0.993
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "start": 57.82,
+      "end": 59.36,
+      "text": "¿Qué debe reconocer enfermería?",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "¿Qué",
+          "start": 57.82,
+          "end": 57.9,
+          "confidence": 0.938
+        },
+        {
+          "word": "debe",
+          "start": 57.9,
+          "end": 58.12,
+          "confidence": 0.976
+        },
+        {
+          "word": "reconocer",
+          "start": 58.12,
+          "end": 58.74,
+          "confidence": 0.992
+        },
+        {
+          "word": "enfermería?",
+          "start": 58.74,
+          "end": 59.36,
+          "confidence": 0.753
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "start": 59.9,
+      "end": 63.8,
+      "text": "Cara asimétrica, un brazo que cae o dificultad para hablar.",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "Cara",
+          "start": 59.9,
+          "end": 60.12,
+          "confidence": 0.364
+        },
+        {
+          "word": "asimétrica,",
+          "start": 60.12,
+          "end": 60.88,
+          "confidence": 0.962
+        },
+        {
+          "word": "un",
+          "start": 61.26,
+          "end": 61.42,
+          "confidence": 0.961
+        },
+        {
+          "word": "brazo",
+          "start": 61.42,
+          "end": 61.72,
+          "confidence": 0.995
+        },
+        {
+          "word": "que",
+          "start": 61.72,
+          "end": 61.88,
+          "confidence": 0.988
+        },
+        {
+          "word": "cae",
+          "start": 61.88,
+          "end": 62.3,
+          "confidence": 0.992
+        },
+        {
+          "word": "o",
+          "start": 62.3,
+          "end": 62.58,
+          "confidence": 0.705
+        },
+        {
+          "word": "dificultad",
+          "start": 62.58,
+          "end": 63.24,
+          "confidence": 0.994
+        },
+        {
+          "word": "para",
+          "start": 63.24,
+          "end": 63.46,
+          "confidence": 0.994
+        },
+        {
+          "word": "hablar.",
+          "start": 63.46,
+          "end": 63.8,
+          "confidence": 0.998
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "start": 64.42,
+      "end": 67.52,
+      "text": "En UCI, valora conciencia, pupilas y fuerza.",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "En",
+          "start": 64.42,
+          "end": 64.56,
+          "confidence": 0.802
+        },
+        {
+          "word": "UCI,",
+          "start": 64.56,
+          "end": 64.88,
+          "confidence": 0.885
+        },
+        {
+          "word": "valora",
+          "start": 65.08,
+          "end": 65.36,
+          "confidence": 0.977
+        },
+        {
+          "word": "conciencia,",
+          "start": 65.36,
+          "end": 66.12,
+          "confidence": 0.983
+        },
+        {
+          "word": "pupilas",
+          "start": 66.38,
+          "end": 66.92,
+          "confidence": 0.887
+        },
+        {
+          "word": "y",
+          "start": 66.92,
+          "end": 67.14,
+          "confidence": 0.969
+        },
+        {
+          "word": "fuerza.",
+          "start": 67.14,
+          "end": 67.52,
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "start": 68.12,
+      "end": 71.5,
+      "text": "Vigila respiración, oxigenación y presión arterial.",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "Vigila",
+          "start": 68.12,
+          "end": 68.42,
+          "confidence": 0.937
+        },
+        {
+          "word": "respiración,",
+          "start": 68.42,
+          "end": 69.16,
+          "confidence": 0.983
+        },
+        {
+          "word": "oxigenación",
+          "start": 69.56,
+          "end": 70.2,
+          "confidence": 0.972
+        },
+        {
+          "word": "y",
+          "start": 70.2,
+          "end": 70.56,
+          "confidence": 0.969
+        },
+        {
+          "word": "presión",
+          "start": 70.56,
+          "end": 70.96,
+          "confidence": 0.997
+        },
+        {
+          "word": "arterial.",
+          "start": 70.96,
+          "end": 71.5,
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "start": 72.04,
+      "end": 75.78,
+      "text": "Comunica inmediatamente cualquier deterioro al equipo responsable.",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "Comunica",
+          "start": 72.04,
+          "end": 72.52,
+          "confidence": 0.99
+        },
+        {
+          "word": "inmediatamente",
+          "start": 72.52,
+          "end": 73.3,
+          "confidence": 0.997
+        },
+        {
+          "word": "cualquier",
+          "start": 73.3,
+          "end": 73.84,
+          "confidence": 0.991
+        },
+        {
+          "word": "deterioro",
+          "start": 73.84,
+          "end": 74.62,
+          "confidence": 0.99
+        },
+        {
+          "word": "al",
+          "start": 74.62,
+          "end": 74.74,
+          "confidence": 0.99
+        },
+        {
+          "word": "equipo",
+          "start": 74.74,
+          "end": 74.98,
+          "confidence": 0.997
+        },
+        {
+          "word": "responsable.",
+          "start": 74.98,
+          "end": 75.78,
+          "confidence": 0.985
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "start": 76.34,
+      "end": 77.32,
+      "text": "El reloj avanza.",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "El",
+          "start": 76.34,
+          "end": 76.48,
+          "confidence": 0.988
+        },
+        {
+          "word": "reloj",
+          "start": 76.48,
+          "end": 76.88,
+          "confidence": 0.98
+        },
+        {
+          "word": "avanza.",
+          "start": 76.88,
+          "end": 77.32,
+          "confidence": 0.979
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "start": 77.88,
+      "end": 79.36,
+      "text": "El tiempo es cerebro.",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "El",
+          "start": 77.88,
+          "end": 78.0,
+          "confidence": 0.973
+        },
+        {
+          "word": "tiempo",
+          "start": 78.0,
+          "end": 78.42,
+          "confidence": 0.99
+        },
+        {
+          "word": "es",
+          "start": 78.42,
+          "end": 78.84,
+          "confidence": 0.994
+        },
+        {
+          "word": "cerebro.",
+          "start": 78.84,
+          "end": 79.36,
+          "confidence": 0.996
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "start": 79.8,
+      "end": 82.16,
+      "text": "Reconoce, comunica y vigila.",
+      "confidence": 0.879,
+      "words": [
+        {
+          "word": "Reconoce,",
+          "start": 79.8,
+          "end": 80.5,
+          "confidence": 0.767
+        },
+        {
+          "word": "comunica",
+          "start": 80.88,
+          "end": 81.42,
+          "confidence": 0.968
+        },
+        {
+          "word": "y",
+          "start": 81.42,
+          "end": 81.7,
+          "confidence": 0.978
+        },
+        {
+          "word": "vigila.",
+          "start": 81.7,
+          "end": 82.16,
+          "confidence": 0.995
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "start": 82.16,
+      "end": 84.6,
+      "text": "Síguenos en MediShort 360.",
+      "confidence": 0.616,
+      "words": [
+        {
+          "word": "Síguenos",
+          "start": 82.16,
+          "end": 83.18,
+          "confidence": 0.861
+        },
+        {
+          "word": "en",
+          "start": 83.18,
+          "end": 83.36,
+          "confidence": 0.993
+        },
+        {
+          "word": "MediShort",
+          "start": 83.36,
+          "end": 83.94,
+          "confidence": 0.808
+        },
+        {
+          "word": "360.",
+          "start": 83.94,
+          "end": 84.6,
+          "confidence": 0.707
+        }
+      ]
+    }
+  ]
+}

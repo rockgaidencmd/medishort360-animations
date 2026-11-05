@@ -1,7 +1,11 @@
+import {ECVRedesign} from './ECVAudioFilm';
+import {ECVFilm} from './ECVFilm';
+import {ECVPreview} from './ECVPreview';
 import type React from 'react';
 import {Clip} from './Clip';
 import {Outro} from './Outro';
 import {ShockMicrocirculation} from './ShockMicrocirculation';
+import {AntifungalTimeline} from './AntifungalTimeline';
 import type {SceneComponentName} from './names';
 import type {SceneProps} from './types';
 
@@ -14,7 +18,11 @@ import type {SceneProps} from './types';
  *   3) en scenes.json cambia component: "Clip" -> "Arteriole" y pon los props.
  */
 export const sceneRegistry: Record<SceneComponentName, React.FC<SceneProps>> = {
+  ECVRedesign,
+  ECVFilm,
+  ECVPreview,
   Clip,
   ShockMicrocirculation,
   Outro,
+  AntifungalTimeline,
 };
