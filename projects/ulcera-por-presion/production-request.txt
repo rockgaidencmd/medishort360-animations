@@ -1,0 +1,83 @@
+AUDIO LISTO: proyecto ulcera-por-presion. Adjunto el MP3. Sigue la Fase 2 de AGENTS.md (el audio manda, tiempos por palabra desde el transcript) y crea el video completo con el diseño de abajo. Lee docs/ESTANDAR-CALIDAD.md, docs/PLAYBOOKS.md, docs/BIBLIOTECA.md y docs/LECCIONES.md. Rama video/ulcera-por-presion. No me pidas ejecutar comandos. NO hagas merge ni render final.
+
+TEXTO DEL AUDIO (si el transcript difiere, el AUDIO MANDA; avísame de las diferencias)
+"¿Cómo puede morir tejido bajo una piel intacta? ¡Hola, hijos de Florence Nightingale! En las úlceras por presión, el apoyo presiona el tejido contra el hueso. Los capilares se comprimen y llega menos sangre. Entonces faltan oxígeno y nutrientes; las células se lesionan y pueden morir. Esa muerte es la necrosis. El daño puede comenzar junto al hueso mientras la superficie sigue cerrada. Después, la piel se enrojece y no palidece al presionarla; luego aparecen ampollas o una herida abierta. Por eso enfermería cambia la posición y descarga el apoyo: retirar la presión protege el tejido que sigue vivo. Síguenos en MediShort360."
+
+REGLA PRINCIPAL
+Cada palabra clave dispara su animación en el instante exacto en que se dice (adelantada como máximo 0.15 s). Los tiempos salen del transcript por palabra y se pasan como props; nunca escritos a mano. El video dura lo mismo que el audio, con escenas contiguas y sin cuadros congelados. Si el audio dice "sangre", se ve sangre; si dice "necrosis", se ve tejido negro.
+
+MARCA DE AGUA (OBLIGATORIA)
+"MEDISHORT360" visible en TODOS los fotogramas, de principio a fin, arriba a la izquierda, sin que nada la tape y sin que los zooms la muevan (va fuera de la cámara). Tipografía del theme y tamaño legible.
+
+TEXTO EN PANTALLA: SOLO EL NECESARIO
+Permitido: (1) la marca de agua; (2) el título "ÚLCERAS POR PRESIÓN" desde el segundo 0 hasta pasado el saludo, para que el tema se entienda sin sonido; (3) etiquetas de las estructuras que se nombran o se identifican: Piel, Grasa, Músculo, Hueso, Capilares, Necrosis, Ampolla, Herida abierta; (4) subtítulos palabra por palabra en la franja inferior (y 1720 a 1920). Todo lo demás está prohibido. Al terminar, lista cada texto del video y por qué está.
+Etiquetas de 36 px o más, con línea guía que se dibuja, sin solaparse con el objeto, y que aparecen justo cuando se dicen.
+
+PALABRA -> QUÉ SE VE
+1. "¿Cómo puede morir tejido bajo una piel intacta?" (gancho, pantalla completa)
+   Un talón apoyado en el colchón, la piel sana y brillante. Una lupa luminosa entra en la piel y revela un corte: bajo la superficie intacta hay una zona que se oscurece junto al hueso. En "morir" el oscurecimiento crece. Aparece el título.
+2. "¡Hola, hijos de Florence Nightingale!"
+   Una insignia animada de la marca entra y sale en unos 2 s, sin detener la acción de fondo.
+3. "las úlceras por presión, el apoyo presiona el tejido contra el hueso"
+   Un paciente de lado en la cama, con anillos de pulso en los puntos de apoyo. Zoom al corte con capas identificadas: Piel, Grasa, Músculo, Hueso. En "presiona" un peso baja desde la superficie y flechas de fuerza se enfrentan desde el colchón y desde el hueso; las capas se aplastan visiblemente entre ambas.
+4. "Los capilares se comprimen y llega menos sangre"
+   Pantalla dividida: arriba el corte con la lupa, abajo el interior del tejido a zoom 6x a 10x. Capilares grandes: los tubos se aplastan, los glóbulos rojos grandes se frenan, se apilan y se detienen, y aguas abajo el vaso queda vacío y pálido.
+5. "faltan oxígeno y nutrientes"
+   Partículas de oxígeno y nutrientes que antes llegaban se apagan una a una antes de alcanzar las células, y el brillo de las células cae. Sin texto adicional.
+6. "las células se lesionan y pueden morir"
+   Pantalla completa macro con células de 120 a 260 px: se hinchan, pierden color, se agrietan y se vuelven gris oscuro. Algunas siguen vivas y coloridas, para que se vea la diferencia.
+7. "Esa muerte es la necrosis"
+   Las células muertas se oscurecen hasta negro y la zona negra crece como una mancha. Entra el rótulo "NECROSIS" con spring y un destello breve.
+8. "El daño puede comenzar junto al hueso mientras la superficie sigue cerrada"
+   Zoom hacia fuera al corte completo: la mancha oscura junto al hueso crece hacia arriba y la piel de arriba sigue intacta, con un brillo protector sobre la superficie. Contraste claro entre arriba sano y abajo dañado.
+9. "Después, la piel se enrojece y no palidece al presionarla" (TIEMPO)
+   Vista externa del talón. En "Después" entra un reloj o cronómetro grande (mínimo 200 px) con la aguja avanzando, sin cifras. La piel pasa de normal a roja. Un dedo presiona y al levantarse la piel sigue roja, sin ponerse blanca. Un destello sutil confirma que no palidece.
+10. "luego aparecen ampollas o una herida abierta" (TIEMPO)
+   El reloj avanza otra vez y aparece una línea de tiempo animada en tres pasos: piel roja, ampolla, herida abierta. La ampolla se forma como una burbuja de líquido, se rompe y la herida se abre mostrando el tejido profundo oscuro. Rótulos "Ampolla" y "Herida abierta".
+11. "Por eso enfermería cambia la posición y descarga el apoyo"
+   Pantalla dividida con un único valor "pressure" (de 1 a 0) que controla ambas mitades. Arriba, el paciente gira con suavidad, una almohada se coloca bajo la pantorrilla y las flechas de presión desaparecen. Abajo, el macro: los capilares se reabren y la sangre vuelve a fluir.
+12. "retirar la presión protege el tejido que sigue vivo"
+   Macro: las células vivas recuperan color y brillo, rodeadas de un halo protector; la zona de necrosis permanece oscura. Check grande al final.
+13. "Síguenos en MediShort360."
+   Cierre de marca con la animación Outro existente.
+
+ANIMACIONES DE TIEMPO
+Reloj o cronómetro animado grande en 9 y 10, reutilizando TimeClock de la biblioteca. Sin cifras ni tiempos clínicos.
+
+ZOOM Y CÁMARA
+- Planos en src/motion/shots.ts: general (zoom 1) -> talón o zona (2 a 3x) -> corte (3 a 4x) -> macro de capilares y células (6 a 10x, cruzando a una escena donde las células miden 120 a 260 px). El zoom siempre va a la zona que se nombra, y vuelve a salir para mostrar el contexto.
+- Parallax, respiración sutil y leve desenfoque del fondo cuando hay foco en las células.
+- Pantalla dividida del estándar solo en 4, 5 y 11; el resto va a pantalla completa. Lupa con cono que conecta la zona de arriba con la vista ampliada.
+
+TRANSICIONES PROFESIONALES (nunca cortes secos)
+- Entre 1 y 3: la lupa se agranda y llena la pantalla (zoom-through).
+- Entre 3 y 4: división animada con un divisor que se desliza.
+- Entre 5 y 6: zoom-through hacia el interior de una célula.
+- Entre 7 y 8: retroceso de cámara con desenfoque suave.
+- Entre 8 y 9: barrido con máscara en forma de gota o círculo expansivo.
+- Entre 10 y 11: barrido lateral con destello.
+Todas con easing y de 0.4 a 0.8 s.
+
+MOTION GRAPHICS
+Anillos de pulso en puntos clave, flechas de fuerza que se dibujan, líneas guía que se trazan, estelas en los glóbulos, destellos sutiles al cumplirse cada evento, texto cinético con spring solo en "NECROSIS", partículas ambientales suaves. Nada estático: todo respira o fluye.
+
+TAMAÑO Y CALIDAD
+- El objeto principal ocupa al menos el 90 % del ancho de su zona. Nada decorativo menor de 40 px. Sin zonas vacías: fondo con degradado, viñeta y partículas sutiles.
+- Estilo ilustrado, amable y didáctico del theme. Sin gore: la necrosis se muestra como oscurecimiento limpio de células, no como imagen realista.
+- Colores con significado y coherencia: vivo = rojo y rosado cálidos; en riesgo = ámbar; muerto = gris oscuro a negro.
+
+PIEZAS
+Revisa BIBLIOTECA.md y reutiliza: SkinSection, Cells (RedBloodCell), lupa y cono, Camera, shots.ts, TimeClock, Outro, subtítulos. Crea solo las que falten, parametrizables, en src/anatomy/ o src/scenes/, registradas en names.ts y registry.ts: BodyOnBed (paciente de lado con talón y sacro), PressureForce (peso y flechas), TissueCrossSection (Piel, Grasa, Músculo, Hueso, con parámetro de compresión), CapillaryCompression, OxygenParticles, CellDeath (etapas), NecrosisZone, BlanchTest (dedo que presiona), BlisterWound (ampolla y herida abierta), PatientTurn (giro, almohada y descarga). Parámetro común "pressure" de 0 a 1 que controla compresión, flujo y daño.
+
+REGLAS TÉCNICAS
+Solo SVG y código. Sin emojis como texto. Sin MP4 prerenderizados. Movimiento determinista con useCurrentFrame; sin Math.random (semilla fija). Colores desde theme.ts. Sin dependencias nuevas. No agregues datos clínicos que no estén en el audio; si dudas, escribe // REVISAR.
+
+PASOS
+Copia el audio, crea el proyecto, transcribe (si Whisper falla, dame el error completo y NO inventes tiempos), escribe scenes.json y facts.json (una afirmación por frase del audio, source null, reviewedBy null), npm run sync, validate, typecheck, render:draft y qa. No abras el navegador ni el Studio; verifica con npx remotion still.
+
+ENTREGA
+1) Genera output/previews/hoja-contacto.png: UNA sola imagen de máximo 2000 px de ancho con 16 cuadros en el instante de estas palabras: "piel intacta", "hueso", "capilares", "sangre", "oxígeno", "células", "necrosis", "superficie", "Después", "no palidece", "ampollas", "herida abierta", "posición", "descarga", "vivo" y "MediShort360". Segundo y palabra bajo cada cuadro.
+2) Para cada cuadro dime: zoom, tamaño de la célula más pequeña, letra más pequeña y si se ve la marca de agua. Si el zoom macro es menor que 6, hay una letra menor de 36 px o la marca falta en algún cuadro, no está terminado.
+3) Lista de todos los textos en pantalla y por qué están.
+4) Duración del audio y del video, diferencias audio/guion y qué verificaste y qué no.
+5) Commit y push. Respuesta final corta.

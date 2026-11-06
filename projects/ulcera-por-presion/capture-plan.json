@@ -1,0 +1,114 @@
+[
+  {
+    "requested": "piel intacta",
+    "actual": "piel intacta",
+    "second": 2.0,
+    "frame": 60,
+    "status": "present"
+  },
+  {
+    "requested": "hueso",
+    "actual": "hueso",
+    "second": 8.58,
+    "frame": 258,
+    "status": "present"
+  },
+  {
+    "requested": "capilares",
+    "actual": "capilares",
+    "second": 12.44,
+    "frame": 374,
+    "status": "present"
+  },
+  {
+    "requested": "sangre",
+    "actual": "sangre",
+    "second": 13.56,
+    "frame": 407,
+    "status": "present"
+  },
+  {
+    "requested": "oxígeno",
+    "actual": "oxígeno",
+    "second": 15.6,
+    "frame": 468,
+    "status": "present"
+  },
+  {
+    "requested": "células",
+    "actual": "células",
+    "second": 17.54,
+    "frame": 527,
+    "status": "present"
+  },
+  {
+    "requested": "necrosis",
+    "actual": "necrosis",
+    "second": 20.3,
+    "frame": 609,
+    "status": "present"
+  },
+  {
+    "requested": "superficie",
+    "actual": null,
+    "second": null,
+    "frame": null,
+    "status": "absent-in-audio"
+  },
+  {
+    "requested": "Después",
+    "actual": null,
+    "second": null,
+    "frame": null,
+    "status": "absent-in-audio"
+  },
+  {
+    "requested": "no palidece",
+    "actual": "no palidece",
+    "second": 27.26,
+    "frame": 818,
+    "status": "present"
+  },
+  {
+    "requested": "ampollas",
+    "actual": null,
+    "second": null,
+    "frame": null,
+    "status": "absent-in-audio"
+  },
+  {
+    "requested": "herida abierta",
+    "actual": null,
+    "second": null,
+    "frame": null,
+    "status": "absent-in-audio"
+  },
+  {
+    "requested": "posición",
+    "actual": "posición",
+    "second": 35.96,
+    "frame": 1079,
+    "status": "present"
+  },
+  {
+    "requested": "descarga",
+    "actual": "descarga",
+    "second": 36.76,
+    "frame": 1103,
+    "status": "present"
+  },
+  {
+    "requested": "vivo",
+    "actual": null,
+    "second": null,
+    "frame": null,
+    "status": "absent-in-audio"
+  },
+  {
+    "requested": "MediShort360",
+    "actual": "MediShort",
+    "second": 41.86,
+    "frame": 1256,
+    "status": "present"
+  }
+]

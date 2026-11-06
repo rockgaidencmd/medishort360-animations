@@ -1,0 +1,749 @@
+{
+  "source": "whisper",
+  "language": "es",
+  "model": "small",
+  "durationSec": 44.042,
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.0,
+      "end": 2.98,
+      "text": "¿Cómo puede morir tejido bajo una piel intacta?",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "¿Cómo",
+          "start": 0.0,
+          "end": 0.28,
+          "confidence": 0.654
+        },
+        {
+          "word": "puede",
+          "start": 0.28,
+          "end": 0.62,
+          "confidence": 0.977
+        },
+        {
+          "word": "morir",
+          "start": 0.62,
+          "end": 0.98,
+          "confidence": 0.997
+        },
+        {
+          "word": "tejido",
+          "start": 0.98,
+          "end": 1.5,
+          "confidence": 0.995
+        },
+        {
+          "word": "bajo",
+          "start": 1.5,
+          "end": 1.72,
+          "confidence": 0.989
+        },
+        {
+          "word": "una",
+          "start": 1.72,
+          "end": 2.0,
+          "confidence": 0.99
+        },
+        {
+          "word": "piel",
+          "start": 2.0,
+          "end": 2.32,
+          "confidence": 0.993
+        },
+        {
+          "word": "intacta?",
+          "start": 2.32,
+          "end": 2.98,
+          "confidence": 0.988
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "start": 3.46,
+      "end": 5.54,
+      "text": "¡Hola, hijos de Florence Nightingale!",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "¡Hola,",
+          "start": 3.46,
+          "end": 3.8,
+          "confidence": 0.744
+        },
+        {
+          "word": "hijos",
+          "start": 4.1,
+          "end": 4.32,
+          "confidence": 0.969
+        },
+        {
+          "word": "de",
+          "start": 4.32,
+          "end": 4.54,
+          "confidence": 0.997
+        },
+        {
+          "word": "Florence",
+          "start": 4.54,
+          "end": 4.84,
+          "confidence": 0.911
+        },
+        {
+          "word": "Nightingale!",
+          "start": 4.84,
+          "end": 5.54,
+          "confidence": 0.986
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 6.06,
+      "end": 9.08,
+      "text": "Todo empieza con presión sostenida sobre un hueso,",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "Todo",
+          "start": 6.06,
+          "end": 6.32,
+          "confidence": 0.96
+        },
+        {
+          "word": "empieza",
+          "start": 6.32,
+          "end": 6.58,
+          "confidence": 0.998
+        },
+        {
+          "word": "con",
+          "start": 6.58,
+          "end": 7.06,
+          "confidence": 0.986
+        },
+        {
+          "word": "presión",
+          "start": 7.06,
+          "end": 7.46,
+          "confidence": 0.994
+        },
+        {
+          "word": "sostenida",
+          "start": 7.46,
+          "end": 8.06,
+          "confidence": 0.997
+        },
+        {
+          "word": "sobre",
+          "start": 8.06,
+          "end": 8.38,
+          "confidence": 0.995
+        },
+        {
+          "word": "un",
+          "start": 8.38,
+          "end": 8.58,
+          "confidence": 0.995
+        },
+        {
+          "word": "hueso,",
+          "start": 8.58,
+          "end": 9.08,
+          "confidence": 0.993
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 9.2,
+      "end": 10.66,
+      "text": "como el talón o el sacro.",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "como",
+          "start": 9.2,
+          "end": 9.42,
+          "confidence": 0.989
+        },
+        {
+          "word": "el",
+          "start": 9.42,
+          "end": 9.56,
+          "confidence": 0.993
+        },
+        {
+          "word": "talón",
+          "start": 9.56,
+          "end": 9.92,
+          "confidence": 0.993
+        },
+        {
+          "word": "o",
+          "start": 9.92,
+          "end": 10.14,
+          "confidence": 0.978
+        },
+        {
+          "word": "el",
+          "start": 10.14,
+          "end": 10.26,
+          "confidence": 0.963
+        },
+        {
+          "word": "sacro.",
+          "start": 10.26,
+          "end": 10.66,
+          "confidence": 0.986
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 11.18,
+      "end": 14.84,
+      "text": "La presión aplasta los capilares y la sangre deja de llegar.",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "La",
+          "start": 11.18,
+          "end": 11.28,
+          "confidence": 0.99
+        },
+        {
+          "word": "presión",
+          "start": 11.28,
+          "end": 11.64,
+          "confidence": 0.998
+        },
+        {
+          "word": "aplasta",
+          "start": 11.64,
+          "end": 12.22,
+          "confidence": 0.99
+        },
+        {
+          "word": "los",
+          "start": 12.22,
+          "end": 12.44,
+          "confidence": 0.79
+        },
+        {
+          "word": "capilares",
+          "start": 12.44,
+          "end": 13.12,
+          "confidence": 0.995
+        },
+        {
+          "word": "y",
+          "start": 13.12,
+          "end": 13.42,
+          "confidence": 0.83
+        },
+        {
+          "word": "la",
+          "start": 13.42,
+          "end": 13.56,
+          "confidence": 0.994
+        },
+        {
+          "word": "sangre",
+          "start": 13.56,
+          "end": 13.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "deja",
+          "start": 13.92,
+          "end": 14.36,
+          "confidence": 0.991
+        },
+        {
+          "word": "de",
+          "start": 14.36,
+          "end": 14.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "llegar.",
+          "start": 14.54,
+          "end": 14.84,
+          "confidence": 0.998
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 15.36,
+      "end": 19.36,
+      "text": "Sin oxígeno ni nutrientes, las células se debilitan y mueren.",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "Sin",
+          "start": 15.36,
+          "end": 15.6,
+          "confidence": 0.989
+        },
+        {
+          "word": "oxígeno",
+          "start": 15.6,
+          "end": 16.26,
+          "confidence": 0.967
+        },
+        {
+          "word": "ni",
+          "start": 16.26,
+          "end": 16.4,
+          "confidence": 0.919
+        },
+        {
+          "word": "nutrientes,",
+          "start": 16.4,
+          "end": 16.92,
+          "confidence": 0.996
+        },
+        {
+          "word": "las",
+          "start": 17.42,
+          "end": 17.54,
+          "confidence": 0.978
+        },
+        {
+          "word": "células",
+          "start": 17.54,
+          "end": 17.82,
+          "confidence": 0.993
+        },
+        {
+          "word": "se",
+          "start": 17.82,
+          "end": 18.1,
+          "confidence": 0.996
+        },
+        {
+          "word": "debilitan",
+          "start": 18.1,
+          "end": 18.76,
+          "confidence": 0.864
+        },
+        {
+          "word": "y",
+          "start": 18.76,
+          "end": 19.0,
+          "confidence": 0.997
+        },
+        {
+          "word": "mueren.",
+          "start": 19.0,
+          "end": 19.36,
+          "confidence": 0.982
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 19.88,
+      "end": 20.94,
+      "text": "Es la necrosis.",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "Es",
+          "start": 19.88,
+          "end": 20.12,
+          "confidence": 0.939
+        },
+        {
+          "word": "la",
+          "start": 20.12,
+          "end": 20.3,
+          "confidence": 0.994
+        },
+        {
+          "word": "necrosis.",
+          "start": 20.3,
+          "end": 20.94,
+          "confidence": 0.923
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 21.5,
+      "end": 24.62,
+      "text": "El daño suele empezar en profundidad, junto al hueso.",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "El",
+          "start": 21.5,
+          "end": 21.66,
+          "confidence": 0.993
+        },
+        {
+          "word": "daño",
+          "start": 21.66,
+          "end": 21.9,
+          "confidence": 0.994
+        },
+        {
+          "word": "suele",
+          "start": 21.9,
+          "end": 22.24,
+          "confidence": 0.996
+        },
+        {
+          "word": "empezar",
+          "start": 22.24,
+          "end": 22.58,
+          "confidence": 0.992
+        },
+        {
+          "word": "en",
+          "start": 22.58,
+          "end": 22.82,
+          "confidence": 0.997
+        },
+        {
+          "word": "profundidad,",
+          "start": 22.82,
+          "end": 23.54,
+          "confidence": 0.998
+        },
+        {
+          "word": "junto",
+          "start": 23.78,
+          "end": 24.04,
+          "confidence": 0.997
+        },
+        {
+          "word": "al",
+          "start": 24.04,
+          "end": 24.22,
+          "confidence": 0.995
+        },
+        {
+          "word": "hueso.",
+          "start": 24.22,
+          "end": 24.62,
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 25.04,
+      "end": 28.8,
+      "text": "Por fuera, la piel se enrojece y no palidece al presionarla.",
+      "confidence": 0.873,
+      "words": [
+        {
+          "word": "Por",
+          "start": 25.04,
+          "end": 25.24,
+          "confidence": 0.997
+        },
+        {
+          "word": "fuera,",
+          "start": 25.24,
+          "end": 25.5,
+          "confidence": 0.992
+        },
+        {
+          "word": "la",
+          "start": 25.86,
+          "end": 25.96,
+          "confidence": 0.999
+        },
+        {
+          "word": "piel",
+          "start": 25.96,
+          "end": 26.14,
+          "confidence": 0.999
+        },
+        {
+          "word": "se",
+          "start": 26.14,
+          "end": 26.34,
+          "confidence": 0.998
+        },
+        {
+          "word": "enrojece",
+          "start": 26.34,
+          "end": 27.02,
+          "confidence": 0.926
+        },
+        {
+          "word": "y",
+          "start": 27.02,
+          "end": 27.26,
+          "confidence": 0.986
+        },
+        {
+          "word": "no",
+          "start": 27.26,
+          "end": 27.44,
+          "confidence": 0.997
+        },
+        {
+          "word": "palidece",
+          "start": 27.44,
+          "end": 28.0,
+          "confidence": 0.826
+        },
+        {
+          "word": "al",
+          "start": 28.0,
+          "end": 28.12,
+          "confidence": 0.992
+        },
+        {
+          "word": "presionarla.",
+          "start": 28.12,
+          "end": 28.8,
+          "confidence": 0.863
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 28.8,
+      "end": 33.96,
+      "text": "Si la presión continúa, se oscurece, se rompe y se forma la úlcera.",
+      "confidence": 0.777,
+      "words": [
+        {
+          "word": "Si",
+          "start": 28.8,
+          "end": 29.4,
+          "confidence": 0.75
+        },
+        {
+          "word": "la",
+          "start": 29.4,
+          "end": 29.52,
+          "confidence": 0.996
+        },
+        {
+          "word": "presión",
+          "start": 29.52,
+          "end": 29.88,
+          "confidence": 0.994
+        },
+        {
+          "word": "continúa,",
+          "start": 29.88,
+          "end": 30.56,
+          "confidence": 0.96
+        },
+        {
+          "word": "se",
+          "start": 30.88,
+          "end": 30.92,
+          "confidence": 0.983
+        },
+        {
+          "word": "oscurece,",
+          "start": 30.92,
+          "end": 31.58,
+          "confidence": 0.987
+        },
+        {
+          "word": "se",
+          "start": 31.9,
+          "end": 32.0,
+          "confidence": 0.986
+        },
+        {
+          "word": "rompe",
+          "start": 32.0,
+          "end": 32.56,
+          "confidence": 0.994
+        },
+        {
+          "word": "y",
+          "start": 32.56,
+          "end": 32.86,
+          "confidence": 0.958
+        },
+        {
+          "word": "se",
+          "start": 32.86,
+          "end": 32.98,
+          "confidence": 0.954
+        },
+        {
+          "word": "forma",
+          "start": 32.98,
+          "end": 33.34,
+          "confidence": 0.998
+        },
+        {
+          "word": "la",
+          "start": 33.34,
+          "end": 33.54,
+          "confidence": 0.984
+        },
+        {
+          "word": "úlcera.",
+          "start": 33.54,
+          "end": 33.96,
+          "confidence": 0.967
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 34.46,
+      "end": 37.8,
+      "text": "Por eso, enfermería cambia la posición y descarga el apoyo.",
+      "confidence": 0.777,
+      "words": [
+        {
+          "word": "Por",
+          "start": 34.46,
+          "end": 34.56,
+          "confidence": 0.989
+        },
+        {
+          "word": "eso,",
+          "start": 34.56,
+          "end": 34.76,
+          "confidence": 0.992
+        },
+        {
+          "word": "enfermería",
+          "start": 34.84,
+          "end": 35.44,
+          "confidence": 0.853
+        },
+        {
+          "word": "cambia",
+          "start": 35.44,
+          "end": 35.86,
+          "confidence": 0.98
+        },
+        {
+          "word": "la",
+          "start": 35.86,
+          "end": 35.96,
+          "confidence": 0.993
+        },
+        {
+          "word": "posición",
+          "start": 35.96,
+          "end": 36.4,
+          "confidence": 0.996
+        },
+        {
+          "word": "y",
+          "start": 36.4,
+          "end": 36.76,
+          "confidence": 0.992
+        },
+        {
+          "word": "descarga",
+          "start": 36.76,
+          "end": 37.34,
+          "confidence": 0.993
+        },
+        {
+          "word": "el",
+          "start": 37.34,
+          "end": 37.46,
+          "confidence": 0.997
+        },
+        {
+          "word": "apoyo.",
+          "start": 37.46,
+          "end": 37.8,
+          "confidence": 0.997
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 38.46,
+      "end": 40.62,
+      "text": "Devolver la sangre salva el tejido.",
+      "confidence": 0.777,
+      "words": [
+        {
+          "word": "Devolver",
+          "start": 38.46,
+          "end": 38.88,
+          "confidence": 0.955
+        },
+        {
+          "word": "la",
+          "start": 38.88,
+          "end": 39.04,
+          "confidence": 0.958
+        },
+        {
+          "word": "sangre",
+          "start": 39.04,
+          "end": 39.42,
+          "confidence": 0.999
+        },
+        {
+          "word": "salva",
+          "start": 39.42,
+          "end": 40.06,
+          "confidence": 0.883
+        },
+        {
+          "word": "el",
+          "start": 40.06,
+          "end": 40.16,
+          "confidence": 0.998
+        },
+        {
+          "word": "tejido.",
+          "start": 40.16,
+          "end": 40.62,
+          "confidence": 0.998
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 41.18,
+      "end": 43.22,
+      "text": "Síguenos en MediShort 360.",
+      "confidence": 0.777,
+      "words": [
+        {
+          "word": "Síguenos",
+          "start": 41.18,
+          "end": 41.68,
+          "confidence": 0.844
+        },
+        {
+          "word": "en",
+          "start": 41.68,
+          "end": 41.86,
+          "confidence": 0.992
+        },
+        {
+          "word": "MediShort",
+          "start": 41.86,
+          "end": 42.48,
+          "confidence": 0.752
+        },
+        {
+          "word": "360.",
+          "start": 42.48,
+          "end": 43.22,
+          "confidence": 0.761
+        }
+      ]
+    }
+  ]
+}

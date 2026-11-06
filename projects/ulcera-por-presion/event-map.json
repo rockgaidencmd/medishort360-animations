@@ -1,0 +1,282 @@
+[
+  {
+    "event": "hookDeath",
+    "query": "morir",
+    "wordIndex": 2,
+    "start": 0.62,
+    "end": 0.98,
+    "visualStart": 0.62,
+    "frame": 19,
+    "leadSec": 0
+  },
+  {
+    "event": "greeting",
+    "query": "Hola",
+    "wordIndex": 8,
+    "start": 3.46,
+    "end": 3.8,
+    "visualStart": 3.46,
+    "frame": 104,
+    "leadSec": 0
+  },
+  {
+    "event": "body",
+    "query": "Todo empieza",
+    "wordIndex": 13,
+    "start": 6.06,
+    "end": 6.58,
+    "visualStart": 6.06,
+    "frame": 182,
+    "leadSec": 0
+  },
+  {
+    "event": "bone",
+    "query": "hueso",
+    "wordIndex": 20,
+    "start": 8.58,
+    "end": 9.08,
+    "visualStart": 8.58,
+    "frame": 258,
+    "leadSec": 0
+  },
+  {
+    "event": "compression",
+    "query": "aplasta",
+    "wordIndex": 29,
+    "start": 11.64,
+    "end": 12.22,
+    "visualStart": 11.64,
+    "frame": 350,
+    "leadSec": 0
+  },
+  {
+    "event": "capillaries",
+    "query": "capilares",
+    "wordIndex": 31,
+    "start": 12.44,
+    "end": 13.12,
+    "visualStart": 12.44,
+    "frame": 374,
+    "leadSec": 0
+  },
+  {
+    "event": "blood",
+    "query": "sangre",
+    "wordIndex": 34,
+    "start": 13.56,
+    "end": 13.92,
+    "visualStart": 13.56,
+    "frame": 407,
+    "leadSec": 0
+  },
+  {
+    "event": "oxygen",
+    "query": "oxígeno",
+    "wordIndex": 39,
+    "start": 15.6,
+    "end": 16.26,
+    "visualStart": 15.6,
+    "frame": 468,
+    "leadSec": 0
+  },
+  {
+    "event": "nutrients",
+    "query": "nutrientes",
+    "wordIndex": 41,
+    "start": 16.4,
+    "end": 16.92,
+    "visualStart": 16.4,
+    "frame": 492,
+    "leadSec": 0
+  },
+  {
+    "event": "cells",
+    "query": "células",
+    "wordIndex": 43,
+    "start": 17.54,
+    "end": 17.82,
+    "visualStart": 17.54,
+    "frame": 527,
+    "leadSec": 0
+  },
+  {
+    "event": "injury",
+    "query": "debilitan",
+    "wordIndex": 45,
+    "start": 18.1,
+    "end": 18.76,
+    "visualStart": 18.1,
+    "frame": 543,
+    "leadSec": 0
+  },
+  {
+    "event": "death",
+    "query": "mueren",
+    "wordIndex": 47,
+    "start": 19.0,
+    "end": 19.36,
+    "visualStart": 19.0,
+    "frame": 570,
+    "leadSec": 0
+  },
+  {
+    "event": "necrosis",
+    "query": "necrosis",
+    "wordIndex": 50,
+    "start": 20.3,
+    "end": 20.94,
+    "visualStart": 20.3,
+    "frame": 609,
+    "leadSec": 0
+  },
+  {
+    "event": "deep",
+    "query": "El daño",
+    "wordIndex": 51,
+    "start": 21.5,
+    "end": 21.9,
+    "visualStart": 21.5,
+    "frame": 645,
+    "leadSec": 0
+  },
+  {
+    "event": "outside",
+    "query": "Por fuera",
+    "wordIndex": 60,
+    "start": 25.04,
+    "end": 25.5,
+    "visualStart": 25.04,
+    "frame": 752,
+    "leadSec": 0
+  },
+  {
+    "event": "red",
+    "query": "enrojece",
+    "wordIndex": 65,
+    "start": 26.34,
+    "end": 27.02,
+    "visualStart": 26.34,
+    "frame": 791,
+    "leadSec": 0
+  },
+  {
+    "event": "blanch",
+    "query": "no palidece",
+    "wordIndex": 67,
+    "start": 27.26,
+    "end": 28.0,
+    "visualStart": 27.26,
+    "frame": 818,
+    "leadSec": 0
+  },
+  {
+    "event": "finger",
+    "query": "presionarla",
+    "wordIndex": 70,
+    "start": 28.12,
+    "end": 28.8,
+    "visualStart": 28.12,
+    "frame": 844,
+    "leadSec": 0
+  },
+  {
+    "event": "dark",
+    "query": "oscurece",
+    "wordIndex": 76,
+    "start": 30.92,
+    "end": 31.58,
+    "visualStart": 30.92,
+    "frame": 928,
+    "leadSec": 0
+  },
+  {
+    "event": "rupture",
+    "query": "rompe",
+    "wordIndex": 78,
+    "start": 32.0,
+    "end": 32.56,
+    "visualStart": 32.0,
+    "frame": 960,
+    "leadSec": 0
+  },
+  {
+    "event": "ulcer",
+    "query": "úlcera",
+    "wordIndex": 83,
+    "start": 33.54,
+    "end": 33.96,
+    "visualStart": 33.54,
+    "frame": 1007,
+    "leadSec": 0
+  },
+  {
+    "event": "care",
+    "query": "Por eso",
+    "wordIndex": 84,
+    "start": 34.46,
+    "end": 34.76,
+    "visualStart": 34.46,
+    "frame": 1034,
+    "leadSec": 0
+  },
+  {
+    "event": "turn",
+    "query": "posición",
+    "wordIndex": 89,
+    "start": 35.96,
+    "end": 36.4,
+    "visualStart": 35.96,
+    "frame": 1079,
+    "leadSec": 0
+  },
+  {
+    "event": "release",
+    "query": "descarga",
+    "wordIndex": 91,
+    "start": 36.76,
+    "end": 37.34,
+    "visualStart": 36.76,
+    "frame": 1103,
+    "leadSec": 0
+  },
+  {
+    "event": "reflow",
+    "query": "Devolver",
+    "wordIndex": 94,
+    "start": 38.46,
+    "end": 38.88,
+    "visualStart": 38.46,
+    "frame": 1154,
+    "leadSec": 0
+  },
+  {
+    "event": "protect",
+    "query": "salva",
+    "wordIndex": 97,
+    "start": 39.42,
+    "end": 40.06,
+    "visualStart": 39.42,
+    "frame": 1183,
+    "leadSec": 0
+  },
+  {
+    "event": "outro",
+    "query": "Síguenos",
+    "wordIndex": 100,
+    "start": 41.18,
+    "end": 41.68,
+    "visualStart": 41.18,
+    "frame": 1236,
+    "leadSec": 0
+  },
+  {
+    "event": "brand",
+    "query": "MediShort",
+    "wordIndex": 102,
+    "start": 41.86,
+    "end": 42.48,
+    "visualStart": 41.86,
+    "frame": 1256,
+    "leadSec": 0
+  }
+]
