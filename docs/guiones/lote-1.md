@@ -10,12 +10,12 @@
 
 ## 1. Úlcera por presión
 
-Tipo: enfermedad. **96 palabras; 48 s nominales.**
+Tipo: enfermedad. **102 palabras; 51 s nominales.**
 
 ### Guion — texto de audio
 
 ```text
-¿Cómo puede morir tejido bajo una piel intacta? ¡Hola, hijos de Florence Nightingale! En las úlceras por presión, el apoyo comprime el tejido contra el hueso. Los capilares se estrechan y llega menos sangre. Entonces faltan oxígeno y nutrientes; las células se lesionan y pueden morir. Esa muerte es la necrosis. El daño puede comenzar junto al hueso mientras la superficie sigue cerrada. Después pueden aparecer cambios de color, ampollas o una herida abierta. Por eso enfermería cambia la posición y descarga el apoyo: retirar la presión protege el tejido que sigue vivo. Síguenos en MediShort360.
+¿Cómo puede morir tejido bajo una piel intacta? ¡Hola, hijos de Florence Nightingale! En las úlceras por presión, el apoyo presiona el tejido contra el hueso. Los capilares se comprimen y llega menos sangre. Entonces faltan oxígeno y nutrientes; las células se lesionan y pueden morir. Esa muerte es la necrosis. El daño puede comenzar junto al hueso mientras la superficie sigue cerrada. Después, la piel se enrojece y no palidece al presionarla; luego aparecen ampollas o una herida abierta. Por eso enfermería cambia la posición y descarga el apoyo: retirar la presión protege el tejido que sigue vivo. Síguenos en MediShort360.
 ```
 
 ### Cadena dibujable
@@ -32,14 +32,14 @@ Piel cerrada sobre talón y corte profundo que revela daño. Pregunta completa v
 |---|---|---|---:|
 | 0–4 | Piel cerrada sobre talón y corte profundo que revela daño. | ¿Cómo puede morir tejido bajo una piel intacta? | 8 |
 | 4–6.5 | Continúa el apoyo durante el saludo. | ¡Hola, hijos de Florence Nightingale! | 5 |
-| 6.5–13 | El talón comprime el tejido contra el hueso; aparece el nombre del tema. | En las úlceras por presión, el apoyo comprime el tejido contra el hueso. | 13 |
-| 13–17 | Capilares estrechos y menor flujo de eritrocitos. | Los capilares se estrechan y llega menos sangre. | 8 |
+| 6.5–13 | El talón comprime el tejido contra el hueso; aparece el nombre del tema. | En las úlceras por presión, el apoyo presiona el tejido contra el hueso. | 13 |
+| 13–17 | Capilares estrechos y menor flujo de eritrocitos. | Los capilares se comprimen y llega menos sangre. | 8 |
 | 17–23 | Menor llegada de oxígeno y nutrientes, seguida de lesión celular. | Entonces faltan oxígeno y nutrientes; las células se lesionan y pueden morir. | 12 |
 | 23–25.5 | Células muertas identificadas como necrosis. | Esa muerte es la necrosis. | 5 |
 | 25.5–31.5 | Contraste entre lesión profunda y superficie aún cerrada. | El daño puede comenzar junto al hueso mientras la superficie sigue cerrada. | 12 |
-| 31.5–37 | Ejemplos alternativos de coloración, ampolla y pérdida de piel; no etapas obligatorias. | Después pueden aparecer cambios de color, ampollas o una herida abierta. | 11 |
-| 37–46.5 | Cambio de postura y descarga; tejido viable protegido, sin revivir células necróticas. | Por eso enfermería cambia la posición y descarga el apoyo: retirar la presión protege el tejido que sigue vivo. | 19 |
-| 46.5–48 | Cierre de marca. | Síguenos en MediShort360. | 3 |
+| 31.5–40 | Secuencia escrita por el usuario: enrojecimiento persistente, ampolla o herida; pendiente de revisión, no generalizar ni producir todavía. | Después, la piel se enrojece y no palidece al presionarla; luego aparecen ampollas o una herida abierta. | 17 |
+| 40–49.5 | Cambio de postura y descarga; tejido viable protegido, sin revivir células necróticas. | Por eso enfermería cambia la posición y descarga el apoyo: retirar la presión protege el tejido que sigue vivo. | 19 |
+| 49.5–51 | Cierre de marca. | Síguenos en MediShort360. | 3 |
 
 ### Piezas previstas
 
@@ -48,7 +48,7 @@ Piel cerrada sobre talón y corte profundo que revela daño. Pregunta completa v
 
 ### Afirmaciones y decisiones por confirmar
 
-- [REVISAR] Compresión y reducción del riego son una simplificación: también hay deformación directa. Confirmar necrosis y lesión profunda; coloración, ampolla y herida son posibilidades, no una progresión universal. No afirmar que descargar revierte necrosis. Fuentes: NPIAP, NICE, NHS y Gefen et al.
+- [REVISAR] Compresión y reducción del riego son una simplificación: también hay deformación directa. La redacción de referencia del usuario tiene 102 palabras y presenta una secuencia superficial que debe corregirse o contextualizarse antes del audio: coloración, ampolla y herida son posibilidades, no una progresión universal. Confirmar necrosis y lesión profunda. No afirmar que descargar revierte necrosis. Fuentes: NPIAP, NICE, NHS y Gefen et al.
 - Revisión clínica pendiente; conservar reviewedBy en null. Confirmar representaciones concretas antes de producir audio o animaciones.
 
 ### Fuentes consultadas
@@ -60,12 +60,12 @@ Piel cerrada sobre talón y corte profundo que revela daño. Pregunta completa v
 
 ## 2. Hipoglucemia
 
-Tipo: enfermedad. **96 palabras; 48 s nominales.**
+Tipo: enfermedad. **98 palabras; 49 s nominales.**
 
 ### Guion — texto de audio
 
 ```text
-¿Por qué sudan, tiemblan y se confunden? ¡Hola, hijos de Florence Nightingale! La glucosa baja y el cuerpo libera adrenalina para movilizar combustible. Esa respuesta acelera el corazón y hace temblar las manos; también aparece sudor. Mientras tanto, al cerebro le llega menos glucosa. Sus células pierden combustible y pueden aparecer confusión, somnolencia o convulsiones. Pero algunas personas no sienten las señales de alarma. Enfermería comprueba la glucemia y trata según protocolo, con una vía segura si no pueden tragar. El temblor viene de la alarma; la confusión, del cerebro sin suficiente glucosa. Síguenos en MediShort360.
+¿Por qué sudan, tiemblan y se confunden? ¡Hola, hijos de Florence Nightingale! En la hipoglucemia, baja la glucosa que circula por la sangre. El cuerpo libera adrenalina para movilizar combustible. El corazón se acelera y las manos tiemblan; también aparece sudor. Mientras tanto, al cerebro le llega menos glucosa. Sus neuronas funcionan peor y aparecen confusión o somnolencia; si empeora, pueden aparecer convulsiones. Pero algunas personas no sienten las primeras señales. Por eso enfermería comprueba la glucemia y trata según protocolo: reponer glucosa permite recuperar combustible, por una vía segura según la capacidad de tragar. Síguenos en MediShort360.
 ```
 
 ### Cadena dibujable
@@ -82,14 +82,14 @@ Sudor, mano temblorosa y gesto de confusión. Pregunta completa visible desde el
 |---|---|---|---:|
 | 0–3.5 | Sudor, mano temblorosa y gesto de confusión. | ¿Por qué sudan, tiemblan y se confunden? | 7 |
 | 3.5–6 | Los signos siguen durante el saludo. | ¡Hola, hijos de Florence Nightingale! | 5 |
-| 6–11.5 | Baja la glucosa y aparece la respuesta de adrenalina. | La glucosa baja y el cuerpo libera adrenalina para movilizar combustible. | 11 |
-| 11.5–18 | Latido acelerado, temblor y sudor como respuestas de alarma. | Esa respuesta acelera el corazón y hace temblar las manos; también aparece sudor. | 13 |
-| 18–22 | Zoom al cerebro: menor disponibilidad de glucosa. | Mientras tanto, al cerebro le llega menos glucosa. | 8 |
-| 22–27.5 | Alteración neuronal y posibles manifestaciones neurológicas, sin gore. | Sus células pierden combustible y pueden aparecer confusión, somnolencia o convulsiones. | 11 |
-| 27.5–32 | Paciente sin señales de alarma junto a glucosa baja. | Pero algunas personas no sienten las señales de alarma. | 9 |
-| 32–40 | Comprobación de glucemia y tratamiento por vía segura según protocolo. | Enfermería comprueba la glucemia y trata según protocolo, con una vía segura si no pueden tragar. | 16 |
-| 40–46.5 | Conectar respuesta de alarma con temblor y menor glucosa cerebral con confusión. | El temblor viene de la alarma; la confusión, del cerebro sin suficiente glucosa. | 13 |
-| 46.5–48 | Cierre de marca. | Síguenos en MediShort360. | 3 |
+| 6–11.5 | Glucosa circulante baja; aparece el nombre hipoglucemia. | En la hipoglucemia, baja la glucosa que circula por la sangre. | 11 |
+| 11.5–15 | Se libera adrenalina para movilizar combustible. | El cuerpo libera adrenalina para movilizar combustible. | 7 |
+| 15–20.5 | Latido acelerado, temblor y sudor como respuestas de alarma. | El corazón se acelera y las manos tiemblan; también aparece sudor. | 11 |
+| 20.5–24.5 | Zoom al cerebro: menor disponibilidad de glucosa. | Mientras tanto, al cerebro le llega menos glucosa. | 8 |
+| 24.5–31.5 | Alteración neuronal y posibles manifestaciones neurológicas, sin gore. | Sus neuronas funcionan peor y aparecen confusión o somnolencia; si empeora, pueden aparecer convulsiones. | 14 |
+| 31.5–35.5 | Paciente sin señales de alarma junto a glucosa baja. | Pero algunas personas no sienten las primeras señales. | 8 |
+| 35.5–47.5 | Comprobación de glucemia y tratamiento por vía segura según protocolo. | Por eso enfermería comprueba la glucemia y trata según protocolo: reponer glucosa permite recuperar combustible, por una vía segura según la capacidad de tragar. | 24 |
+| 47.5–49 | Cierre de marca. | Síguenos en MediShort360. | 3 |
 
 ### Piezas previstas
 
@@ -109,12 +109,12 @@ Sudor, mano temblorosa y gesto de confusión. Pregunta completa visible desde el
 
 ## 3. Insulina en la jeringa
 
-Tipo: procedimiento. **98 palabras; 49 s nominales.**
+Tipo: procedimiento. **96 palabras; 48 s nominales.**
 
 ### Guion — texto de audio
 
 ```text
-¿Cómo sabes que cargaste las unidades correctas? ¡Hola, hijos de Florence Nightingale! Al tirar del émbolo, aumenta el espacio dentro de la jeringa y entra insulina. El émbolo se desplaza por la escala; su posición permite leer la cantidad. Entre los números hay marcas, pero cada intervalo depende del modelo. Dos unidades, cuatro unidades, ocho unidades: son ejemplos de lectura, no dosis. Una burbuja ocupa espacio sin aportar insulina; por eso puede falsear la cantidad cargada. Enfermería verifica la jeringa compatible y contrasta la lectura con la prescripción: la marca debe corresponder a lo indicado. Síguenos en MediShort360.
+¿Cómo sabes que cargaste las unidades correctas? ¡Hola, hijos de Florence Nightingale! Al cargar insulina, tirar del émbolo aumenta el espacio de la jeringa y permite que entre líquido. El émbolo se detiene frente a una marca: esa posición permite leer las unidades. Pero cada intervalo depende del modelo. Dos unidades, cuatro unidades, ocho unidades: son ejemplos de lectura, no dosis. Si entra una burbuja, ocupa espacio sin aportar insulina; aunque coincida la marca, habrá menos medicamento. Por eso enfermería comprueba la compatibilidad de la jeringa y compara la lectura con la prescripción. Síguenos en MediShort360.
 ```
 
 ### Cadena dibujable
@@ -131,13 +131,13 @@ Jeringa cargada y pregunta sobre escala. Pregunta completa visible desde el inic
 |---|---|---|---:|
 | 0–3.5 | Jeringa cargada y pregunta sobre escala. | ¿Cómo sabes que cargaste las unidades correctas? | 7 |
 | 3.5–6 | Acercamiento a escala durante el saludo. | ¡Hola, hijos de Florence Nightingale! | 5 |
-| 6–13 | Émbolo se retrae e insulina entra desde vial; nunca desde una pluma. | Al tirar del émbolo, aumenta el espacio dentro de la jeringa y entra insulina. | 14 |
-| 13–19.5 | Posición del émbolo vinculada a escala. | El émbolo se desplaza por la escala; su posición permite leer la cantidad. | 13 |
-| 19.5–25 | Se recorren marcas; comparación entre modelos sin equivalencias inventadas. | Entre los números hay marcas, pero cada intervalo depende del modelo. | 11 |
-| 25–31 | Ejemplos de dos, cuatro y ocho unidades, rotulados como lectura, no dosis. | Dos unidades, cuatro unidades, ocho unidades: son ejemplos de lectura, no dosis. | 12 |
-| 31–38 | Burbuja ocupa parte del espacio: menos líquido para la misma posición. | Una burbuja ocupa espacio sin aportar insulina; por eso puede falsear la cantidad cargada. | 14 |
-| 38–47.5 | Comprobar compatibilidad y cotejar escala con prescripción; borde exacto pendiente. | Enfermería verifica la jeringa compatible y contrasta la lectura con la prescripción: la marca debe corresponder a lo indicado. | 19 |
-| 47.5–49 | Cierre de marca. | Síguenos en MediShort360. | 3 |
+| 6–14.5 | Émbolo se retrae e insulina entra desde vial; nunca desde una pluma. | Al cargar insulina, tirar del émbolo aumenta el espacio de la jeringa y permite que entre líquido. | 17 |
+| 14.5–21.5 | Posición del émbolo vinculada a escala. | El émbolo se detiene frente a una marca: esa posición permite leer las unidades. | 14 |
+| 21.5–24.5 | Se recorren marcas; comparación entre modelos sin equivalencias inventadas. | Pero cada intervalo depende del modelo. | 6 |
+| 24.5–30.5 | Ejemplos de dos, cuatro y ocho unidades, rotulados como lectura, no dosis. | Dos unidades, cuatro unidades, ocho unidades: son ejemplos de lectura, no dosis. | 12 |
+| 30.5–38.5 | Burbuja ocupa parte del espacio: menos líquido para la misma posición. | Si entra una burbuja, ocupa espacio sin aportar insulina; aunque coincida la marca, habrá menos medicamento. | 16 |
+| 38.5–46.5 | Comprobar compatibilidad y cotejar escala con prescripción; borde exacto pendiente. | Por eso enfermería comprueba la compatibilidad de la jeringa y compara la lectura con la prescripción. | 16 |
+| 46.5–48 | Cierre de marca. | Síguenos en MediShort360. | 3 |
 
 ### Piezas previstas
 
@@ -158,12 +158,12 @@ Jeringa cargada y pregunta sobre escala. Pregunta completa visible desde el inic
 
 ## 4. Cetoacidosis diabética
 
-Tipo: enfermedad. **96 palabras; 48 s nominales.**
+Tipo: enfermedad. **99 palabras; 49.5 s nominales.**
 
 ### Guion — texto de audio
 
 ```text
-¿Por qué este paciente respira tan profundo? ¡Hola, hijos de Florence Nightingale! Falta insulina efectiva y el cuerpo descompone grasa. El hígado transforma parte de esa grasa en cetonas. Cuando se acumulan, acidifican la sangre. Entonces aumenta la ventilación: el pecho se expande profundamente y expulsa más dióxido de carbono. Al eliminarlo, el cuerpo intenta compensar la acidez. Pero respirar así no elimina las cetonas ni resuelve la causa. Enfermería activa la atención urgente y vigila el potasio durante el tratamiento, porque la insulina puede hacerlo bajar. Esa respiración es compensación, no recuperación. Síguenos en MediShort360.
+¿Por qué este paciente respira tan profundo? ¡Hola, hijos de Florence Nightingale! En la cetoacidosis diabética falta insulina efectiva. Entonces el cuerpo descompone grasa y el hígado produce cetonas. Cuando se acumulan, acidifican la sangre. El cuerpo responde aumentando la ventilación: el pecho se expande y expulsa más dióxido de carbono. Al eliminarlo, intenta compensar la acidez. Pero esa respiración no detiene la producción de cetonas; la causa sigue activa. Por eso enfermería activa la atención urgente y vigila el potasio durante el tratamiento: la insulina puede hacerlo entrar en las células y bajar en sangre. Síguenos en MediShort360.
 ```
 
 ### Cadena dibujable
@@ -180,15 +180,14 @@ Paciente con respiración profunda. Pregunta completa visible desde el inicio, c
 |---|---|---|---:|
 | 0–3.5 | Paciente con respiración profunda. | ¿Por qué este paciente respira tan profundo? | 7 |
 | 3.5–6 | Continúa el movimiento torácico durante el saludo. | ¡Hola, hijos de Florence Nightingale! | 5 |
-| 6–10 | Insulina insuficiente y liberación de grasa. | Falta insulina efectiva y el cuerpo descompone grasa. | 8 |
-| 10–14.5 | Ácidos grasos llegan al hígado y se forman cetonas. | El hígado transforma parte de esa grasa en cetonas. | 9 |
+| 6–9.5 | Nombre cetoacidosis diabética e insulina insuficiente. | En la cetoacidosis diabética falta insulina efectiva. | 7 |
+| 9.5–14.5 | Degradación de grasa y formación de cetonas en el hígado. | Entonces el cuerpo descompone grasa y el hígado produce cetonas. | 10 |
 | 14.5–17.5 | Cetonas se acumulan y aumenta la acidez ilustrativa. | Cuando se acumulan, acidifican la sangre. | 6 |
-| 17.5–25 | Tórax se expande y expulsa dióxido de carbono. | Entonces aumenta la ventilación: el pecho se expande profundamente y expulsa más dióxido de carbono. | 15 |
-| 25–29 | Salida de dióxido de carbono compensa parcialmente la acidez. | Al eliminarlo, el cuerpo intenta compensar la acidez. | 8 |
-| 29–34.5 | Persisten cetonas y causa subyacente pese a la compensación. | Pero respirar así no elimina las cetonas ni resuelve la causa. | 11 |
-| 34.5–43.5 | Aviso urgente y vigilancia de potasio durante tratamiento. | Enfermería activa la atención urgente y vigila el potasio durante el tratamiento, porque la insulina puede hacerlo bajar. | 18 |
-| 43.5–46.5 | Distinguir compensación respiratoria de recuperación metabólica. | Esa respiración es compensación, no recuperación. | 6 |
-| 46.5–48 | Cierre de marca. | Síguenos en MediShort360. | 3 |
+| 17.5–25.5 | Tórax se expande y expulsa dióxido de carbono. | El cuerpo responde aumentando la ventilación: el pecho se expande y expulsa más dióxido de carbono. | 16 |
+| 25.5–28.5 | Salida de dióxido de carbono compensa parcialmente la acidez. | Al eliminarlo, intenta compensar la acidez. | 6 |
+| 28.5–35 | Persisten cetonas y causa subyacente pese a la compensación. | Pero esa respiración no detiene la producción de cetonas; la causa sigue activa. | 13 |
+| 35–48 | Aviso urgente y vigilancia de potasio durante tratamiento. | Por eso enfermería activa la atención urgente y vigila el potasio durante el tratamiento: la insulina puede hacerlo entrar en las células y bajar en sangre. | 26 |
+| 48–49.5 | Cierre de marca. | Síguenos en MediShort360. | 3 |
 
 ### Piezas previstas
 
@@ -206,12 +205,12 @@ Paciente con respiración profunda. Pregunta completa visible desde el inicio, c
 
 ## 5. Hiperpotasemia
 
-Tipo: enfermedad. **96 palabras; 48 s nominales.**
+Tipo: enfermedad. **97 palabras; 48.5 s nominales.**
 
 ### Guion — texto de audio
 
 ```text
-¿Por qué el ECG se ve así? ¡Hola, hijos de Florence Nightingale! El potasio se acumula fuera de las células cardíacas y cambia su equilibrio eléctrico. Al principio puede acelerar la recuperación eléctrica y formar ondas T picudas. Si la alteración aumenta, puede frenar la conducción: el impulso se propaga más lento y el complejo se ensancha. Pero esos cambios no siguen siempre ese orden; incluso puede haber un trazado normal. Enfermería monitoriza el ritmo y avisa ante cambios sospechosos. Esas ondas pueden ser la huella del potasio alterando la electricidad del corazón. Síguenos en MediShort360.
+¿Por qué el ECG se ve así? ¡Hola, hijos de Florence Nightingale! En la hiperpotasemia aumenta el potasio fuera de las células cardíacas. Ese cambio altera cómo se activan y recuperan eléctricamente. La recuperación puede acelerarse y dibujar ondas T picudas. Con mayor alteración, la conducción puede frenarse: el impulso avanza más lento y el complejo se ensancha. Pero los cambios no siguen siempre ese orden; incluso puede haber un trazado normal. Por eso enfermería monitoriza el ritmo y comunica cambios sospechosos: el potasio puede alterar la electricidad del corazón y desencadenar arritmias peligrosas. Síguenos en MediShort360.
 ```
 
 ### Cadena dibujable
@@ -228,13 +227,13 @@ ECG con ondas T picudas. Pregunta completa visible desde el inicio, comprensible
 |---|---|---|---:|
 | 0–3.5 | ECG con ondas T picudas. | ¿Por qué el ECG se ve así? | 7 |
 | 3.5–6 | El trazado sigue durante el saludo. | ¡Hola, hijos de Florence Nightingale! | 5 |
-| 6–13 | Zoom a célula cardíaca y acumulación extracelular de potasio. | El potasio se acumula fuera de las células cardíacas y cambia su equilibrio eléctrico. | 14 |
-| 13–19 | Recuperación eléctrica alterada, conectada a la onda T. | Al principio puede acelerar la recuperación eléctrica y formar ondas T picudas. | 12 |
-| 19–28.5 | Impulso más lento y complejo ancho. | Si la alteración aumenta, puede frenar la conducción: el impulso se propaga más lento y el complejo se ensancha. | 19 |
-| 28.5–35.5 | Ejemplos alternativos y ECG aparentemente normal, sin secuencia obligatoria. | Pero esos cambios no siguen siempre ese orden; incluso puede haber un trazado normal. | 14 |
-| 35.5–40 | Monitorización y aviso ante cambios. | Enfermería monitoriza el ritmo y avisa ante cambios sospechosos. | 9 |
-| 40–46.5 | Conectar distribución de potasio, electricidad cardíaca y ECG. | Esas ondas pueden ser la huella del potasio alterando la electricidad del corazón. | 13 |
-| 46.5–48 | Cierre de marca. | Síguenos en MediShort360. | 3 |
+| 6–11.5 | Nombre hiperpotasemia y potasio extracelular elevado. | En la hiperpotasemia aumenta el potasio fuera de las células cardíacas. | 11 |
+| 11.5–16 | Activación y recuperación eléctricas de la célula. | Ese cambio altera cómo se activan y recuperan eléctricamente. | 9 |
+| 16–20.5 | Recuperación eléctrica alterada, conectada a la onda T. | La recuperación puede acelerarse y dibujar ondas T picudas. | 9 |
+| 20.5–29 | Impulso más lento y complejo ancho. | Con mayor alteración, la conducción puede frenarse: el impulso avanza más lento y el complejo se ensancha. | 17 |
+| 29–36 | Ejemplos alternativos y ECG aparentemente normal, sin secuencia obligatoria. | Pero los cambios no siguen siempre ese orden; incluso puede haber un trazado normal. | 14 |
+| 36–47 | Monitorización y aviso ante cambios. | Por eso enfermería monitoriza el ritmo y comunica cambios sospechosos: el potasio puede alterar la electricidad del corazón y desencadenar arritmias peligrosas. | 22 |
+| 47–48.5 | Cierre de marca. | Síguenos en MediShort360. | 3 |
 
 ### Piezas previstas
 
@@ -253,8 +252,8 @@ ECG con ondas T picudas. Pregunta completa visible desde el inicio, comprensible
 
 ## Verificación y pendientes del lote
 
-- Nueva dirección editorial: cadena causal predominante, verbos animables y enfermería en una frase final por tema. No se crearon animaciones ni ramas de video.
-- Los cinco guiones cumplen noventa a cien palabras. Saludo después del gancho y cierre exacto; ejemplos de unidades solo en insulina. Sin acotaciones ni notas clínicas dentro del audio.
-- El guion de úlcera menciona expresamente «úlceras por presión» después del saludo. Frente al ejemplo propuesto, evita una progresión superficial universal y la promesa de recuperar tejido necrótico.
+- Adaptación a la referencia del usuario: tema nombrado, cadena causal predominante, verbos animables y enfermería en una frase final por tema. No se crearon animaciones ni ramas de video.
+- Los cuatro guiones adaptados cumplen noventa a cien palabras. La referencia de úlcera del usuario se conserva literalmente: 102 palabras, 51 segundos nominales, pendiente de ajustar si se mantiene el límite de cien. Saludo después del gancho y cierre exacto; ejemplos de unidades solo en insulina. Sin acotaciones ni notas clínicas dentro del audio.
+- El guion de úlcera menciona expresamente «úlceras por presión» después del saludo. Se conserva literalmente la última redacción del usuario como referencia; su secuencia superficial sigue pendiente de revisión y no es una progresión universal.
 - Fuentes anteriores conservadas. Las afirmaciones siguen pendientes de revisión clínica; no presentar una clasificación de lesiones como secuencia temporal obligatoria.
 - Comprobar conteos, tablas, fuentes y diff; no corresponden renders ni pruebas de código. Commit en chore/guiones-lote-1, sin merge ni push.
