@@ -39,7 +39,6 @@ for i,seg in enumerate(t['segments']):
  if i in (0,1,len(t['segments'])-1): continue
  facts.append(dict(id=f'f{i}',text=seg['text'],source=None,reviewedBy=None,reviewedAt=None))
 write('facts.json',{'facts':facts})
-write('scenes.json',{'scenes':[dict(id='ulcera-audio',from_=0)]}) if False else None
 write('scenes.json',{'scenes':[{'id':'ulcera-audio','from':0,'to':duration,'kind':'anatomy','component':'PressureUlcer','props':{'events':events,'internalBrand':False,'internalLabel':True,'wordCaptions':True,'captionBottom':20,'captionFontSize':48,'watermarkFontSize':40},'structures':['piel','tejido subcutáneo','músculo','hueso','capilares','células'],'action':'Compresión tisular, reducción del flujo, lesión y necrosis; cambios cutáneos y descarga que conserva el tejido viable.','camera':'static','cameraIntensity':0,'transitionIn':0,'factIds':[f['id'] for f in facts],'assetIds':[]}]})
 write('render-options.json',{'entry':'src/index.tsx','normalizeDraftRange':True})
 actual=' '.join(s['text'] for s in t['segments'])

@@ -47,3 +47,16 @@ El video de vasopresores abrió con un fenómeno visible y funcionó mejor que e
 ## Registro para cada video futuro
 
 Añadir al finalizar: id y commit de referencia, fuente y estado de revisión, duración medida de audio/video, conteo y ritmo observados, piezas reutilizadas/nuevas con rutas, diferencias de voz, fallos completos y solución, comandos realmente ejecutados, QA/capturas y verificaciones pendientes. No sustituir lecciones anteriores sin conservar el contexto de su medición.
+
+## Evidencia de úlcera por presión
+
+- MP3 recibido como `necrosis guion.mp3`, copiado sin cambios a `public/audio/ulcera-por-presion-original.mp3`. SHA-256: `4a34d89e5a493ac996f13ada88107fce8a1c035b4eb2e5bcd0da5032b55b6a59`. Duración medida: 44.042438 s, no la estimada desde el texto.
+- El MP3 usa una versión anterior al texto del encargo: «Todo empieza con presión sostenida…» y «Devolver la sangre salva el tejido». No dice «superficie», «Después», «ampollas», «herida abierta» ni «vivo». No asignar tiempos manuales a esas palabras ni crear la ampolla por inercia del plan.
+- Faster-Whisper base produjo errores de segmentación como «presiona plasta» y «Si no exigen o ni no trientes». Se conservó en `transcript.base-original.json`; una nueva transcripción real con small reconoció correctamente presión/aplasta y oxígeno/nutrientes. El ASR small original también se conserva. No se editaron tiempos para hacer encajar el guion.
+- `scripts/build-ulcera.py` busca veintiocho eventos en el transcript; `scripts/check-ulcera.py` verifica intervalos ASR, continuidad, hash y ausencia de tiempos inventados. Cuantización máxima de inicio a treinta fps: 0.026667 s.
+- El modelo base ya estaba local y small estaba en caché. El entorno habitual de ejecución falló por acceso denegado; se continuó con la ejecución autorizada. npm necesitó caché dentro del espacio de trabajo, y el Node instalado necesitó un shim local para `os.userInfo`/interfaces de red en este entorno. No se añadieron dependencias al repositorio.
+- El Python de Whisper carece de Pillow. Para la hoja de contacto se usó el entorno existente `2026-10-30/.../work/animacion-env`; no asumir que todos los Python locales tienen las mismas bibliotecas.
+- Se detectó y corrigió el recorte de la segunda fila celular en la vista dividida. Comprobar cuerpos visibles completos y la reserva inferior de subtítulos, no solo tamaños nominales.
+- La marca se coloca fuera de cámara y se inspecciona en la región fija de todos los fotogramas decodificados. La revisión por píxeles complementa, pero no sustituye, comprobar la palabra legible en las capturas.
+- La necrosis queda negra al retirar presión. El retorno de sangre solo se representa como protección de tejido viable; la frase del audio no valida una reversión de necrosis. Fuentes y revisión clínica permanecen pendientes como pide el encargo.
+- Borrador cuantizado a 1322 fotogramas, 44.066667 s: diferencia 0.024229 s respecto al archivo. `render:draft` normaliza yuv420p y copia AAC, conservando el render previo. Ver reporte de QA y `verification.md` para la medición de la entrega actual. Sin render final ni merge.

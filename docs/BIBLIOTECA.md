@@ -5,7 +5,7 @@ Inventario obtenido de las exportaciones, props, imports, registro de escenas y 
 ## Cómo elegir y reutilizar
 
 - Priorizar SVG de cicatrización y el sistema de tiempo por palabra. Los tamaños finales se miden en la composición, no se deducen del nombre de una prop.
-- Solo cinco escenas están registradas en `src/scenes/names.ts` y `src/scenes/registry.ts`: `Clip`, `ShockMicrocirculation`, `Outro`, `ChildFall`, `WoundHealing`.
+- Seis escenas están registradas en `src/scenes/names.ts` y `src/scenes/registry.ts`: `Clip`, `ShockMicrocirculation`, `Outro`, `ChildFall`, `WoundHealing` y `PressureUlcer`.
 - Un componente anatómico no recibe necesariamente `SceneProps`. Para usarlo en `scenes.json`, crear/reutilizar una escena adaptadora y registrarla en ambos archivos; no pasar a ciegas el nombre de cualquier exportación.
 - `src/scenes/types.ts` define `SceneProps`: `t` local en segundos, `durationSec` y `props`. En un proyecto con relojes globales, sumar el `timelineOffset` y considerar el redondeo del inicio de la secuencia.
 - Hay componentes históricos 3D y piezas con colores literales o texto pequeño. Su presencia no demuestra cumplimiento del nuevo estándar. No modificar los proyectos antiguos para hacerlos pasar; adaptar el uso nuevo sin cambiar sus valores por defecto.
@@ -118,3 +118,25 @@ Los tamaños históricos de `Overlays`/`Preview-Cells` pueden ser menores que el
 | Riñón | No se encontró pieza dedicada. Crear vista externa y mecanismo interno solo para el tema documentado |
 | Pulmón | No se encontró pieza dedicada. Crear geometría/actuación parametrizable y revisión anatómica |
 | Corazón | No se encontró pieza dedicada. Los trazos de monitor no equivalen a una pieza de corazón; falta órgano y actuación revisable |
+
+## Úlcera por presión — piezas SVG añadidas
+
+Proyecto: `projects/ulcera-por-presion/`; escena registrada `PressureUlcer` en `src/scenes/PressureUlcer.tsx`, `names.ts` y `registry.ts`. Sus eventos proceden de `events.json`, generado desde palabras reales por `scripts/build-ulcera.py`. No es un generador universal ni una aprobación clínica.
+
+Todas las piezas siguientes se exportan de `src/anatomy/PressureTissue.tsx`; se integran mediante la escena adaptadora `PressureUlcer`, no se registran directamente como si aceptaran `SceneProps`.
+
+| Pieza | Parámetros y actuación |
+|---|---|
+| `BodyOnBed` | `t`, `pressure`, `turn`: paciente de lado, cama, puntos de apoyo |
+| `PressureForce` | `t`, `pressure`: peso y flechas opuestas |
+| `TissueCrossSection` | `t`, `pressure`, `damage`: piel, grasa, músculo, hueso y deformación; sustituto específico porque `SkinSection` representa cicatrización y carece de este mecanismo óseo |
+| `CapillaryCompression` | `t`, `pressure`, `flowTime`: lumen comprimido y eritrocitos; reutiliza `RedBloodCell` de `Cells.tsx` |
+| `OxygenParticles` | `t`, `loss`: desaparición de aportes antes de alcanzar células |
+| `CellDeath` | `t`, `damage`, `necrosis`, `recovery`: lesión, oscurecimiento y células viables separadas; no recupera células necróticas |
+| `NecrosisZone` | `t`, `growth`: mancha esquemática; export disponible, no consumido por este montaje (la zona se integra en el corte) |
+| `BlanchTest` | `t`, `redness`, `press`, `showFinger`: piel roja persistente y presión del dedo |
+| `BlisterWound` | `open`, `dark`, `blister`: herida esquemática; en este audio `blister=0`, porque no dice ampolla |
+| `PatientTurn` | `t`, `pressure`, `turn`: giro y almohada con descarga |
+| `TimeClock` | `t`, `progress`: reloj de avance conceptual sin cifras; no existía en el inventario previo |
+
+Reutiliza `shotAt`, `RedBloodCell`, `Outro`, `Captions` y `Watermark`. El cierre usa `Outro` sin eslogan ni marca central, manteniendo la marca fija externa. Los nuevos tamaños opcionales de `Captions` y `Watermark` conservan los defaults antiguos. Capturas y mediciones: `projects/ulcera-por-presion/capture-report.json`, `verification.md`, `output/previews/hoja-contacto.png`. El zoom ocho corresponde al espacio macro normalizado y debe contrastarse con el tamaño final del cuerpo; no es una escala histológica certificada.

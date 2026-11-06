@@ -49,8 +49,8 @@ export const ProjectVideo: React.FC<ProjectVideoProps> = ({project}) => {
           </Sequence>
         );
       })}
-      {!controls.internalBrand&&<Watermark text={manifest.brand} />}
-      <Captions transcript={transcript} wordByWord={controls.wordCaptions===true} bottom={typeof controls.captionBottom==='number'?controls.captionBottom:undefined}/>
+      {!controls.internalBrand&&<Watermark text={manifest.brand} fontSize={typeof controls.watermarkFontSize==='number'?controls.watermarkFontSize:undefined} />}
+      <Captions transcript={transcript} wordByWord={controls.wordCaptions===true} fontSize={typeof controls.captionFontSize==='number'?controls.captionFontSize:undefined} bottom={typeof controls.captionBottom==='number'?controls.captionBottom:undefined}/>
       <Audio src={staticFile(manifest.audio)} />
     </AbsoluteFill>
   );

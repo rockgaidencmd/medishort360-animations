@@ -33,7 +33,7 @@ export const buildChunks = (transcript: Transcript): Chunk[] => {
   return chunks;
 };
 
-export const Captions: React.FC<{transcript: Transcript; wordByWord?: boolean; bottom?: number}> = ({transcript,wordByWord=false,bottom}) => {
+export const Captions: React.FC<{transcript: Transcript; wordByWord?: boolean; bottom?: number;fontSize?:number}> = ({transcript,wordByWord=false,bottom,fontSize}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -57,7 +57,7 @@ export const Captions: React.FC<{transcript: Transcript; wordByWord?: boolean; b
         borderRadius: 18,
         background: colors.panelDeep,
         color: colors.caption,
-        fontSize: size.caption,
+        fontSize: fontSize??size.caption,
         lineHeight: 1.25,
         display: 'flex',
         alignItems: 'center',

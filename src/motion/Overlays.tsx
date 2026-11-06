@@ -55,7 +55,7 @@ export const Callout: React.FC<{text: string; frame: number}> = ({text, frame}) 
   );
 };
 
-export const Watermark: React.FC<{text: string}> = ({text}) => (
+export const Watermark: React.FC<{text: string;fontSize?:number}> = ({text,fontSize}) => (
   <div
     style={{
       position: 'absolute',
@@ -63,7 +63,7 @@ export const Watermark: React.FC<{text: string}> = ({text}) => (
       top: 50,
       color: colors.text,
       fontWeight: 700,
-      fontSize: size.brand,
+      fontSize: fontSize??size.brand,
       letterSpacing: 3,
       textShadow: `0 2px 8px ${colors.shadow}`,
     }}

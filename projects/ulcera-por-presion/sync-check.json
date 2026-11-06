@@ -1,0 +1,18 @@
+{
+  "wordIntervalsUnchanged": true,
+  "eventCount": 28,
+  "source": "Whisper small sobre MP3 original",
+  "maxVisualLeadSec": 0,
+  "maxFrameRoundingDelaySec": 0.026666666666670835,
+  "continuity": true,
+  "audioHashMatches": true,
+  "captureSlots": 16,
+  "actualCaptureWords": 11,
+  "absentWords": [
+    "superficie",
+    "Después",
+    "ampollas",
+    "herida abierta",
+    "vivo"
+  ]
+}
