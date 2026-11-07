@@ -33,7 +33,7 @@ export const buildChunks = (transcript: Transcript): Chunk[] => {
   return chunks;
 };
 
-export const Captions: React.FC<{transcript: Transcript; wordByWord?: boolean; bottom?: number;fontSize?:number}> = ({transcript,wordByWord=false,bottom,fontSize}) => {
+export const Captions: React.FC<{transcript: Transcript; wordByWord?: boolean; bottom?: number;fontSize?:number;highContrast?:boolean}> = ({transcript,wordByWord=false,bottom,fontSize,highContrast=false}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -56,14 +56,16 @@ export const Captions: React.FC<{transcript: Transcript; wordByWord?: boolean; b
         boxSizing: 'border-box',
         borderRadius: 18,
         background: colors.panelDeep,
-        color: colors.caption,
+        color: highContrast?theme.anatomy.maskWhite:colors.caption,
+        textShadow: highContrast?`0 2px 3px ${colors.panelDeep}, 2px 0 2px ${colors.panelDeep}, -2px 0 2px ${colors.panelDeep}`:undefined,
+        WebkitTextStroke:highContrast?`1px ${colors.panelDeep}`:undefined,
         fontSize: fontSize??size.caption,
         lineHeight: 1.25,
         display: 'flex',
         alignItems: 'center',
         flexWrap: 'wrap',
         gap: '0 10px',
-        opacity: fadeIn,
+        opacity: highContrast?1:fadeIn,
       }}
     >
       {chunk.words.map((w, i) => {
@@ -74,9 +76,9 @@ export const Captions: React.FC<{transcript: Transcript; wordByWord?: boolean; b
             key={`${w.start}-${i}`}
             style={{
               display: 'inline-block',
-              color: active ? colors.label : colors.caption,
-              fontWeight: active ? 700 : 400,
-              transform: `scale(${active ? interpolate(pop, [0, 1], [1.25, 1]) : 1})`,
+              color: highContrast?theme.anatomy.maskWhite:(active ? colors.label : colors.caption),
+              fontWeight: active ? (highContrast?800:700) : 400,
+              transform: `scale(${active ? interpolate(pop, [0, 1], [highContrast?1.03:1.25, 1]) : 1})`,
             }}
           >
             {w.text}

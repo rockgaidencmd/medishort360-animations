@@ -1,0 +1,58 @@
+[
+  {
+    "requested": "superficie",
+    "literalFound": false,
+    "match": null,
+    "cause": "ausencia real; no es un fallo de acentos, mayúsculas o signos"
+  },
+  {
+    "requested": "Después",
+    "literalFound": false,
+    "match": null,
+    "cause": "ausencia real; no es un fallo de acentos, mayúsculas o signos"
+  },
+  {
+    "requested": "ampollas",
+    "literalFound": false,
+    "match": null,
+    "cause": "ausencia real; no es un fallo de acentos, mayúsculas o signos"
+  },
+  {
+    "requested": "herida abierta",
+    "literalFound": false,
+    "match": null,
+    "cause": "ausencia real; no es un fallo de acentos, mayúsculas o signos"
+  },
+  {
+    "requested": "vivo",
+    "literalFound": false,
+    "match": null,
+    "cause": "ausencia real; no es un fallo de acentos, mayúsculas o signos"
+  },
+  {
+    "requested": "no palidece",
+    "literalFound": true,
+    "match": {
+      "query": "no palidece",
+      "start": 27.26,
+      "end": 28.0,
+      "fromWord": 67,
+      "toWord": 68,
+      "actual": "no palidece"
+    },
+    "cause": "presencia literal"
+  },
+  {
+    "requested": "MediShort360",
+    "literalFound": true,
+    "match": {
+      "query": "MediShort360",
+      "start": 41.86,
+      "end": 43.22,
+      "fromWord": 102,
+      "toWord": 103,
+      "actual": "MediShort 360."
+    },
+    "cause": "fragmentación resuelta"
+  }
+]

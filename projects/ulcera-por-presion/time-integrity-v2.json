@@ -1,0 +1,24 @@
+{
+  "transcriptSha256": "e45f99286c92f754b796d3201d2ec28cef96055444e47c9f8c1c4ec7981c4d4d",
+  "audioSha256": "4a34d89e5a493ac996f13ada88107fce8a1c035b4eb2e5bcd0da5032b55b6a59",
+  "originalEventTimesUnchanged": true,
+  "scenes8_9_10_12": {
+    "8": {
+      "anchor": "El daño / junto al hueso",
+      "start": 21.5
+    },
+    "9": {
+      "anchor": "Por fuera / no palidece",
+      "start": 25.04
+    },
+    "10": {
+      "anchor": "Si la presión continúa / se rompe / úlcera",
+      "start": 28.8
+    },
+    "12": {
+      "anchor": "salva el tejido",
+      "start": 39.42
+    }
+  },
+  "ampolla": "Ilustración pedida en v2, anclada al tramo real continúa/oscurece; no se afirma que el audio diga ampolla."
+}

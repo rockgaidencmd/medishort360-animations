@@ -37,14 +37,23 @@
           "outro": 41.18,
           "brand": 41.86,
           "greetingEnd": 5.54,
-          "end": 44.042438
+          "end": 44.042438,
+          "openingEnd": 2.98,
+          "evolution": 28.8,
+          "blister": 30.56,
+          "deathEnd": 19.36,
+          "necrosisEnd": 20.94,
+          "surfaceClosed": 24.62,
+          "viable": 39.42
         },
         "internalBrand": false,
         "internalLabel": true,
         "wordCaptions": true,
         "captionBottom": 20,
-        "captionFontSize": 48,
-        "watermarkFontSize": 40
+        "captionFontSize": 50,
+        "watermarkFontSize": 44,
+        "site": "sacro",
+        "captionHighContrast": true
       },
       "structures": [
         "piel",

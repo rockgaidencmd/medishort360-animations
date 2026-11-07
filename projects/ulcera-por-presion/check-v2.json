@@ -1,0 +1,27 @@
+{
+  "transcriptUnchanged": true,
+  "audioUnchanged": true,
+  "originalEventTimesUnchanged": true,
+  "normalizationTestsPassed": true,
+  "literalAbsencesConfirmed": 5,
+  "realCaptureFrames": 20,
+  "fillers": 0,
+  "sceneAnchors8_9_10_12": {
+    "8": {
+      "anchor": "El daño / junto al hueso",
+      "start": 21.5
+    },
+    "9": {
+      "anchor": "Por fuera / no palidece",
+      "start": 25.04
+    },
+    "10": {
+      "anchor": "Si la presión continúa / se rompe / úlcera",
+      "start": 28.8
+    },
+    "12": {
+      "anchor": "salva el tejido",
+      "start": 39.42
+    }
+  }
+}

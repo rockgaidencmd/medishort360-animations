@@ -1,0 +1,47 @@
+MEJORAS al video ulcera-por-presion (mismo audio y misma rama). No me pidas ejecutar comandos. NO hagas merge ni render final. El AUDIO manda: no cambies tiempos ya correctos.
+
+0) DIAGNÓSTICO PRIMERO (antes de tocar el diseño)
+- Imprime el transcript completo con tiempo por palabra.
+- En mi hoja de contacto, las palabras "superficie", "Después", "ampollas", "herida abierta" y "vivo" salieron como "NO SE DICE EN EL MP3", pero "no palidece" sí se encontró a los 27 s. Dime por qué falló: normalización de acentos, mayúsculas, signos, fragmentación del transcript o ausencia real.
+- Corrige la búsqueda de palabras (sin acentos, sin mayúsculas, sin signos, tolerante a variantes) y verifica que las escenas 8, 9, 10 y 12 tengan sus tiempos reales. Una escena sin tiempo es un error: nunca dibujes un cuadro de relleno.
+
+1) APERTURA NUEVA (0 a ~4 s, hasta "piel intacta")
+- Habitación de hospital con un paciente acostado en cama (plano general, zoom 1), con respiración sutil, monitor y suero. "ÚLCERAS POR PRESIÓN" visible desde el segundo 0.
+- Cámara con push-in suave y parallax que se acerca al paciente hasta la región sacra. Etiqueta "Región sacra" con línea guía. Los talones pulsan suavemente con la etiqueta "Talones". Parámetro site: "sacro" | "talon".
+- Una lupa luminosa se abre sobre la zona y hace zoom-through hacia el corte de piel. En "morir", una mancha oscura crece junto al hueso.
+
+2) IDENTIFICACIÓN DE ESTRUCTURAS
+Etiquetas de 36 a 44 px, con punto de color, línea guía que se dibuja, anillo de pulso sobre la estructura y fondo para legibilidad. Aparecen cuando el audio las nombra o cuando la cámara las muestra por primera vez, y salen cuando dejan de servir (máximo 4 a la vez). Nombres: Región sacra, Talones, Epidermis, Dermis, Tejido graso, Músculo, Hueso, Capilar, Glóbulos rojos, Célula, Núcleo, Oxígeno, Nutrientes, Necrosis, Ampolla, Herida abierta. Solo nombres: sin frases explicativas.
+
+3) MUERTE CELULAR CON "CIELITO" (en "las células se lesionan y pueden morir" y "necrosis")
+- Etapa 1, lesión: la célula se hincha, pierde color y se sacude levemente.
+- Etapa 2, muerte: se vuelve gris, aparecen grietas finas y el núcleo se apaga.
+- Etapa 3, cielito: sobre la célula aparece un halo dorado; una silueta translúcida de la célula con alitas pequeñas se desprende, sube con vaivén dejando destellos y llega a una nubecita en la parte alta de la ventana, que hace un pequeño "puff". Escalonado entre 3 y 5 células.
+- La célula muerta oscura se queda en su sitio, para que se vea el daño. Estilo tierno, no macabro, sin texto ni símbolos religiosos.
+- En "Esa muerte es la necrosis": las zonas muertas se oscurecen y se unen en una mancha, con el rótulo "NECROSIS" nítido (36 px o más, buen contraste, spring y destello).
+
+4) TAMAÑO Y COMPOSICIÓN
+- Sin zonas vacías: ninguna mitad de pantalla con más del 25 % vacío. El corte de piel ocupa todo su cuadro y la parte inferior es el micromundo con células de 120 a 260 px.
+- El paciente en cama ocupa al menos el 90 % del ancho de su zona.
+- Reloj de 200 px o más, con marcas y aguja que avanza, junto a la línea de tiempo "piel roja -> ampolla -> herida abierta" con iconos SVG.
+- Subtítulos con contraste fuerte (blanco con contorno oscuro, 44 a 52 px), palabra activa resaltada, sin transparencia que los apague.
+- Marca de agua "MEDISHORT360" fija en todos los fotogramas, un poco más grande y definida, fuera de la cámara.
+
+5) RECUPERACIÓN VISIBLE (en "posición", "descarga" y "vivo")
+Un único valor pressure (1 a 0) que controla ambas mitades. Arriba el paciente gira, se coloca una almohada y las flechas de presión se desvanecen. Abajo los capilares se reabren, los glóbulos rojos vuelven a fluir, las células vivas recuperan color con un halo y la necrosis queda oscura. Check grande al final.
+
+6) MÁS MOTION GRAPHICS
+Anillos de pulso, flechas de fuerza que se dibujan, estelas en los glóbulos, destellos al cumplirse cada evento, texto cinético solo en "NECROSIS", partículas ambientales suaves, desenfoque de profundidad, y barras o indicadores solo si ayudan. Transiciones: las mismas del prompt anterior (zoom-through de lupa, división con divisor, entrada a la célula, retroceso con desenfoque, barrido circular y barrido lateral con destello).
+
+7) CALIDAD
+Sombras suaves, degradados con volumen, luz de borde, brillo en los vasos, grosor de línea consistente, fondo con viñeta y partículas. Pocos filtros de desenfoque por escena. Revisa y elimina la forma difusa que aparece detrás de la escena de "células".
+
+8) REGLAS (las de siempre)
+SVG y código, sin emojis como texto, sin MP4 prerenderizados, movimiento determinista con useCurrentFrame, sin Math.random, colores desde theme.ts, sin dependencias nuevas, tiempos desde el transcript. Reutiliza piezas de BIBLIOTECA.md. Registra las nuevas en names.ts y registry.ts: HospitalRoom, CellSoul (cielito), StructureLabel (si no existe).
+
+ENTREGA
+1) validate, typecheck y render:draft sin errores.
+2) Una sola imagen output/previews/hoja-contacto-v2.png, máximo 2000 px de ancho, con 20 cuadros: paciente en cama (plano general), push-in a mitad de camino, región sacra con lupa, hueso, capilares comprimidos, sangre detenida, oxígeno, célula lesionada, cielito (2 cuadros), necrosis, superficie, Después con reloj, no palidece, ampollas, herida abierta, posición, descarga, vivo y MediShort360. Segundo y palabra bajo cada cuadro. Ningún cuadro de relleno: si una palabra no se encuentra, dime cuál y por qué.
+3) Por cuadro: zoom, célula más pequeña, letra más pequeña y si se ve la marca de agua.
+4) Lista de todos los textos en pantalla.
+5) Commit y push. Respuesta final corta.

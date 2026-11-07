@@ -50,7 +50,7 @@ export const ProjectVideo: React.FC<ProjectVideoProps> = ({project}) => {
         );
       })}
       {!controls.internalBrand&&<Watermark text={manifest.brand} fontSize={typeof controls.watermarkFontSize==='number'?controls.watermarkFontSize:undefined} />}
-      <Captions transcript={transcript} wordByWord={controls.wordCaptions===true} fontSize={typeof controls.captionFontSize==='number'?controls.captionFontSize:undefined} bottom={typeof controls.captionBottom==='number'?controls.captionBottom:undefined}/>
+      <Captions transcript={transcript} wordByWord={controls.wordCaptions===true} highContrast={controls.captionHighContrast===true} fontSize={typeof controls.captionFontSize==='number'?controls.captionFontSize:undefined} bottom={typeof controls.captionBottom==='number'?controls.captionBottom:undefined}/>
       <Audio src={staticFile(manifest.audio)} />
     </AbsoluteFill>
   );

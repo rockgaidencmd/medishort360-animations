@@ -1,0 +1,72 @@
+{
+  "file": "output/ulcera-por-presion-draft.mp4",
+  "checkedAt": "2026-11-06T11:37:47.397Z",
+  "checks": [
+    {
+      "name": "video presente",
+      "ok": true,
+      "level": "fail",
+      "detail": "ok"
+    },
+    {
+      "name": "audio presente",
+      "ok": true,
+      "level": "fail",
+      "detail": "ok"
+    },
+    {
+      "name": "códec H.264",
+      "ok": true,
+      "level": "fail",
+      "detail": "códec: h264"
+    },
+    {
+      "name": "pixel format yuv420p (compatibilidad Android/iOS)",
+      "ok": true,
+      "level": "fail",
+      "detail": "pix_fmt: yuv420p"
+    },
+    {
+      "name": "resolución",
+      "ok": true,
+      "level": "fail",
+      "detail": "540x960 (esperado 540x960)"
+    },
+    {
+      "name": "fps",
+      "ok": true,
+      "level": "fail",
+      "detail": "30.00 (esperado 30)"
+    },
+    {
+      "name": "audio AAC",
+      "ok": true,
+      "level": "fail",
+      "detail": "códec: aac"
+    },
+    {
+      "name": "duración = audio original",
+      "ok": true,
+      "level": "fail",
+      "detail": "44.07 s vs 44.042438 s"
+    },
+    {
+      "name": "duración = archivo de audio",
+      "ok": true,
+      "level": "fail",
+      "detail": "44.07 s vs 44.04 s"
+    },
+    {
+      "name": "sin cuadros negros",
+      "ok": true,
+      "level": "fail",
+      "detail": "ok"
+    },
+    {
+      "name": "sin tramos congelados > 1 s",
+      "ok": true,
+      "level": "warn",
+      "detail": "ok"
+    }
+  ]
+}

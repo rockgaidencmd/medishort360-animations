@@ -1,4 +1,5 @@
-import {PressureUlcer} from './PressureUlcer';
+import {PressureUlcer} from './PressureUlcerV2';
+import {HospitalRoom,CellSoul,StructureLabel} from './PressureUlcerV2Parts';
 import {ChildFall} from './ChildFall';
 import {WoundHealing} from './WoundHealing';
 import type React from 'react';
@@ -23,5 +24,8 @@ export const sceneRegistry: Record<SceneComponentName, React.FC<SceneProps>> = {
   ChildFall,
   WoundHealing,
   PressureUlcer,
+  HospitalRoom,
+  CellSoul,
+  StructureLabel,
 };
 

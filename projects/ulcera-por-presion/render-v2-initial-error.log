@@ -1,0 +1,31 @@
+
+> medishort360-animations@0.1.0 render:draft
+> npx --yes tsx@4 scripts/render.ts ulcera-por-presion
+
+
+$ npx tsx scripts/sync-projects.ts
+Proyectos registrados (3): cicatrizacion-herida, ulcera-por-presion, vasopresores
+
+$ npx tsx scripts/validate.ts ulcera-por-presion
+⚠ [recursos] asset webxr-hand: archivo no encontrado: public/models/webxr-hand.glb
+⚠ [recursos] asset makehuman-head-feet: archivo no encontrado: public/models/makehuman-head-feet.glb
+⚠ [ulcera-por-presion] dato f2: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f3: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f4: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f5: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f6: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f7: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f8: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f9: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f10: falta fuente o revisión (source / reviewedBy)
+⚠ [ulcera-por-presion] dato f11: falta fuente o revisión (source / reviewedBy)
+✔ [ulcera-por-presion] sin errores
+
+$ npx remotion render src/index.tsx ulcera-por-presion output/ulcera-por-presion-draft.mp4 --codec=h264 --scale=0.5 --crf=30 --pixel-format=yuv420p --audio-codec=aac --gl=angle
+X [ERROR] Cannot read directory "../../..": Access is denied.
+
+X [ERROR] Could not resolve "C:\\Users\\Usuario\\Documents\\Codex\\medishort360-animations\\remotion.config.ts"
+
+Build failed with 2 errors:
+error: Cannot read directory "../../..": Access is denied.
+error: Could not resolve "C:\\Users\\Usuario\\Documents\\Codex\\medishort360-animations\\remotion.config.ts"

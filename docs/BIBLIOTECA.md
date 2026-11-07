@@ -5,7 +5,7 @@ Inventario obtenido de las exportaciones, props, imports, registro de escenas y 
 ## Cómo elegir y reutilizar
 
 - Priorizar SVG de cicatrización y el sistema de tiempo por palabra. Los tamaños finales se miden en la composición, no se deducen del nombre de una prop.
-- Seis escenas están registradas en `src/scenes/names.ts` y `src/scenes/registry.ts`: `Clip`, `ShockMicrocirculation`, `Outro`, `ChildFall`, `WoundHealing` y `PressureUlcer`.
+- Nueve escenas están registradas en `src/scenes/names.ts` y `src/scenes/registry.ts`: `Clip`, `ShockMicrocirculation`, `Outro`, `ChildFall`, `WoundHealing`, `PressureUlcer`, `HospitalRoom`, `CellSoul` y `StructureLabel`.
 - Un componente anatómico no recibe necesariamente `SceneProps`. Para usarlo en `scenes.json`, crear/reutilizar una escena adaptadora y registrarla en ambos archivos; no pasar a ciegas el nombre de cualquier exportación.
 - `src/scenes/types.ts` define `SceneProps`: `t` local en segundos, `durationSec` y `props`. En un proyecto con relojes globales, sumar el `timelineOffset` y considerar el redondeo del inicio de la secuencia.
 - Hay componentes históricos 3D y piezas con colores literales o texto pequeño. Su presencia no demuestra cumplimiento del nuevo estándar. No modificar los proyectos antiguos para hacerlos pasar; adaptar el uso nuevo sin cambiar sus valores por defecto.
@@ -119,7 +119,7 @@ Los tamaños históricos de `Overlays`/`Preview-Cells` pueden ser menores que el
 | Pulmón | No se encontró pieza dedicada. Crear geometría/actuación parametrizable y revisión anatómica |
 | Corazón | No se encontró pieza dedicada. Los trazos de monitor no equivalen a una pieza de corazón; falta órgano y actuación revisable |
 
-## Úlcera por presión — piezas SVG añadidas
+## Úlcera por presión — piezas SVG iniciales (v1)
 
 Proyecto: `projects/ulcera-por-presion/`; escena registrada `PressureUlcer` en `src/scenes/PressureUlcer.tsx`, `names.ts` y `registry.ts`. Sus eventos proceden de `events.json`, generado desde palabras reales por `scripts/build-ulcera.py`. No es un generador universal ni una aprobación clínica.
 
@@ -140,3 +140,19 @@ Todas las piezas siguientes se exportan de `src/anatomy/PressureTissue.tsx`; se 
 | `TimeClock` | `t`, `progress`: reloj de avance conceptual sin cifras; no existía en el inventario previo |
 
 Reutiliza `shotAt`, `RedBloodCell`, `Outro`, `Captions` y `Watermark`. El cierre usa `Outro` sin eslogan ni marca central, manteniendo la marca fija externa. Los nuevos tamaños opcionales de `Captions` y `Watermark` conservan los defaults antiguos. Capturas y mediciones: `projects/ulcera-por-presion/capture-report.json`, `verification.md`, `output/previews/hoja-contacto.png`. El zoom ocho corresponde al espacio macro normalizado y debe contrastarse con el tamaño final del cuerpo; no es una escala histológica certificada.
+
+## Úlcera por presión — revisión v2
+
+La escena registrada `PressureUlcer` usa ahora `src/scenes/PressureUlcerV2.tsx`. La implementación v1 se conserva como referencia; los tiempos correctos del transcript y `events.json` no se alteran. `scripts/prepare-ulcera-v2.py` añade anclas reales y configura la escena con `events-v2.json`.
+
+| Pieza nueva | Archivo / contrato | Uso real |
+|---|---|---|
+| `HospitalRoom` / `HospitalRoomArt` | `src/scenes/PressureUlcerV2Parts.tsx`; adaptador `SceneProps` registrado y vista SVG parametrizable (`site: sacro/talon`, `pressure`, `turn`, `backgroundBlur`) | Habitación, cama, paciente, monitor sin cifras, suero y paralaje; apertura con cámara aplicada y fondo desenfocado |
+| `CellSoul` / `CellSoulArt` | Mismo archivo; adaptador registrado y vista con `t/from/to` | Metáfora pedida: tres siluetas que se desprenden, ascienden y llegan a una nube; cuerpos muertos permanecen en su sitio |
+| `StructureLabel` / `StructureLabelArt` | Mismo archivo; adaptador registrado y vista con texto, coordenadas, punto objetivo, inicio, color y fuente | Nombres a cuarenta píxeles con punto, guía trazada y anillo; máximo cuatro etiquetas simultáneas |
+
+`CellDeath` admite `large`, `volume` y `nucleusLoss`: macro con nueve células (tres muertas y seis viables) y supresión del núcleo al morir. Conserva los valores por defecto anteriores. `TissueCrossSection` y `CapillaryCompression` admiten volumen opcional con degradados y brillo. `Captions` añade `highContrast` opcional: blanco, contorno oscuro y opacidad completa sin alterar los defaults antiguos.
+
+Un solo valor `pressure` gobierna giro, almohada, flechas, lumen, flujo y recuperación del tejido viable. La necrosis no se revierte. La ampolla y los iconos de evolución se muestran por la petición expresa de v2, anclados a «Si la presión continúa»/«oscurece»; no se atribuye al MP3 la palabra ampolla ni se considera una progresión universal.
+
+Hoja: `output/previews/hoja-contacto-v2.png`, veinte fotogramas reales. Diagnóstico y tamaños: `projects/ulcera-por-presion/verification-v2.md` y `capture-report-v2.json`. No inventar marcas temporales para títulos de escena que no se pronuncian.

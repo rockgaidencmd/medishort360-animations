@@ -5,20 +5,21 @@ import {theme} from '../styles/theme';
 
 const a=theme.anatomy,c=theme.colors;
 const limit=(x:number)=>Math.max(0,Math.min(1,x));
-export type PressureProps={t:number;pressure:number;damage?:number};
+export type PressureProps={t:number;pressure:number;damage?:number;volume?:boolean};
 
 /** REVISAR: esquema educativo de compresión, no clasificación ni escala histológica. */
-export const TissueCrossSection:React.FC<PressureProps>=({t,pressure,damage=0})=>{
+export const TissueCrossSection:React.FC<PressureProps>=({t,pressure,damage=0,volume=false})=>{
  const squash=1-.28*pressure;
  return <g>
+  {volume&&<defs><linearGradient id="pressure-dermis" x2="0" y2="1"><stop stopColor={a.newSkin}/><stop offset="1" stopColor={a.capillary}/></linearGradient><linearGradient id="pressure-muscle" x2="0" y2="1"><stop stopColor={a.dermis}/><stop offset="1" stopColor={c.bloodDeep}/></linearGradient></defs>}
   <rect x="20" y="720" width="960" height="155" rx="65" fill={a.paper}/>
   <path d="M40 806 Q500 760 960 806" stroke={a.fatOutline} strokeWidth="16" fill="none"/>
   <g transform={`translate(0 ${715*(1-squash)}) scale(1 ${squash})`}>
-   <path d="M20 170 Q250 125 500 170 T980 170 V710 H20Z" fill={a.dermis}/>
+   <path d="M20 170 Q250 125 500 170 T980 170 V710 H20Z" fill={volume?'url(#pressure-dermis)':a.dermis}/>
    <path d="M20 170 Q250 125 500 170 T980 170 V245 H20Z" fill={a.epidermis}/>
    <path d="M20 290 H980 V500 H20Z" fill={a.fat}/>
    {Array.from({length:12},(_,i)=><ellipse key={i} cx={70+i%6*170} cy={345+Math.floor(i/6)*100} rx="62" ry={38+Math.sin(t+i)*2} fill={a.fatOutline} opacity=".5"/>)}
-   <path d="M20 520 H980 V715 H20Z" fill={a.wound}/>
+   <path d="M20 520 H980 V715 H20Z" fill={volume?'url(#pressure-muscle)':a.wound}/>
    {Array.from({length:7},(_,i)=><path key={i} d={`M30 ${540+i*25} Q500 ${560+i*25+Math.sin(t+i)*3} 970 ${540+i*25}`} stroke={a.dermis} strokeWidth="9" fill="none"/>)}
    <path d="M30 270 Q280 245 500 280 T970 270" stroke={a.capillary} strokeWidth={35-pressure*23} fill="none"/>
    {Array.from({length:8},(_,i)=><ellipse key={i} cx={35+((i*130+t*65*(1-pressure))%920)} cy={270+Math.sin(i+t)*8} rx="25" ry={16-pressure*8} fill={c.bloodDeep}/>)}
@@ -45,10 +46,12 @@ export const BodyOnBed:React.FC<PressureProps & {turn?:number}>=({t,pressure,tur
  {[{x:550,y:615},{x:927,y:647}].map((p,i)=><circle key={i} cx={p.x} cy={p.y} r={48+(Math.sin(t*3+i)+1)*16} fill="none" stroke={c.amber} strokeWidth="9" opacity={pressure*.8}/>)}
 </g>;
 
-export const CapillaryCompression:React.FC<PressureProps & {flowTime:number}>=({t,pressure,flowTime})=>{
+export const CapillaryCompression:React.FC<PressureProps & {flowTime:number}>=({t,pressure,flowTime,volume=false})=>{
  const gap=260-pressure*100;
  return <g transform="scale(0.125)">
-  <path d={`M20 ${290-gap/2} Q500 ${265-gap/2} 980 ${290-gap/2} V${290+gap/2} Q500 ${265+gap/2} 20 ${290+gap/2}Z`} fill={a.newSkin} stroke={a.capillary} strokeWidth="22"/>
+  {volume&&<defs><linearGradient id="pressure-lumen" x2="0" y2="1"><stop stopColor={a.capillary}/><stop offset=".45" stopColor={a.newSkin}/><stop offset="1" stopColor={c.bloodDeep}/></linearGradient></defs>}
+  <path d={`M20 ${290-gap/2} Q500 ${265-gap/2} 980 ${290-gap/2} V${290+gap/2} Q500 ${265+gap/2} 20 ${290+gap/2}Z`} fill={volume?'url(#pressure-lumen)':a.newSkin} stroke={a.capillary} strokeWidth="22"/>
+  {volume&&<path d={`M35 ${305-gap/2} Q500 ${280-gap/2} 965 ${305-gap/2}`} fill="none" stroke={a.paper} strokeWidth="8" opacity=".6"/>}
   {Array.from({length:6},(_,i)=>{
    const normal=40+((i*170+flowTime*115)%900),packed=80+i*112;
    const x=normal*(1-pressure)+packed*pressure;
@@ -63,16 +66,18 @@ export const OxygenParticles:React.FC<{t:number;loss:number;nutrientLoss?:number
  </g>;})}
 </g>;
 
-export const CellDeath:React.FC<{t:number;damage:number;recovery?:number;necrosis?:boolean}>=({t,damage,recovery=0,necrosis=false})=><g transform="scale(0.125)">
- {Array.from({length:6},(_,i)=>{
-  const dead=i<3?damage:damage*.12;
-  const x=180+i%3*320,y=530+Math.floor(i/3)*210;
+export const CellDeath:React.FC<{t:number;damage:number;recovery?:number;necrosis?:boolean;large?:boolean;volume?:boolean;nucleusLoss?:number}>=({t,damage,recovery=0,necrosis=false,large=false,volume=false,nucleusLoss=0})=><g transform="scale(0.125)">
+ {Array.from({length:large?9:6},(_,i)=>{
+  const dead=i<3?damage:damage*.12*(1-recovery);
+  const x=large?150+i%3*350:180+i%3*320,y=large?390+Math.floor(i/3)*310:530+Math.floor(i/3)*210;
   const fill=interpolateColors(dead,[0,.5,1],[a.dermis,a.stone,necrosis?a.maskBlack:a.ink]);
-  const r=88+Math.sin(t*1.1+i)*2+dead*12;
-  return <g key={i} transform={`translate(${x} ${y})`}>
+  const r=(large?110:88)+Math.sin(t*1.1+i)*2+dead*12;
+  const shake=dead>.05&&dead<.8?Math.sin(t*22+i)*4:0;
+  return <g key={i} transform={`translate(${x+shake} ${y})`}>
+   {volume&&<defs><radialGradient id={`pressure-cell-${i}`} cx="35%" cy="30%"><stop stopColor={fill}/><stop offset="1" stopColor={interpolateColors(dead,[0,1],[a.capillary,necrosis?a.maskBlack:a.ink])}/></radialGradient></defs>}
    {recovery>0&&i>=3&&<circle r={r+22+Math.sin(t*2)*5} fill="none" stroke={c.mintBright} strokeWidth="12" opacity={recovery*.7}/>}
-   <circle r={r} fill={fill} stroke={a.newSkin} strokeWidth="7"/>
-   <ellipse rx="30" ry="38" fill={dead>.7?a.maskBlack:a.nucleus}/>
+   <circle r={r} fill={volume?`url(#pressure-cell-${i})`:fill} stroke={a.newSkin} strokeWidth="7"/>
+   <ellipse rx="30" ry="38" fill={dead>.7?a.maskBlack:a.nucleus} opacity={i<3?1-nucleusLoss*.95:1}/>
    {dead>.25&&<path d="M-68 -15 L-28 3 -43 40 M48 -58 L19 -20 43 5" stroke={a.ink} strokeWidth="9" fill="none" opacity={dead}/>}
   </g>;
  })}
